@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+	div {
+		margin: 20px;
+	}
+	a{
+		display: inline-block;
+		width: 150px;
+		padding: 10px;
+		border: 1px solid black;
+		text-decoration: none;
+	}
+	img { width: 310px; height: 450px;}
+	
+</style>
+</head>
+<body>
+	<div>
+		<a href="../images/a.jpg">브이아이피</a>
+		<a href="../images/b.jpg">택시운전사</a>
+		<a href="../images/c.jpg">청년경찰</a>
+		<a href="../images/d.jpg">장산범</a>
+		<a href="../images/e.jpg">혹성탈출</a>
+	</div>
+	
+	<div>
+		<img alt="브이아이피 영화포스터" src="../images/a.jpg" id="photo-gallery">
+	</div>
+</body>
+<script type="text/javascript">
+	(function(){
+		// 모든 a 엘리먼트를 찾아온다.
+		var links = document.getElementsByTagName("a");
+		var linkArray = [];
+		// links에 담긴 a 엘리먼트를 linkArray 배열에 옮겨담는다.
+		for(var i=0; i<links.length; i++) {
+			linkArray.push(links.item(i));
+		}
+		// linkArray에 들어이있는 요소의 갯수만큼 함수를 실행한다.
+		// item에는 a 엘리먼트가 순서대로 전달된다.
+		linkArray.forEach(function(item,index){
+			// item에 들어있는 a 엘리먼트에 이벤트 핸들러 함수를 등록한다.
+			item.addEventListener("click", function(event) {
+				// a 태그를 클릭했을 때 페이지가 이동되는 기본동작이 일어나지 않도록 방해한다.
+				event.preventDefault();
+				// item에 들어있는 a 엘리먼트의 href 속성값을 읽어온다.
+				var imagepath = item.getAttribute('href');
+				// id가 ptho-gallery인 img 엘리먼트의 src 속성값을 변경한다.
+				document.getElementById("photo-gallery").setAttribute("src", imagepath);
+			})
+			
+		});
+	}())
+</script>
+</html>

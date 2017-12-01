@@ -1,0 +1,44 @@
+package kr.co.jtimes.news.dao;
+
+import java.sql.SQLException;
+import java.util.List;
+
+import kr.co.jtimes.common.criteria.NewsCriteria;
+import kr.co.jtimes.news.vo.TbNewsVo;
+import kr.co.jtimes.util.IbatisUtil;
+
+public class TbNewsDao {
+
+	public TbNewsVo getNews(int no) throws SQLException {
+		return (TbNewsVo) IbatisUtil.getSqlMap().queryForObject("getNews", no);
+	}
+	
+	@SuppressWarnings("unchecked")
+	public List<TbNewsVo> getNewses() throws SQLException {
+		return IbatisUtil.getSqlMap().queryForList("getNewses");
+	}
+	
+	public void insertNews(TbNewsVo news) throws SQLException {
+		IbatisUtil.getSqlMap().insert("insertNews", news);
+	}
+	
+	public List<TbNewsVo> getNewsByCategory(NewsCriteria criteria) throws SQLException {
+		return IbatisUtil.getSqlMap().queryForList("getNewsByCategory", criteria);
+	}
+	
+	public int getNewsCountAllByCategory(int categoryNo) throws SQLException {
+		return (Integer)IbatisUtil.getSqlMap().queryForObject("getNewsCountAllByCategory", categoryNo);
+	}
+	
+	public int updateNews(TbNewsVo newsHit) throws SQLException {
+		return IbatisUtil.getSqlMap().update("updateNews", newsHit);
+	}
+	
+	public int getNewsNextSequence() throws SQLException {
+		return (Integer)IbatisUtil.getSqlMap().queryForObject("getNewsNextSequence");
+	}
+	
+	public TbNewsVo getNewsBack(int newsNo) throws SQLException {
+		return (TbNewsVo)IbatisUtil.getSqlMap().queryForObject("getNewsBack", newsNo);
+	}
+}

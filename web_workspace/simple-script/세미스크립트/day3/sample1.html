@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	// 즉시 실행 함수
+	// - 함수를 정의함과 동시에 실행하는 것
+	(function(){
+		console.log("즉시 실행 함수 실행됨");
+	})();
+	
+	// 즉시 실행 함수에 값 전달하기
+	(function(a, b){
+		console.log(a,b);
+	})(10, 20);
+	
+	// 즉시 실행 함수가 아닌 일반 함수
+	// 일반함수 정의
+	function fn() {
+		console.log("일반함수 실행됨");
+	}
+	// 일반함수 실행
+	fn();
+</script>
+</head>
+<body>
+
+</body>
+</html>

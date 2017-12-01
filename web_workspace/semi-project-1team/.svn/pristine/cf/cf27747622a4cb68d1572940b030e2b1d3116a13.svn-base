@@ -1,0 +1,71 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<title>Insert title here</title>
+<!-- 
+<style type="text/css">
+	.news {line-height: 40px;}
+</style>
+ -->
+ <style>
+ 	div.info {
+ 		color:gray;
+ 	}
+ 	span {
+ 		line-height:40px; 
+ 		color:gray;
+ 	}
+ </style>
+</head>
+<body>
+<%@ include file="/reporter/commons/reporterNavi.jsp"  %>
+<div class="container">
+	<div class="row">
+		<div class="col-offset-sm-2 col-sm-7">
+			<div class="row panel panel-body">
+				<h3><strong>[2018 러시아 월드컵 최종예선] 프랑스, 네덜란드 대파…스웨덴전 패배 극복</strong></h3>
+			</div>
+			<div class="info">
+				<span><small>기사입력 2017.09.01 오전 10:42</small></span>
+			</div>
+			<div class="row">
+				<p>
+					[매경닷컴 MK스포츠 강대호 기자] 2018 러시아 월드컵 최종예선에서 프랑스가 첫 패배의 충격을 대승으로 만회했다.
+				</p>
+				<p>
+					프랑스는 1일 네덜란드와의 2018 러시아 월드컵 최종예선 유럽 A조 7차전 홈경기를 4-0으로 이겼다. 2016 유럽축구연맹(UEFA) 챔피언스리그 기량발전 베스트11 토마 르마(22·모나코)가 2골로 공격을 주도했다.
+				</p>
+				<p>
+					스웨덴과의 6차전 원정경기에서 1-2로 진 프랑스는 잉글랜드와의 홈 평가전 3-2 승리에 이어 네덜란드도 압도했다. 5승 1무 1패 득실차 +10 승점 16으로 2위 스웨덴(13점)보다 나은 A조 선두다.
+				</p>
+			</div>
+			
+			<div class="row text-center">
+				<img src="12.jpg">
+			</div>
+			<div class="row text-center">
+				<span><small>2018 러시아 월드컵 최종예선 네덜란드전 2골의 주인공 토마 르마. 사진=AFPBBNews=News1</small></span>
+			</div>
+			<div class="row">
+				<p>2016 스페인 라리가 MVP 앙투안 그리즈만(26·아틀레티코) 역시 1골 1도움으로 네덜란드 격파에 큰 힘이 됐다. 2016-17 UEFA 챔피언스리그 우수 18인에 포함된 킬리안 음바페(19·파리 생제르맹)도 1득점 했다.</p>
+				<p>2011-12 리그1 득점왕 올리비에 지루(31·아스널)와 2016-17 리그1 베스트11 지브릴 시디베(25·모나코)도 1도움씩하며 전·현직 프랑스프로축구 스타다운 면모를 보였다.</p>
+				<p>[dogma01@maekyung.com]</p>
+			</div>
+			<div class="form-group text-right">
+	             <button class="btn btn-danger">수정</button>
+	        </div>
+		</div>
+		<div class="col-sm-3">
+		</div>
+	</div>
+</div>
+<%@include file="/reporter/commons/reporterFooter.jsp" %>
+</body>
+</html>

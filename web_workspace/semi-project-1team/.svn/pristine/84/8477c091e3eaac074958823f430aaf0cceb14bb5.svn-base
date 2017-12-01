@@ -1,0 +1,68 @@
+package kr.co.jtimes.ad.web;
+
+import java.io.IOException;
+import java.sql.SQLException;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
+import javax.servlet.ServletException;
+import javax.servlet.annotation.MultipartConfig;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.Part;
+
+import kr.co.jtimes.ad.dao.AdDao;
+import kr.co.jtimes.ad.vo.AdVo;
+			
+@WebServlet("/reporter/AD/adupload.html")
+@MultipartConfig()
+public class AdUploadServlet extends HttpServlet{
+
+	private static final String SAVED_DIRECTORY = "C:\\web_eclipse\\web_workspace\\.metadata\\.plugins\\org.eclipse.wst.server.core\\tmp0\\wtpwebapps\\semi-project-1team\\ad\\";	//경로
+	@Override
+	protected void service(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
+		
+		req.setCharacterEncoding("utf-8");
+		
+		Part part = req.getPart("file-upload");
+		String imgname = req.getParameter("imgname");
+		String item = part.getContentType();
+		String fType = item.substring(item.indexOf("/")+1, item.length());
+		String path = SAVED_DIRECTORY + imgname + "." + fType;
+		part.write(path);
+		
+		SimpleDateFormat dateFormat = new SimpleDateFormat();
+		Date startDate = null;
+		try {
+			startDate = dateFormat.parse(req.getParameter("submit-startDate"));
+		} catch (ParseException e1) {
+			e1.printStackTrace();
+		}
+		Date endDate = null;
+		try {
+			endDate = dateFormat.parse(req.getParameter("submit-endDate"));
+		} catch (ParseException e1) {
+			e1.printStackTrace();
+		}
+		
+		AdVo adVo = new AdVo();
+		adVo.setAdTitle(imgname);
+		adVo.setAdImgPath(path);
+		adVo.setAdLink(req.getParameter("submit-link"));
+		adVo.setAdStartDate(startDate);
+		adVo.setAdEndDate(endDate);
+
+		
+		AdDao adDao = new AdDao();
+		try {
+			adDao.addAd(adVo);
+		} catch (SQLException e) {
+			throw new ServletException(e);
+		}
+	
+		res.sendRedirect("/reporter/imageContainer/index.jsp");
+	}
+}

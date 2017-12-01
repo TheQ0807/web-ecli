@@ -1,0 +1,18 @@
+package kr.co.jtimes.citizenrep.image.dao;
+
+import java.sql.SQLException;
+import java.util.List;
+
+import kr.co.jtimes.util.IbatisUtil;
+
+public class CrImgDao {
+
+	public void addCrImg(CrImgDao crImgDao) throws SQLException{
+		IbatisUtil.getSqlMap().insert("addCrImg", crImgDao);
+	}
+	
+	@SuppressWarnings("unchecked")
+	public List<String> getCrImgByCrNo(int no) throws SQLException{
+		return IbatisUtil.getSqlMap().queryForList("getCrImgByCrNo", no);
+	}
+}

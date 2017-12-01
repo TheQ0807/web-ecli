@@ -1,0 +1,74 @@
+<%@page import="java.util.List"%>
+<%@page import="kr.co.jtimes.news.vo.TbNewsVo"%>
+<%@page import="kr.co.jtimes.news.dao.TbNewsDao"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<title>Insert title here</title>
+<style type="text/css">
+	a { color: black; }
+	.container {
+		width: 1024px;
+		margin: 0 auto;
+	}
+</style>
+</head>
+<body>
+<%pageContext.setAttribute("cp", "eco");%>
+<%@include file="/commons/clientNavi.jsp" %>
+
+<div class="container">
+	<div class="col-xs-6 panel panel-body">
+		<%
+			TbNewsDao tbNewsDao = new TbNewsDao();
+			List<TbNewsVo> newsList = tbNewsDao.getNewses();
+				
+			for (TbNewsVo newses : newsList) {
+				
+				int categoryNo = newses.getCategory().getCategoryNo();
+				if (categoryNo == 20) {
+		%>	
+		<div class="row">
+			<div class="col-xs-3">
+				<a href="article.jsp?newsNo=<%=newses.getNewsNo()%>"><img src="<%=newses.getNewsImgPath() %>" class="img-thumbnail"></a>
+			</div>
+			<div class="col-xs-9">
+				<div class="row">
+					<h3><a href="article.jsp?newsNo=<%=newses.getNewsNo()%>"><%=newses.getNewsTitle() %></a></h3>
+					<p style="color:gray"><%=newses.getNewsContents() %></p>
+				</div>
+			</div>
+		</div>
+		
+		<%
+				}
+			}
+		%>
+		
+	</div>
+
+	<div class="col-xs-6 panel panel-body">
+		<div class="col-xs-1"></div>
+		<div class="col-xs-11">
+			<div class="row">
+				<h3><em>광고 자리</em></h3>
+				<div class="row">
+					<img src="" class="img-thumbnail" style="width:250px; height: 250px">
+				</div>
+				<div class="row">
+					<img src="" class="img-thumbnail" style="width:250px; height: 250px">
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<%@include file="/commons/clientFooter.jsp" %>
+</body>
+</html>

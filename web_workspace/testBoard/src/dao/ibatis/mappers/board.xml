@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE sqlMap      
+    PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"      
+    "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="board">
+	
+	<select id="getAllBoards" resultClass="vo.Board">
+		select
+			board_no 			as no,
+			board_title 		as title,
+			board_writer 		as writer,
+			board_contents 		as contents,
+			board_createdate 	as createdate,
+			board_pno			as pno
+		from
+			tb_board2
+		order by
+			pno desc, no asc
+	</select>
+	
+	<insert id="addBoard" parameterClass="vo.Board">
+		insert into tb_board2
+		(board_no, board_title, board_writer, board_contents, board_createdate, board_pno)
+		values
+		(#no#, #title#, #writer#, #contents#, sysdate, #pno#)
+	
+	</insert>
+	
+	<select id="getBoardByNo" parameterClass="int" resultClass="vo.Board">
+		select
+			board_no 			as no,
+			board_title 		as title,
+			board_writer 		as writer,
+			board_contents 		as contents,
+			board_createdate 	as createdate,
+			board_pno			as pno
+		from
+			tb_board2
+		where
+			board_no = #value#
+	</select>
+	
+	<select id="getSeq" resultClass="int">
+	select 
+		board2_seq.nextval 
+	from 
+		dual
+	</select>
+	
+</sqlMap>

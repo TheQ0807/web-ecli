@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<taglib xmlns="http://java.sun.com/xml/ns/javaee"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-jsptaglibrary_2_1.xsd"
+        version="2.1">
+
+    <description>my simple tag library</description>
+    <display-name>my simple tag</display-name>
+    <tlib-version>1.0</tlib-version>
+    <short-name>my</short-name>
+    <uri>http://www.jhta.co.kr/tags/mytag</uri>
+    
+    <tag>
+    	<name>hello</name>
+    	<tag-class>sample1.HelloTag</tag-class>
+    	<body-content>empty</body-content>
+    	<attribute>
+    		<name>message</name>
+    		<required>true</required>
+    	</attribute>
+    </tag>
+    
+    <tag>
+    	<name>numberToStr</name>
+    	<tag-class>sample1.NumberTag</tag-class>
+    	<body-content>empty</body-content>
+    	<attribute>
+    		<name>number</name>
+    		<required>true</required>
+    	</attribute>
+    	<attribute>
+    		<name>pattern</name>
+    		<required>true</required>
+    	</attribute>
+    </tag>
+    
+</taglib>

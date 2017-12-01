@@ -1,0 +1,12 @@
+package kr.co.jtimes.reporter.profile.common.dao;
+
+import java.sql.SQLException;
+
+import kr.co.jtimes.reporter.profile.common.vo.ReporterVo;
+
+public class ReporterDao {
+
+	public ReporterVo getReporterById () throws SQLException{
+		return null;
+	}
+}

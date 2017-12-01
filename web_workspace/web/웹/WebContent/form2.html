@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>폼 연습</title>
+</head>
+<body>
+	<h1>폼 연습</h1>
+								
+	<form method="post" action="form.demo2.hta">
+		<input type="hidden" name="phone" value="010-1111-1111" />
+		<input type="hidden" name="jumin" value="800101" />
+		<label>이름</label> <input type="text" name="username" /> <br />
+		<label>비밀번호</label><input type="password" name="userpwd" /><br />
+		<label>지역</label>   <select name="location">
+								<option value="서울">서울</option>
+								<option value="인천">인천</option>
+								<option value="대구">대구</option>
+								<option value="부산">부산</option>
+								<option value="광주">광주</option>
+								<option value="기타">기타</option>
+							</select> <br />
+		<label>성별</label><input type="radio" name="gener" value="남" checked="checked">남자
+						  <input type="radio" name="gener" value="여"> 여자 <br/>
+		<label>기술</label><input type="checkbox" name="tech" value="java"> 자바
+						  <input type="checkbox" name="tech" value="c"> C
+						  <input type="checkbox" name="tech" value="python"> 파이썬
+						  <input type="checkbox" name="tech" value="bigdata"> 빅데이터
+						  <input type="checkbox" name="tech" value="db"> 데이터베이스 <br />
+		<button type="sumit">등록</button>
+	</form>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<%@page import="kr.co.jtimes.profile.common.dao.UserDao"%>
+<%@page import="kr.co.jtimes.profile.common.vo.UserVo"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8" trimDirectiveWhitespaces="true"%>
+<% 
+	request.setCharacterEncoding("utf-8");
+	
+	String name = request.getParameter("name");
+	String email = request.getParameter("email");
+	
+	UserVo user =new UserVo();
+	UserDao userDao = new UserDao();
+	
+	user.setEmail(email);
+	user.setName(name);
+	
+	UserVo findId = userDao.getLoginId(user);
+	String idState = null;
+	if(findId == null) {
+		idState = "1";
+	} else {
+		idState = "2";
+		
+	}
+	
+	response.getWriter().write(idState);
+%>

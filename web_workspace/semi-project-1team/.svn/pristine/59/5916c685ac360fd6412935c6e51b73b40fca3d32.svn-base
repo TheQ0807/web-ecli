@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE sqlMap      
+    PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"      
+    "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="tbimages">
+
+	<typeAlias alias="tbimages" type="kr.co.jtimes.reporter.imagecontainer.common.vo.TbImageVo"/>
+	
+	<select id="getImageSelectAll" resultClass="tbimages">
+		SELECT  
+			A.IMG_NO				imgNo,
+	        A.IMG_LOCATION			imgLocation,
+	        A.IMG_TITLE				imgTitle,
+	        A.IMG_ALT				imgAlt,
+	        A.IMG_PATH				imgPath,
+	        A.IMG_ALTER_STATE		imgAlterState,
+	        A.REPORTER_NO			"reporter.reporterNo",
+	        A.NEWS_TYPE_NO			"newsType.newsTypeNo",
+	        A.CATEGORY_NO			"category.categoryNo",
+	        A.IMG_REGDATE			imgRegdate,
+	        A.IMG_TYPE				imgType,
+	        A.IMG_SIZE				imgSize
+		FROM 
+			TB_IMAGE A,
+		    REPORTER_EMPLOYEE B,
+		    NEWS_TYPE C,
+		    NEWS_CATEGORY D
+     
+		WHERE
+    		A.REPORTER_NO = B.REPORTER_NO
+		AND
+    		A.NEWS_TYPE_NO = C.NEWS_TYPE_NO
+		AND
+     		A.CATEGORY_NO = D.CATEGORY_NO   
+	</select>
+	
+	
+</sqlMap>

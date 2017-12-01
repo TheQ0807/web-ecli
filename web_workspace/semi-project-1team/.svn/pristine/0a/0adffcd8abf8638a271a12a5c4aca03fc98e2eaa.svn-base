@@ -1,0 +1,5 @@
+package kr.co.jtimes.reporter.imagecontainer.common.dao;
+
+public class TbImageDao {
+
+}

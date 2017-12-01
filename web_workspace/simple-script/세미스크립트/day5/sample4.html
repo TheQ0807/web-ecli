@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+	* {padding:5px; }
+	.on {border: 1px solid orange; }
+</style>
+</head>
+<body>
+	<h1>DOM 순회하기</h1>
+	
+	<div id="content-section-1">
+		<h3>DOM 순회 속성</h3>
+		<ul id="property-list">
+			<li>firstChild</li>
+			<li>lastChild</li>
+			<li>childNodes</li>
+			<li>firstElementChild</li>
+			<li>lastElementChild</li>
+			<li>children</li>
+		</ul>
+	</div>
+	
+	<div id="content-section-2">
+		<h3>DOM 조작 메소드</h3>
+		<ul id="method-list">
+			<li>
+				<h4>appendChild()</h4>
+				<p>자식노드를 추가한다.</p>
+			</li>
+			
+			<li>
+				<h4>removeChild()</h4>
+				<p>자식노드를 삭제한다.</p>		
+			</li>
+			<li>insertBefore()</li>
+			<li>hasChildNodes()</li>
+		</ul>
+	</div>
+	
+</body>
+<script type="text/javascript">
+	var div = document.getElementById("content-section-2");
+	
+	var ul = document.getElementById("method-list");
+	
+	
+	
+</script>
+</html>
+<!-- 
+
+var div = document.getElementById('content-section')
+
+var ul = div.lastElementChild
+
+ul.firstElementChild
+= <li>firstChild</li>
+
+document.querySelector("div#content-section ul li:nth-child(1)")
+= <li>firstChild</li>
+
+ -->

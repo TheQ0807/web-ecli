@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE sqlMap      
+    PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"      
+    "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="reporter">
+	<typeAlias alias="ReporterEmployeeVo" type="kr.co.jtimes.reporter.profile.common.vo.ReporterEmployeeVo"/>
+	<select id="getReporterById" parameterClass="string" resultClass="ReporterEmployeeVo">
+		select 
+			reporter_no			as reporterNo,
+			reporter_id			as reporterId,
+			reporter_name		as reporterName,
+			reporter_pos		as reporterPos,
+			reporter_email		as reporterEmail,
+			reporter_phone		as reporterPhone,
+			reporter_pw			as reporterPw,
+			dept_no				as "deptNo.deptNo"
+		from
+			reporter_employee
+		where
+			reporter_id = #value#
+	</select>
+		
+	<update id="updateReporterAll" parameterClass="ReporterEmployeeVo">
+		update 
+			reporter_employee
+		set 
+			reporter_email = #reporterEmail#,
+			reporter_phone = #reporterPhone#
+		where
+			reporter_id = #reporterId#
+	</update>
+
+</sqlMap>

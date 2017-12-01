@@ -1,0 +1,111 @@
+package kr.co.jtimes.reporter.imagecontainer.common.web;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.sql.SQLException;
+import java.util.List;
+
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import com.google.gson.Gson;
+
+import kr.co.jtimes.common.criteria.Criteria;
+import kr.co.jtimes.reporter.imagecontainer.common.dao.TbImageDao;
+import kr.co.jtimes.reporter.imagecontainer.common.vo.TbImageVo;
+
+@WebServlet("/index.do")
+public class IndexJsonServlet extends HttpServlet {
+
+	@Override
+	protected void service(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
+		String expendId = req.getParameter("expendId");
+		String tapId = req.getParameter("tapid");
+		int beginIndex = Integer.parseInt(req.getParameter("bino"));
+		int endIndex = Integer.parseInt(req.getParameter("eino"));
+		String titleAuthorCategory = req.getParameter("titleAuthorCategory");
+		String searchWord = req.getParameter("searchWord");
+		
+		
+		
+		
+		System.out.println(expendId + " " + tapId + " " +beginIndex + " " +endIndex+ " "+titleAuthorCategory+ " "+searchWord);
+		
+		
+		String categoryId = req.getParameter("categoryId");
+		
+		TbImageDao tbImageDao = new TbImageDao();
+		Criteria criteria = new Criteria();
+		
+		// 펼치기를 눌렀을 때 실행
+		if("expend".equals(expendId)) {
+			criteria.setBeginIndex(beginIndex);
+			criteria.setEndIndex(endIndex);
+			criteria.setTapId(tapId);
+			
+				// 카테고리의 전체 버튼을 눌렀을 때
+				if("categoryAll".equals(categoryId)){
+					criteria.setCategoryAll(categoryId);
+					
+					criteria.setTapId(tapId);
+					criteria.setBeginIndex(beginIndex);
+					criteria.setEndIndex(endIndex);
+					
+					System.out.println(criteria.toString());
+					
+				// 카테고리의 전체버튼을 누르지 않았을 때
+				}else {
+					
+					
+					criteria.setCategoryRemainder(categoryId);
+					
+					criteria.setTapId(tapId);
+					criteria.setBeginIndex(beginIndex);
+					criteria.setEndIndex(endIndex);
+					
+					System.out.println(criteria.toString());
+				}
+			
+			System.out.println(criteria.toString());
+		// 펼치기를 누르지 않았을 때 실행
+		}else{
+			// 카테고리의 전체 버튼을 눌렀을 때
+			if("categoryAll".equals(categoryId)){
+				criteria.setCategoryAll(categoryId);
+				
+				criteria.setTapId(tapId);
+				criteria.setBeginIndex(beginIndex);
+				criteria.setEndIndex(endIndex);
+				
+				System.out.println(criteria.toString());
+				
+			// 카테고리의 전체버튼을 누르지 않았을 때
+			}else {
+				
+				
+				criteria.setCategoryRemainder(categoryId);
+				
+				criteria.setTapId(tapId);
+				criteria.setBeginIndex(beginIndex);
+				criteria.setEndIndex(endIndex);
+				
+				System.out.println(criteria.toString());
+			}
+			
+		}
+		
+		try {
+			List<TbImageVo> imageVos = tbImageDao.getSearchBySelectSort(criteria);
+			res.setContentType("text/plain;charset=utf-8");
+			PrintWriter pw = res.getWriter();
+			
+			Gson gson = new Gson();
+			pw.write(gson.toJson(imageVos));
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+	}
+}

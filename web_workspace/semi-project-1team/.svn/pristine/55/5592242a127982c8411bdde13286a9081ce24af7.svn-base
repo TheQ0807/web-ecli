@@ -1,0 +1,94 @@
+<%@page import="kr.co.jtimes.news.vo.TbNewsVo"%>
+<%@page import="kr.co.jtimes.news.dao.TbNewsDao"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <style>
+  	#write-date, #reporter-name, #one-line {color: darkgray;}
+  	.container {
+		width: 1024px;
+		margin: 0 auto;
+	}
+  </style>
+</head>
+<body>
+
+<%@include file="/commons/clientNavi.jsp" %>
+
+<%
+	int no = Integer.parseInt(request.getParameter("newsNo"));
+
+	TbNewsDao tbNewsDao = new TbNewsDao();
+	TbNewsVo tbNewsVo = tbNewsDao.getNews(no);
+%>
+<div class="container">
+	<div class=" col-xs-offset-1 col-xs-10">
+		<div class="row text-center">
+			<div class="panel panel-body">
+				<h1><strong><%=tbNewsVo.getNewsTitle() %></strong></h1>
+				<div class="text-right">
+					<span id="write-date"><small><%=tbNewsVo.getRegdate() %></small></span>
+					<span id="reporter-name"><small><%=tbNewsVo.getReporter() %></small></span>
+				</div>
+			</div>
+		</div>
+		<div class="row text-right">
+			<span><small>조회수:<%=tbNewsVo.getNewsViewCnt() %></small></span>
+			<span><small>추천수: </small></span>
+		</div>
+		<div class="row">
+			<div class="panel panel-body">
+				<div class="row text-center">
+					<img alt="ecomomy" src="<%=tbNewsVo.getNewsImgPath() %>" />
+				</div>
+				<div class="row">
+					<p><%=tbNewsVo.getNewsContents() %></p>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="form-group text-center">
+				<a href="/news/newsLike.jsp?newsNo=<%=no %>" class="btn btn-default" style="background: white; ">추천</a>
+			</div>
+		</div>
+		<div class="row well">
+			<form class="form-group" method="post" action="/news/addComment.jsp">
+				<input type="hidden" name="newsNo" value="<%=tbNewsVo.getNewsNo()%>">
+				<div class="form-group">
+					<textarea rows="3" cols="100" class="form-control" name="contents"></textarea>
+				</div>
+				<div class="form-group text-right">
+					<button type="submit" class="btn btn-sm btn-primary">등록</button>
+				</div>
+				<ul class="list-group">
+					<li class="list-group-item">
+						<p>
+							<span>smmc05004</span>
+							<span class="pull-right">입력일시: 2017-08-31</span>
+						</p>
+						<p class="list-group-item-text">이 기사 추천합니다. 아주 좋은 기사라고 생각합니다.</p>
+						<div class="text-right">
+							<p>
+								<a class="glyphicon glyphicon-thumbs-up" href="" class="btn btn-sm"></a> 
+								<span class="badge">12</span>
+								<a class="glyphicon glyphicon-thumbs-down" href="" class="btn btn-sm" style="color: red;"></a> 
+								<span class="badge">2</span>
+							</p>
+						</div>
+					</li>
+				</ul>
+			</form>
+		</div>
+	</div>
+</div>
+<%@include file="/commons/clientFooter.jsp" %>
+</body>
+</html>

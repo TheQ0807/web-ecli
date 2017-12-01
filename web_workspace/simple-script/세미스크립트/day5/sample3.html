@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+	div {width: 400px; height:200px; padding: 15px; border: 1px solid black;}
+	label {
+		display: inline-block; width:100px; text-align: center;
+		padding: 5px; margin: 5px;
+		border: 1px solid silver;	
+	}
+	.active {
+		background-color: #99d6ff;
+	}
+</style>
+</head>
+<body>
+<div id="user-box">
+	<label>이순신</label>
+	<label>김유신</label>
+	<label>강감찬</label>
+	<label>홍길동</label>
+	<label>류관순</label>
+	<label>안중근</label>
+</div>
+
+<p>
+	<button id="btn-up">up</button>
+	<button id="btn-down">down</button>
+</p>
+
+<div id="member-box"></div>
+</body>
+<script type="text/javascript">
+(function(){
+	var labelNodeList = document.getElementsByTagName("label");
+	for(var i=0; i<labelNodeList.length; i++) {
+		var label = labelNodeList.item(i);
+		
+		label.addEventListener('click', function(event){
+			var self = event.target;
+			if(self.getAttribute('class')=='active'){
+				self.removeAttribute("class");
+			}else {
+				self.setAttribute("class","active");
+				
+			}
+		})
+	};
+	document.getElementById('btn-down').addEventListener('click', function(){
+		var memberbox = document.getElementById("member-box");
+		
+		var labelNodeList = document.querySelectorAll("#user-box .active");
+		for(var i=0; i<labelNodeList.length; i++){
+			var label = labelNodeList.item(i);
+			
+			memberbox.appendChild(label);
+			label.removeAttribute('class');
+			
+		}
+	});
+	
+	document.getElementById('btn-up').addEventListener('click', function(){
+		var userbox = document.getElementById("user-box");
+		
+		var labelNodeList = document.querySelectorAll("#member-box .active");
+		for(var i=0; i<labelNodeList.length; i++){
+			var label = labelNodeList.item(i);
+			
+			userbox.appendChild(label);
+			label.removeAttribute('class');
+		}
+	});
+	
+}())
+</script>
+</html>

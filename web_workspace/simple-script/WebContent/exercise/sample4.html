@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<textarea rows="5" style="width: 100%;" id="content-box"></textarea>
+</body>
+<script type="text/javascript">
+	// textarea에 입력된 글자의 갯수가 10글자 미만일 때는 글자색이 초록색
+	// textarea에 입력된 글자의 갯수가 20글자 미만일 때는 글자색이 파란색
+	// textarea에 입력된 글자의 갯수가 50글자 미만일 때는 글자색이 오렌지색
+	// textarea에 입력된 글자의 갯수가 50글자 이상일 때는 글자색이 빨간색으로 변경하기
+	/* function kdown(){
+		
+	}
+	function kpress(el){
+		
+	}
+	function kup(el){
+		
+		var text = el.value;
+		if(text.length < 10){
+			el.style.color='green';
+		} else (text.length > 10 && text.length < 20){
+			el.style.color = 'blue';
+		} else (text.length >20 && text.length < 50){
+			el.style.color= 'orange';
+		} else{
+			el.style.color = 'red';
+		}
+	} */
+	document.getElementById("content-box").addEventListener('keyup', function(event) {
+		var textarea = event.target;
+		
+		if (textarea.value.length < 10) {
+			textarea.style.color = 'green';
+		} else if (textarea.value.length < 20) {
+			textarea.style.color = 'blue';
+		} else if (textarea.value.length < 50) {
+			textarea.style.color = 'orange';
+		} else {
+			textarea.style.color = 'red';
+		}
+	})
+</script>
+</html>

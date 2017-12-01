@@ -1,0 +1,32 @@
+<%@page import="org.apache.commons.codec.digest.DigestUtils"%>
+<%@page import="kr.co.jtimes.profile.common.vo.UserVo"%>
+<%@page import="kr.co.jtimes.profile.common.dao.UserDao"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<% 
+	String id = request.getParameter("id");
+	String pwd = request.getParameter("password");
+	String returnUrl = request.getParameter("returnUrl");
+	
+	UserDao userDao = new UserDao();
+	UserVo registeredUser = userDao.getUserById(id);
+	
+	if(registeredUser == null) {
+		response.sendRedirect("userLogin.jsp?fail=1");
+		return;
+	}
+	
+	if(! registeredUser.getPwd().equals(DigestUtils.sha256Hex(pwd))) {
+		response.sendRedirect("userLogin.jsp?fail=1");
+		return;
+	}
+	
+	//로그인 처리
+	session.setAttribute("userLogin", registeredUser);
+
+	if(returnUrl==null) {
+		response.sendRedirect("/index.jsp");
+	} else {
+		response.sendRedirect(returnUrl);
+	}
+%>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<div id="score-box">
+		국어<br />
+		<input type="text" name="kor"><br />
+		영어<br />
+		<input type="text" name="eng"><br />
+		수학<br />
+		<input type="text" name="math"><br />
+		과학<br />
+		<input type="text" name="sci"><br />
+		<button id="btn">계산하기</button>
+	</div>
+	<div>
+		총점: <input type="text" name = "totalscore" id="total-score" /><br />
+		평균: <input type="text" name = "avgscore" id="avg-score" /><br />
+	</div>
+</body>
+<script type="text/javascript">
+	document.getElementById("btn").addEventListener('click', function(){
+		// div 엘리먼트
+		var scoreBox = document.getElementById("score-box");
+		//	div 엘리먼트 안에 위치하고 있는 input엘리먼트들
+		var fields = scoreBox.getElementsByTagName("input");
+		
+		var totalScore = 0;
+		for(var i=0; i<fields.length; i++) {
+			var score = fields[i].value;
+			totalScore += parseInt(score);
+			
+		}
+		document.getElmentById('total-score').value = totalScore;
+		document.getElmentById('avg-score').value = totalScore/fields.length;
+	})
+</script>
+</html>

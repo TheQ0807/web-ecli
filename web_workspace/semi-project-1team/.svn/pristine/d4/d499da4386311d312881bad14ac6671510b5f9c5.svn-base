@@ -1,0 +1,52 @@
+package kr.co.jtimes.news.comment.vo;
+
+import kr.co.jtimes.profile.common.vo.UserVo;
+
+public class CommentLikeVo {
+
+	private String signState;
+	private NewCommentVo NewCommentVo;
+	private UserVo UserVo;
+	
+	public CommentLikeVo() {}
+
+	public CommentLikeVo(String signState, kr.co.jtimes.news.comment.vo.NewCommentVo newCommentVo,
+			kr.co.jtimes.profile.common.vo.UserVo userVo) {
+		super();
+		this.signState = signState;
+		NewCommentVo = newCommentVo;
+		UserVo = userVo;
+	}
+
+	public String getSignState() {
+		return signState;
+	}
+
+	public void setSignState(String signState) {
+		this.signState = signState;
+	}
+
+	public NewCommentVo getNewCommentVo() {
+		return NewCommentVo;
+	}
+
+	public void setNewCommentVo(NewCommentVo newCommentVo) {
+		NewCommentVo = newCommentVo;
+	}
+
+	public UserVo getUserVo() {
+		return UserVo;
+	}
+
+	public void setUserVo(UserVo userVo) {
+		UserVo = userVo;
+	}
+
+	@Override
+	public String toString() {
+		return "CommentLikeVo [signState=" + signState + ", NewCommentVo=" + NewCommentVo + ", UserVo=" + UserVo + "]";
+	}
+
+	
+	
+}

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	// 전역변수와 지역변수
+	// 전역변수 - 함수의 바깥에서 선언된 변수
+	//		  - 해당 스크립트 및 모든 함수에서 그 전역변수에 접근가능하다
+	//	지역변수- 함수의 안에서 선언된 변수
+	//		   -그 함수에서만 사용가능하다.
+	//			-그 함수가 실행되는 동안만 유지되다가 함수가 종료되면사라진다.
+	
+	// 전역변수 선언
+	var x = 10;
+	
+	function fn1() {
+		console.log('전역변수 x', x);
+		// 지역변수
+		var y = 20;
+		//전역변수 <-- 함수안에서 var없이 선언한 변수는 자동으로 전역변수가 된다.
+		z = 30;
+	}
+	
+	function fn2() {
+		console.log('전역변수 x',x);
+		console.log('z',z);
+		console.log('y',y);
+	}
+	
+	fn1();
+	fn2();
+</script>
+</head>
+<body>
+
+</body>
+</html>

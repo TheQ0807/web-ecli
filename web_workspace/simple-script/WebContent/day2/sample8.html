@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	// 전역변수와 지역변수
+	var x = 10;
+	
+	function fn() {
+		console.log(x);		// 10이 아니라 undefined가 출력된다.
+		
+		var x = 5;
+		console.log(x);		// 5가 출력된다.
+	}
+	fn();
+	
+</script>
+</head>
+<body>
+
+</body>
+</html>

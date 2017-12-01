@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE sqlMap      
+    PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"      
+    "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="citizenrap">
+
+	<typeAlias alias="citizenrap" type="kr.co.jtimes.citizenrap.vo.CitizenrapVo"/>
+
+	<insert id="addCitizenRep" parameterClass="citizenrap">
+		insert into (CR_NO, CR_TITLE, CR_CONTENTS, CR_REGDATE, CR_WRITER_NO)
+		values (SEQ_CIT_REP.nextval, #citizenRepTitle#, #citizenRepContents#, sysdate, #writer.id#)
+	</insert>
+	<select id="getAllCitRep" resultClass="citizenrap">
+		select 	CR_NO			as citizenRepNo,
+				CR_TITLE		as citizenRepTitle,
+				CR_CONTENTS		as citizenRepContents,
+				CR_REGDATE		as citizenRepCreateDate,
+				CR_WRITER_NO	as "writer.id"
+		from
+			TB_CITIZEN_REPORT
+		order by 
+			CR_NO
+	</select>
+	
+	<select id="getCitRepByNo" parameterClass="int" resultClass="citizenrap">
+		select 	CR_NO			as citizenRepNo,
+				CR_TITLE		as citizenRepTitle,
+				CR_CONTENTS		as citizenRepContents,
+				CR_REGDATE		as citizenRepCreateDate,
+				CR_WRITER_NO	as "writer.id"
+		from
+			TB_CITIZEN_REPORT
+		where
+			CR_NO = #value#
+	</select>
+	
+	<update id="deleteCitRepById" parameterClass="int">
+		update TB_CITIZEN_REPORT set CR_ACTIVE='N'
+		where CR_WRITER_NO = #value#
+	</update>
+</sqlMap>

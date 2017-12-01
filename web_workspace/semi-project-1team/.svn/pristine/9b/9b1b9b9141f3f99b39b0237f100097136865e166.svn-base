@@ -1,0 +1,28 @@
+<%@page import="kr.co.jtimes.citizenrep.dao.CitizenRepDao"%>
+<%@page import="kr.co.jtimes.citizenrep.vo.CitizenRepVo"%>
+<%@page import="kr.co.jtimes.profile.common.vo.UserVo"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%
+	//로그인 되지않은 사용자가 접근했을 때 로그인 후 되돌아갈 url 지정
+	pageContext.setAttribute("url", "/simple-jsp-board/index.jsp");
+%>
+<%@ include file="/profile/logincheck.jsp" %>
+<%
+	request.setCharacterEncoding("utf-8");
+
+	String title = request.getParameter("title");
+	String contents = request.getParameter("contents");
+	
+	UserVo userVo = (UserVo) session.getAttribute("loginUser");
+	
+	CitizenRepVo citizenRepVo = new CitizenRepVo();
+	citizenRepVo.setCitizenRepTitle(title);
+	citizenRepVo.setCitizenRepContents(contents);
+	citizenRepVo.setWriter(userVo);
+	
+	CitizenRepDao citizenRepDao = new CitizenRepDao();
+	citizenRepDao.addCitizenRep(citizenRepVo);
+	
+	response.sendRedirect("/citizenrep/list.jsp");
+%>

@@ -1,0 +1,10 @@
+package kr.co.jtimes.citizenrep.image.web;
+
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+
+@WebServlet("/citizenrep/image/upload.html")
+public class CrImgUploadServlet extends HttpServlet{
+	
+	
+}

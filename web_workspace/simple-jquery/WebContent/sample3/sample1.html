@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script type="text/javascript">
+	$(function(){
+		$("button").click(function(){
+			
+			var deptname = $(":input[name=deptname]").val();
+			var loc = $(":input[name=loc]").val();
+			
+			if(!deptname || !loc){
+				return false;
+			}
+			
+			$.ajax({
+				type:"post",
+				url: "response1.jsp",
+				data:{name:deptname, locId: loc},
+				dataType: "json",
+				success:function(result){
+					console.log(result);
+				}
+			})
+			
+			
+			return false;
+		})
+	});
+</script>
+</head>
+<body>
+<div class="container">
+	<h1>부서 등록하기</h1>
+	
+	<form class="well" action="response1.jsp">
+		<div class="form-group">
+			<label>부서명</label>
+			<input type="text" class="form-control" name="deptname" />
+		</div>
+		<div class="form-group">
+			<label>부서위치번호</label>
+			<input type="text" class="form-control" name="loc" />
+		</div>
+		<button class="btn btn-default">등록</button>
+	</form>
+</div>
+</body>
+</html>

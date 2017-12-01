@@ -1,0 +1,82 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <style type="text/css">
+.container {
+	width: 1024px;
+	margin: 0 auto;
+}
+</style>
+</head>
+<body>
+	<div class="container">
+  		<div class="row">
+  			 <ul class="nav nav-tabs navcontents" style="margin-top: 200px;">
+            <li class="active"><a href="#" id="N">광고</a></li>
+            <li class="dropdown">
+                <a id="category" class="dropdown-toggle" data-toggle="dropdown" href="#">카테고리
+                <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+		                	<li><a href="#" id="categoryAllAD">전체</a></li>
+		                    <li><a href="#" id="10">계약기간임박AD</a></li>
+		                    <li><a href="#" id="20">장기계약AD</a></li>
+		                    <li><a href="#" id="40">계약만료AD</a></li>
+		                </ul>
+		            </li>
+		        </ul>
+				<div class="panel panel-default">
+					<table class="table table-condensed table-hover">
+						<thead>
+							<tr>
+								<th>광고번호</th>
+								<th>광고_타이틀</th>
+								<th>광고계약날자</th>
+								<th>광고만료날자</th>
+							</tr>
+						</thead>
+						<tbody>
+							<%
+							
+							%>
+							<tr>
+								<td>광고번호</td>
+								<td><a href="detail.jsp?no=번호">광고_타이틀</a></td>
+								<td>광고계약날자</td>
+								<td>광고만료날자</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>      
+  		</div>
+	</div>
+</body>
+<script type="text/javascript">
+var categoryId = "";
+var categoryList = document.querySelectorAll(".dropdown-menu li a");
+for(index=0; index < categoryList.length; index++) {
+    var categoryItem = categoryList.item(index);
+    
+categoryItem.addEventListener("click", function(event) {
+	
+	 // 초기화 함수
+	 beginIndex = 1;
+	 endIndex = 8;
+	 
+	 // a테그 안에 있는 html화면에 보이는 text값과 카테고리별 id값을 가져옴
+	 var categoryName = event.target.innerText;
+    categoryId = event.target.id;
+    
+    document.getElementById("category").innerHTML = categoryName;
+
+});
+}
+</script>
+</html>

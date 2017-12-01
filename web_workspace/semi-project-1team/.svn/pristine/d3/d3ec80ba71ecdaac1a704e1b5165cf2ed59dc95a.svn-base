@@ -1,0 +1,20 @@
+<%@page import="kr.co.jtimes.reporter.profile.common.dao.ReporterEmployeeDao"%>
+<%@page import="kr.co.jtimes.reporter.profile.common.vo.ReporterEmployeeVo"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<% 
+	request.setCharacterEncoding("utf-8");
+
+	String password1 = request.getParameter("password1");
+	String password2 = request.getParameter("password2");
+	
+	ReporterEmployeeVo reporterEmployeeVo = new ReporterEmployeeVo();
+	
+	
+	if (!password1.equals(password2)) {
+		response.sendRedirect("updatePassword.jsp?fail=1");
+		return;
+	}
+	
+	
+%>

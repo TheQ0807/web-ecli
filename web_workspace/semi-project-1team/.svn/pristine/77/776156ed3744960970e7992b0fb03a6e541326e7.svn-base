@@ -1,0 +1,181 @@
+package kr.co.jtimes.common.criteria;
+
+import java.util.Date;
+import java.util.List;
+
+import kr.co.jtimes.reporter.imagecontainer.common.vo.TbImageVo;
+
+public class Criteria {
+	
+	private String tapId;
+	private String categoryAll;
+	private String categoryPreview;
+	private String categoryEconomy;
+	private String categoryEntertainments;
+	private String categorySports;
+	private String optAll;
+	private String optTitle;
+	private String optWriter;
+	private String searchWord;
+	private Date beginDate;
+	private Date endDate;
+	private List<TbImageVo> extension;
+	private int beginIndex;
+	private int endIndex;
+	
+	public Criteria() {}
+
+	public Criteria(String tapId, String categoryAll, String categoryPreview, String categoryEconomy,
+			String categoryEntertainments, String categorySports, String optAll, String optTitle, String optWriter,
+			String searchWord, Date beginDate, Date endDate, List<TbImageVo> extension, int beginIndex, int endIndex) {
+		super();
+		this.tapId = tapId;
+		this.categoryAll = categoryAll;
+		this.categoryPreview = categoryPreview;
+		this.categoryEconomy = categoryEconomy;
+		this.categoryEntertainments = categoryEntertainments;
+		this.categorySports = categorySports;
+		this.optAll = optAll;
+		this.optTitle = optTitle;
+		this.optWriter = optWriter;
+		this.searchWord = searchWord;
+		this.beginDate = beginDate;
+		this.endDate = endDate;
+		this.extension = extension;
+		this.beginIndex = beginIndex;
+		this.endIndex = endIndex;
+	}
+
+	public String getTapId() {
+		return tapId;
+	}
+
+	public void setTapId(String tapId) {
+		this.tapId = tapId;
+	}
+
+	public String getCategoryAll() {
+		return categoryAll;
+	}
+
+	public void setCategoryAll(String categoryAll) {
+		this.categoryAll = categoryAll;
+	}
+
+	public String getCategoryPreview() {
+		return categoryPreview;
+	}
+
+	public void setCategoryPreview(String categoryPreview) {
+		this.categoryPreview = categoryPreview;
+	}
+
+	public String getCategoryEconomy() {
+		return categoryEconomy;
+	}
+
+	public void setCategoryEconomy(String categoryEconomy) {
+		this.categoryEconomy = categoryEconomy;
+	}
+
+	public String getCategoryEntertainments() {
+		return categoryEntertainments;
+	}
+
+	public void setCategoryEntertainments(String categoryEntertainments) {
+		this.categoryEntertainments = categoryEntertainments;
+	}
+
+	public String getCategorySports() {
+		return categorySports;
+	}
+
+	public void setCategorySports(String categorySports) {
+		this.categorySports = categorySports;
+	}
+
+	public String getOptAll() {
+		return optAll;
+	}
+
+	public void setOptAll(String optAll) {
+		this.optAll = optAll;
+	}
+
+	public String getOptTitle() {
+		return optTitle;
+	}
+
+	public void setOptTitle(String optTitle) {
+		this.optTitle = optTitle;
+	}
+
+	public String getOptWriter() {
+		return optWriter;
+	}
+
+	public void setOptWriter(String optWriter) {
+		this.optWriter = optWriter;
+	}
+
+	public String getSearchWord() {
+		return searchWord;
+	}
+
+	public void setSearchWord(String searchWord) {
+		this.searchWord = searchWord;
+	}
+
+	public Date getBeginDate() {
+		return beginDate;
+	}
+
+	public void setBeginDate(Date beginDate) {
+		this.beginDate = beginDate;
+	}
+
+	public Date getEndDate() {
+		return endDate;
+	}
+
+	public void setEndDate(Date endDate) {
+		this.endDate = endDate;
+	}
+
+	public List<TbImageVo> getExtension() {
+		return extension;
+	}
+
+	public void setExtension(List<TbImageVo> extension) {
+		this.extension = extension;
+	}
+
+	public int getBeginIndex() {
+		return beginIndex;
+	}
+
+	public void setBeginIndex(int beginIndex) {
+		this.beginIndex = beginIndex;
+	}
+
+	public int getEndIndex() {
+		return endIndex;
+	}
+
+	public void setEndIndex(int endIndex) {
+		this.endIndex = endIndex;
+	}
+
+	
+
+
+
+	
+	
+	
+	
+	
+	
+	
+	
+}

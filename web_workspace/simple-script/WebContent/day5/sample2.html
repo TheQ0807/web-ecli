@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+	div {padding: 20px; border: 1px solid black;}
+</style>
+</head>
+<body>
+	<p>
+		<button id="add-btn-1">추가</button>
+		<button id="add-btn-2">추가</button>
+	</p>
+	<div id="box"></div>
+</body>
+<script type="text/javascript">
+	
+	function removeField(event){
+		var box = document.getElementById("box");
+		var button = event.target;
+		var p = event.target.parentNode;
+		
+		box.removeChild(p);
+	}
+
+	document.getElementById('add-btn-2').addEventListener('click', function(){
+		var box = document.getElementById('box');
+		var htmlContent = "<p>";
+		htmlContent += "<label>경력사항: </label>";
+		htmlContent += "<input type='text' />";
+		htmlContent += "<button onclick='removeField(event)'>X</button>";
+		htmlContent += "<br />";
+		htmlContent += "</p>";
+		
+		box.innerHTML += htmlContent;
+		
+	});
+
+	document.getElementById('add-btn-1').addEventListener('click', function(){
+		// input field를 추가할 div가져오기
+		var box = document.getElementById('box');
+		// input field를 생성하기
+		var label = document.createElement('label');
+		var labelTextNode = document.createTextNode("경력사항: ");
+		label.appendChild(labelTextNode);
+		var el = document.createElement('input');
+		var br = document.createElement('br');
+		
+		var p = document.createElement('p');
+		p.appendChild(label);
+		p.appendChild(el);
+		p.appendChild(br);
+		
+		// div에 input field 추가하기
+		box.appendChild(p);
+	})
+</script>
+</html>

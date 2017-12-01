@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	url : <input type="text" id="addr-field"><button id="btn">이동</button>
+</body>
+<script type="text/javascript">
+	document.getElementById("btn").addEventListener('click', function(event){
+		
+		var url = document.getElementById('addr-field').value;
+		
+		// 페이지 이동시키기
+		location.href = url;
+	})
+</script>
+</html>

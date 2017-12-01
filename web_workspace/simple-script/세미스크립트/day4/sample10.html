@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+	.gallery-item{
+		display : inline-block;
+		margin : 15px;
+		padding: 5px;
+		border: 1px solid silver;
+	}
+</style>
+</head>
+<body>
+	<div id="gallery-box"></div>
+</body>
+<script type="text/javascript">
+	var posters = [
+		{image:"a.jpg", title:"브이아이피", point:6.0, rate:27.5},
+		{image:"b.jpg", title:"택시운전사", point:9.3, rate:22.5},
+		{image:"c.jpg", title:"청년경찰", point:7.4, rate:20.2},
+		{image:"d.jpg", title:"장산범", point:7.5, rate:7.5},
+		{image:"e.jpg", title:"혹성탈출", point:7.2, rate:7.4}
+	];
+	
+	var gallery = document.getElementById("gallery-box");
+	var htmlContent = "";
+	posters.forEach(function(poster, index){
+		htmlContent += "<div class='gallery-item'>";
+		htmlContent += "<img src='../images/"+poster.image+"' alt='"+poster.title+"' />";
+		htmlContent += "<h3>"+poster.title+"</h3>";
+		htmlContent += "<p>평점:"+poster.point+" 예매율:<small>"+poster.rate+"%</small></p>";
+		htmlContent += "</div>";
+	});
+	
+	gallery.innerHTML = htmlContent;
+</script>
+</html>

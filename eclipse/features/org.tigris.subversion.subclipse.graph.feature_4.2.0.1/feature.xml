@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature
+      id="org.tigris.subversion.subclipse.graph.feature"
+      label="Subversion Revision Graph"
+      version="4.2.0.1"
+      provider-name="Subclipse"
+      plugin="org.tigris.subversion.subclipse.graph">
+
+   <description>
+      Subversion Revision Graph for Subclipse
+   </description>
+
+   <license url="%licenseURL">
+      %license
+   </license>
+
+   <requires>
+      <import plugin="org.eclipse.team.ui"/>
+      <import plugin="org.eclipse.jface.text"/>
+      <import plugin="org.eclipse.ui.editors"/>
+      <import plugin="org.tigris.subversion.subclipse.ui"/>
+      <import plugin="org.eclipse.draw2d"/>
+      <import plugin="org.eclipse.gef"/>
+   </requires>
+
+   <plugin
+         id="org.tigris.subversion.subclipse.graph"
+         download-size="127"
+         install-size="256"
+         version="4.2.0.1"
+         unpack="false"/>
+
+</feature>

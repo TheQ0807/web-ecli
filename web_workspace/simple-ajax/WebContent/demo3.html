@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<h1>xml 데이터 처리</h1>
+	<p>
+		ajax요청시 응답컨텐츠가 xml데이터인 경우
+		xhr의 responseXML에 응답 xml데이터가 들어있다.
+		
+		xhr은 응답xml을 XML DOM객체로 변환해서 responseXML에 저장한다.
+		
+		XML DOM은 DOM 표준을 준수하기 때문에 HTML DOM과 사용법이 거의 같다. 
+	</p>
+	
+	<p>
+		<button id="btn">xml 불러오기</button>
+	</p>
+	
+	<h3>사원정보</h3>
+	<dl>
+		<dt>사원번호</dt><dd id="emp-id"></dd>
+		<dt>이름</dt><dd id="emp-name"></dd>
+		<dt>직종</dt><dd id="emp-job-id"></dd>
+		<dt>급여</dt><dd id="emp-salary"></dd>
+		<dt>입사일</dt><dd id="emp-hire-date"></dd>
+	</dl>
+	
+</body>
+<script type="text/javascript">
+	document.getElementById("btn").addEventListener("click", function(event){
+		var xhr = new XMLHttpRequest();
+		xhr.onreadystatechange = function() {
+			if(xhr.readyState == 4 && xhr.status == 200) {
+				var xmlDom = xhr.responseXML;
+				
+				var id = xmlDom.getElementsByTagName('emp_id').item(0).textContent;
+				var firstName = xmlDom.getElementsByTagName('first_name').item(0).textContent;
+				var lastName = xmlDom.getElementsByTagName('last_name').item(0).textContent;
+				var jobId = xmlDom.getElementsByTagName('job_id').item(0).textContent;
+				var salary = xmlDom.getElementsByTagName('salary').item(0).textContent;
+				var hireDate = xmlDom.getElementsByTagName('hire_date').item(0).textContent;
+				
+				document.getElementById("emp-id").innerText = id;
+				document.getElementById("emp-name").innerText = firstName+","+lastName;
+				document.getElementById("emp-job-id").innerText = jobId;
+				document.getElementById("emp-salary").innerText = salary;
+				document.getElementById("emp-hire-date").innerText = hireDate;
+			}
+		};
+		xhr.open("GET","emp.do");
+		xhr.send(null);
+	});
+</script>
+</html>

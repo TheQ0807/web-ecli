@@ -1,0 +1,72 @@
+package kr.co.jtimes.ad.web;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.util.Date;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.List;
+
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import com.google.gson.Gson;
+
+import kr.co.jtimes.ad.dao.AdDao;
+import kr.co.jtimes.ad.vo.AdVo;
+import kr.co.jtimes.common.criteria.AdCriteria;
+import oracle.sql.DATE;
+
+@WebServlet("/reporter/AD/adViewservlet.html")
+public class AdViewServlet extends HttpServlet {
+	
+	@Override
+	protected void service(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
+		
+	    res.setContentType("text/plain;charset=utf-8");
+		SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd");
+		String g = req.getParameter("genre");
+		String p = req.getParameter("page");
+		String mode = req.getParameter("mode");
+  
+		AdCriteria criteria = new AdCriteria();
+		criteria.setPage(Integer.valueOf(p));
+		List<AdVo> AdList = null;
+		
+		
+		
+		Date startDate =null;
+		try {
+			startDate = (Date) simpleDateFormat.parse(req.getParameter("startdate"));
+		} catch (ParseException e) {
+			e.printStackTrace();
+		} 
+		Date endDate= null;
+		try {
+			endDate = (Date) simpleDateFormat.parse(req.getParameter("enddate"));
+		} catch (ParseException e) {
+			e.printStackTrace();
+		}
+		
+		
+		
+		long sDate = startDate.getTime();
+		long eDate = endDate.getTime();
+		long now = System.currentTimeMillis();
+		
+		Gson gson = new Gson();
+	    PrintWriter out = res.getWriter();
+	    try {
+	    	if(eDate > now ) {
+		            AdList = new AdDao().getAdByCriteria(criteria);
+		            
+		            out.println(gson.toJson(AdList));
+		     } 
+		} catch (Exception e) {
+			
+		}
+	}
+}

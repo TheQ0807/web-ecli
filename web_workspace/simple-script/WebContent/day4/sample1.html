@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	function fn(el){
+		/* 
+			html 엘리먼트(태그를 표현하는 객체) 중에서input type="radio">, <input type="checkbox">는
+			checked property를 가지고 있다.
+			checked property는 체크되어 있으면 true값을 가진다.
+		 */
+		//console.log("checked: ",el.checked);
+		//console.log("value: ", el.value);
+		var divBox = document.querySelector("#wedding-box");
+		if(el.value == 'Y') {
+			divBox.style.display ='block';
+		}else {
+			divBox.style.display = 'none';
+		}
+	}
+	
+	function fn2() {
+		//1. company-box 엘리먼트찾기
+	 	var combobox = document.querySelector("#company-combobox");
+		//2. email2-filed 엘리멘트 찾기
+		var field = document.getElementById("email2-field");
+		
+		//3.company-box .엘리먼트에서 현재 선택된 값 알아내기
+		var currentCompany= combobox.value;
+		//console.log(currentCompany);
+		
+		//4. email2-field의 값 변경하기
+		field.value = currentCompany;
+	}
+	function fn3(){
+		// 1. lang-all 체크박스 찾기
+		var allCheckBox = document.getElementById("lang-all");
+		// 2. name 속성값이 lang인 체크박스 모드 찾기
+		var checkboxNodeList = document.getElementsByName("lang");
+		// 3. lang-all 체크박스의 현재 체크상태 알아내기
+		var isChecked = allCheckBox.checked;
+		// 4. lang-all 체크박스의 체크상태에 맞추어 name속성값이 lang인 체크박스의 상태를 변경하기
+		for(var index=0; index<checkboxNodeList.length; index++) {
+			var checkbox = checkboxNodeList.item(index);
+			//console.log(checkbox);
+			checkbox.checked = isChecked;
+		}
+	}
+	
+</script>
+</head>
+<body>
+ <form>
+ 	<div>
+ 		<input type="checkbox" id="lang-all" onchange="fn3();"> 프로그래밍 언어<br />
+ 		<input type="checkbox" name="lang" value="C" /> C
+ 		<input type="checkbox" name="lang" value="C++" /> C++
+ 		<input type="checkbox" name="lang" value="C#" /> C#
+ 		<input type="checkbox" name="lang" value="JAVA" /> JAVA
+ 		<input type="checkbox" name="lang" value="JAVAscript" /> JAVAscript
+ 		<input type="checkbox" name="lang" value="python" /> python
+ 	</div>
+ 	<div>
+ 		이메일<br />
+ 		<input type="text" name="email" />
+ 		@
+ 		<input type="text" name="email2" id="email2-field"/>
+ 		<select id="company-combobox" name="company" onchange="fn2()">
+ 			<option value="">직접입력</option>
+ 			<option value="naver.com">naver.com</option>
+ 			<option value="hanmail.net">hanmail.net</option>
+ 			<option value="google.com">google.com</option>
+ 		</select>	
+ 		
+ 	</div>
+ 	<div>
+ 		결혼여부<br />
+ 		<input type="radio" name="married" value="Y" checked="checked" onchange="fn(this);"> 기혼
+ 		<input type="radio" name="married" value="N" onchange="fn(this);"> 미혼
+ 	</div>
+ 	<div id="wedding-box">
+ 		결혼기념일<br />
+ 		<input type="text" name="wedding" />
+ 	</div> 	
+ 	
+ </form>
+</body>
+</html>

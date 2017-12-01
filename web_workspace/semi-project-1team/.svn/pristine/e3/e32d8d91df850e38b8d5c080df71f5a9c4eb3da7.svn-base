@@ -1,0 +1,42 @@
+<%@page import="kr.co.jtimes.news.vo.TbNewsVo"%>
+<%@page import="kr.co.jtimes.news.dao.TbNewsDao"%>
+<%@page import="kr.co.jtimes.reporter.sign.vo.NewsSignVo"%>
+<%@page import="kr.co.jtimes.reporter.sign.dao.NewsSignDao"%>
+<%@page import="kr.co.jtimes.reporter.profile.common.vo.ReporterEmployeeVo"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<%
+	int newsNo = Integer.parseInt(request.getParameter("newsNo"));
+	int signNo = Integer.parseInt(request.getParameter("signNo"));
+
+	ReporterEmployeeVo loginUser = (ReporterEmployeeVo)session.getAttribute("loginReporter");
+	
+	NewsSignDao signDao = new NewsSignDao();
+	NewsSignVo newsSign = signDao.getNewsSign(signNo);
+	if(loginUser.getReporterPos().getPositionNo() > 200) {
+%>
+	<script type="text/javascript">
+		alert("접근 할 수 없습니다.");
+	</script>
+<%
+		response.sendRedirect("/reporter/index.jsp");
+		return;
+	} else if(loginUser.getReporterPos().getPositionNo() == 200) {//부장일때
+		newsSign.setFirstSignState("Y");
+		signDao.updateSign(newsSign);
+	} else {	//국장일때
+		newsSign.setSecondSignState("Y");
+		signDao.updateSign(newsSign);
+		TbNewsDao newsDao = new TbNewsDao();
+		TbNewsVo news = newsDao.getNewsBack(newsNo);
+		news.setNewsSignState("Y");
+		newsDao.updateToNews(news);
+	}
+%>
+	<script type="text/javascript">
+		alert("결재가 완료 되었습니다.");
+	</script>
+<%
+	response.sendRedirect("/reporter/news/confirmNews.jsp");
+%>

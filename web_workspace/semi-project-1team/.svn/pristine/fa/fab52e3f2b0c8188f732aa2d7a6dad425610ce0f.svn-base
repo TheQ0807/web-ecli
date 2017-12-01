@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE sqlMap      
+    PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"      
+    "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="news">
+
+	<typeAlias alias="news" type="kr/co/jtimes/news/vo/TbNewsVo.java"/>
+	
+	<select id="getNews" parameterClass="int" resultClass="news">
+		select
+			news_no 		as newsNo, 
+			nows_location 	as newsLocation, 
+			news_title 		as newsTitle, 
+			news_contents	as newsContents, 
+			news_regdate	as regdate, 
+			news_img_path	as newsImgPath, 
+			news_view_cnt	as newsViewCnt, 
+			news_sign_state	as newsSignState, 
+			news_type_no	as "newsTypeNo.newsTypeNo", 
+			category_no		as "categoryNo.categoryNo", 
+			reporter_no		as "reporterNo.reporterNo"
+		from tb_news
+		where
+			news_no ="value"
+	</select>
+	
+	<select id="getAllNews" resultClass="news">
+		select
+			news_no 		as newsNo, 
+			nows_location 	as newsLocation, 
+			news_title 		as newsTitle, 
+			news_contents	as newsContents, 
+			news_regdate	as regdate, 
+			news_img_path	as newsImgPath, 
+			news_view_cnt	as newsViewCnt, 
+			news_sign_state	as newsSignState, 
+			news_type_no	as "newsTypeNo.newsTypeNo", 
+			category_no		as "categoryNo.categoryNo", 
+			reporter_no		as "reporterNo.reporterNo"
+		from tb_news
+	</select>
+</sqlMap>

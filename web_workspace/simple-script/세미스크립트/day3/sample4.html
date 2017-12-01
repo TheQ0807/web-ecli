@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	// onkeydown, onkeypress는 지금 입력한 글자가 폼요소에 표시되기 전에 발생되는 이벤트다.
+	function kdown(){
+		//console.log('key down');
+	}
+	function kpress(el){
+		//console.log('key press');
+	}
+	function kup(el){
+		//console.log('key up');
+		var text = el.value;
+		if(text.length > 20){
+			el.style.border = '5px solid red';
+			el.style.color='red';
+		} else{
+			el.style.border = '5px solid black';
+			el.style.color = 'black';
+		}
+	}
+</script>
+</head>
+<body>
+	<textarea rows="5" cols="60" onkeydown="kdown();" onkeypress="kpress(this);" onkeyup="kup(this);"></textarea>
+</body>
+</html>

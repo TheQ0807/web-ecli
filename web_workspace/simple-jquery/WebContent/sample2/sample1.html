@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script type="text/javascript">
+	$(function(){
+		
+		var load = false;
+		var currentPage = 1;
+		var MAX_PAGE_SIZE;
+		var ROW_SIZE = 25;
+		
+		var getContents = function(){
+			if(MAX_PAGE_SIZE && currentPage > MAX_PAGE_SIZE){
+				alert("조회할 데이터가 더이상 존재하지 않습니다.");
+				return;
+			}
+			
+			var begin = (currentPage -1)* ROW_SIZE +1;
+			var end = currentPage* ROW_SIZE;
+			
+			currentPage++;
+			
+			$.ajax({
+				type:"GET",
+				url:"proxy.jsp",
+				data:{b:begin, e:end},
+				dataType:"xml",
+				success:function(xmlDom){
+					if(!MAX_PAGE_SIZE) {
+						var totalRecord = $(xmlDom).find("list_total_conunt");
+						MAX_PAGE_SIZE = Math.ceil(totalRecord/25);
+					}
+					
+					var htmlContent ="";
+					$(xmlDom).find("row").each(function(){
+						var codeName = $(this).find("CODENAME").text();
+						var title = $(this).find("TITLE").text();
+						var strtdate = $(this).find("STRTDATE").text();
+						var enddate = $(this).find("END_DATE").text();
+						var place = $(this).find("PLACE").text();
+						var time = $(this).find("TIME").text();
+						var usetarget = $(this).find("USE_TRGT").text();
+						var sponsor = $(this).find("SPONSOR").text();
+						
+						htmlContent += "<tr>";
+						htmlContent += "<td>"+codeName+"</td>";
+						htmlContent += "<td>"+title+"</td>";
+						htmlContent += "<td>"+strtdate+"</td>";
+						htmlContent += "<td>"+enddate+"</td>";
+						htmlContent += "<td>"+place+"</td>";
+						htmlContent += "<td>"+time+"</td>";
+						htmlContent += "</tr>";
+					});
+					$("tbody").append(htmlContent);
+					load = true;
+				}
+			});
+		}
+		
+		getContents();
+		
+		$(window).scroll(function(){
+			var docHeight = $(document).height();
+			var windowHeight = $(window).height();
+			var scrollTop = $(window).scrollTop();
+			
+			if((windowHeight + scrollTop + 1) > docHeight) {
+				load = false;
+				getContents();
+			}
+		})
+		
+	})
+</script>
+<title>Insert title here</title>
+</head>
+<body>
+	<div class="container">
+		<h1>서울시 문화정보</h1>
+		
+		<table class="table table-condensed">
+			<thead>
+				<tr>
+					<th>종류</th>
+					<th>제목</th>
+					<th>시작일</th>
+					<th>종료일</th>
+					<th>장소</th>
+					<th>공연시간</th>
+				</tr>
+			</thead>
+			<tbody></tbody>		
+		</table>	
+	</div>
+</body>
+</html>

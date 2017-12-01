@@ -1,0 +1,32 @@
+package kr.co.jtimes.citizenrep.image.vo;
+
+import kr.co.jtimes.citizenrep.vo.CitizenRepVo;
+
+public class CrImgVo {
+
+	private int crImgNo;
+	private String crImgPath;
+	private CitizenRepVo citizenRepVo;
+	public CrImgVo() {
+		// TODO Auto-generated constructor stub
+	}
+	public int getCrImgNo() {
+		return crImgNo;
+	}
+	public void setCrImgNo(int crImgNo) {
+		this.crImgNo = crImgNo;
+	}
+	public String getCrImgPath() {
+		return crImgPath;
+	}
+	public void setCrImgPath(String crImgPath) {
+		this.crImgPath = crImgPath;
+	}
+	public CitizenRepVo getCitizenRepVo() {
+		return citizenRepVo;
+	}
+	public void setCitizenRepVo(CitizenRepVo citizenRepVo) {
+		this.citizenRepVo = citizenRepVo;
+	}
+	
+}

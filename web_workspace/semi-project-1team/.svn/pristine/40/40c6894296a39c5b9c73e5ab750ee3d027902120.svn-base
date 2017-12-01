@@ -1,0 +1,246 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <style type="text/css">
+        .profile {
+            border-bottom: 3px solid black;
+        }
+        .margintop {margin-top: 150px;}
+        .container {margin: 0 auto; width:1024px;}
+        .newscon {
+            margin-top: 50px;
+            border: 2px solid silver;
+            border-radius: 5px;
+            padding-bottom: 20px;
+            padding-top: 20px;
+        }
+        .legend-con {width:auto; margin-left:150px; border: none;}
+        .display-inline{display: inline;}
+        .btn-confirm {margin-left:50px; margin-top: 20px;}
+        .btn-category {margin-left:50px; margin-top: 20px;}
+        a.newstitle {margin-left: 50px; text-decoration: none; width:500px; overflow: hidden;}
+    </style>
+    <title>메인 페이지</title>
+</head>
+<body>
+    <div class="container">
+        <div class="margintop"></div>
+        <div class="profile row">
+            <div class="col-xs-offset-6 col-xs-3 text-right">
+                <span class="label label-default">직급</span>
+                <span class="label label-default">홍길동</span>
+                <span>(아이디)</span>
+            </div>
+            <div class="col-xs-3 text-right">
+                <button class="btn btn-primary btn-xs">프로필 수정</button>
+                <button class="btn btn-warning btn-xs">기사 작성</button>
+            </div>
+        </div>
+        
+        <fieldset class="newscon">
+            <legend class="display-inline legend-con">[ 시사 ]</legend>
+            <div>
+                <h4 class="display-inline"><span class="label label-warning btn-confirm">승인대기중</span></h4>
+                <h4 class="display-inline"><span class="label label-warning btn-category">특보</span></h4>
+                <a href="" class="newstitle btn">기사 제목입니다.aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</a>
+                <h4 class="display-inline"><span class="label label-primary ">2017-08-30</span></h4>
+                <h4 class="display-inline"><span class="label label-primary ">홍길동</span></h4>
+            </div>
+            <div>
+                <h4 class="display-inline"><span class="label label-warning btn-confirm">승인대기중</span></h4>
+                <h4 class="display-inline"><span class="label label-warning btn-category">특보</span></h4>
+                <a href="" class="newstitle btn">기사 제목입니다.aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</a>
+                <h4 class="display-inline"><span class="label label-primary ">2017-08-30</span></h4>
+                <h4 class="display-inline"><span class="label label-primary ">홍길동</span></h4>
+            </div>
+            <div>
+                <h4 class="display-inline"><span class="label label-warning btn-confirm">승인대기중</span></h4>
+                <h4 class="display-inline"><span class="label label-warning btn-category">특보</span></h4>
+                <a href="" class="newstitle btn">기사 제목입니다.aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</a>
+                <h4 class="display-inline"><span class="label label-primary ">2017-08-30</span></h4>
+                <h4 class="display-inline"><span class="label label-primary ">홍길동</span></h4>
+            </div>
+            <div>
+                <h4 class="display-inline"><span class="label label-warning btn-confirm">승인대기중</span></h4>
+                <h4 class="display-inline"><span class="label label-warning btn-category">특보</span></h4>
+                <a href="" class="newstitle btn">기사 제목입니다.aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</a>
+                <h4 class="display-inline"><span class="label label-primary ">2017-08-30</span></h4>
+                <h4 class="display-inline"><span class="label label-primary ">홍길동</span></h4>
+            </div>
+            <div>
+                <h4 class="display-inline"><span class="label label-warning btn-confirm">승인대기중</span></h4>
+                <h4 class="display-inline"><span class="label label-warning btn-category">특보</span></h4>
+                <a href="" class="newstitle btn">기사 제목입니다.aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</a>
+                <h4 class="display-inline"><span class="label label-primary ">2017-08-30</span></h4>
+                <h4 class="display-inline"><span class="label label-primary ">홍길동</span></h4>
+            </div>
+            <div class="text-center">
+                <ul class="pagination pagination-sm">
+                    <li><a href="">&laquo;</a></li>
+                    <li><a href="">1</a></li>
+                    <li class="active"><a href="">2</a></li>
+                    <li><a href="">3</a></li>
+                    <li><a href="">4</a></li>
+                    <li><a href="">5</a></li>
+                    <li><a href="">&raquo;</a></li>
+                </ul>
+            </div>
+        </fieldset>
+        <fieldset class="newscon">
+            <legend class="display-inline legend-con">[ 경제 ]</legend>
+            <div>
+                <h4 class="display-inline"><span class="label label-warning btn-confirm">승인대기중</span></h4>
+                <h4 class="display-inline"><span class="label label-warning btn-category">특보</span></h4>
+                <a href="" class="newstitle btn">기사 제목입니다.aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</a>
+                <h4 class="display-inline"><span class="label label-primary ">2017-08-30</span></h4>
+                <h4 class="display-inline"><span class="label label-primary ">홍길동</span></h4>
+            </div>
+            <div>
+                <h4 class="display-inline"><span class="label label-warning btn-confirm">승인대기중</span></h4>
+                <h4 class="display-inline"><span class="label label-warning btn-category">특보</span></h4>
+                <a href="" class="newstitle btn">기사 제목입니다.aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</a>
+                <h4 class="display-inline"><span class="label label-primary ">2017-08-30</span></h4>
+                <h4 class="display-inline"><span class="label label-primary ">홍길동</span></h4>
+            </div>
+            <div>
+                <h4 class="display-inline"><span class="label label-warning btn-confirm">승인대기중</span></h4>
+                <h4 class="display-inline"><span class="label label-warning btn-category">특보</span></h4>
+                <a href="" class="newstitle btn">기사 제목입니다.aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</a>
+                <h4 class="display-inline"><span class="label label-primary ">2017-08-30</span></h4>
+                <h4 class="display-inline"><span class="label label-primary ">홍길동</span></h4>
+            </div>
+            <div>
+                <h4 class="display-inline"><span class="label label-warning btn-confirm">승인대기중</span></h4>
+                <h4 class="display-inline"><span class="label label-warning btn-category">특보</span></h4>
+                <a href="" class="newstitle btn">기사 제목입니다.aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</a>
+                <h4 class="display-inline"><span class="label label-primary ">2017-08-30</span></h4>
+                <h4 class="display-inline"><span class="label label-primary ">홍길동</span></h4>
+            </div>
+            <div>
+                <h4 class="display-inline"><span class="label label-warning btn-confirm">승인대기중</span></h4>
+                <h4 class="display-inline"><span class="label label-warning btn-category">특보</span></h4>
+                <a href="" class="newstitle btn">기사 제목입니다.aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</a>
+                <h4 class="display-inline"><span class="label label-primary ">2017-08-30</span></h4>
+                <h4 class="display-inline"><span class="label label-primary ">홍길동</span></h4>
+            </div>
+            <div class="text-center">
+                <ul class="pagination pagination-sm">
+                    <li><a href="">&laquo;</a></li>
+                    <li><a href="">1</a></li>
+                    <li class="active"><a href="">2</a></li>
+                    <li><a href="">3</a></li>
+                    <li><a href="">4</a></li>
+                    <li><a href="">5</a></li>
+                    <li><a href="">&raquo;</a></li>
+                </ul>
+            </div>
+        </fieldset>
+        
+        <fieldset class="newscon">
+            <legend class="display-inline legend-con">[ 연예 ]</legend>
+            <div>
+                <h4 class="display-inline"><span class="label label-warning btn-confirm">승인대기중</span></h4>
+                <h4 class="display-inline"><span class="label label-warning btn-category">특보</span></h4>
+                <a href="" class="newstitle btn">기사 제목입니다.aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</a>
+                <h4 class="display-inline"><span class="label label-primary ">2017-08-30</span></h4>
+                <h4 class="display-inline"><span class="label label-primary ">홍길동</span></h4>
+            </div>
+            <div>
+                <h4 class="display-inline"><span class="label label-warning btn-confirm">승인대기중</span></h4>
+                <h4 class="display-inline"><span class="label label-warning btn-category">특보</span></h4>
+                <a href="" class="newstitle btn">기사 제목입니다.aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</a>
+                <h4 class="display-inline"><span class="label label-primary ">2017-08-30</span></h4>
+                <h4 class="display-inline"><span class="label label-primary ">홍길동</span></h4>
+            </div>
+            <div>
+                <h4 class="display-inline"><span class="label label-warning btn-confirm">승인대기중</span></h4>
+                <h4 class="display-inline"><span class="label label-warning btn-category">특보</span></h4>
+                <a href="" class="newstitle btn">기사 제목입니다.aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</a>
+                <h4 class="display-inline"><span class="label label-primary ">2017-08-30</span></h4>
+                <h4 class="display-inline"><span class="label label-primary ">홍길동</span></h4>
+            </div>
+            <div>
+                <h4 class="display-inline"><span class="label label-warning btn-confirm">승인대기중</span></h4>
+                <h4 class="display-inline"><span class="label label-warning btn-category">특보</span></h4>
+                <a href="" class="newstitle btn">기사 제목입니다.aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</a>
+                <h4 class="display-inline"><span class="label label-primary ">2017-08-30</span></h4>
+                <h4 class="display-inline"><span class="label label-primary ">홍길동</span></h4>
+            </div>
+            <div>
+                <h4 class="display-inline"><span class="label label-warning btn-confirm">승인대기중</span></h4>
+                <h4 class="display-inline"><span class="label label-warning btn-category">특보</span></h4>
+                <a href="" class="newstitle btn">기사 제목입니다.aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</a>
+                <h4 class="display-inline"><span class="label label-primary ">2017-08-30</span></h4>
+                <h4 class="display-inline"><span class="label label-primary ">홍길동</span></h4>
+            </div>
+            <div class="text-center">
+                <ul class="pagination pagination-sm">
+                    <li><a href="">&laquo;</a></li>
+                    <li><a href="">1</a></li>
+                    <li class="active"><a href="">2</a></li>
+                    <li><a href="">3</a></li>
+                    <li><a href="">4</a></li>
+                    <li><a href="">5</a></li>
+                    <li><a href="">&raquo;</a></li>
+                </ul>
+            </div>
+        </fieldset>
+        <fieldset class="newscon">
+            <legend class="display-inline legend-con">[ 스포츠 ]</legend>
+            <div>
+                <h4 class="display-inline"><span class="label label-warning btn-confirm">승인대기중</span></h4>
+                <h4 class="display-inline"><span class="label label-warning btn-category">특보</span></h4>
+                <a href="" class="newstitle btn">기사 제목입니다.aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</a>
+                <h4 class="display-inline"><span class="label label-primary ">2017-08-30</span></h4>
+                <h4 class="display-inline"><span class="label label-primary ">홍길동</span></h4>
+            </div>
+            <div>
+                <h4 class="display-inline"><span class="label label-warning btn-confirm">승인대기중</span></h4>
+                <h4 class="display-inline"><span class="label label-warning btn-category">특보</span></h4>
+                <a href="" class="newstitle btn">기사 제목입니다.aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</a>
+                <h4 class="display-inline"><span class="label label-primary ">2017-08-30</span></h4>
+                <h4 class="display-inline"><span class="label label-primary ">홍길동</span></h4>
+            </div>
+            <div>
+                <h4 class="display-inline"><span class="label label-warning btn-confirm">승인대기중</span></h4>
+                <h4 class="display-inline"><span class="label label-warning btn-category">특보</span></h4>
+                <a href="" class="newstitle btn">기사 제목입니다.aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</a>
+                <h4 class="display-inline"><span class="label label-primary ">2017-08-30</span></h4>
+                <h4 class="display-inline"><span class="label label-primary ">홍길동</span></h4>
+            </div>
+            <div>
+                <h4 class="display-inline"><span class="label label-warning btn-confirm">승인대기중</span></h4>
+                <h4 class="display-inline"><span class="label label-warning btn-category">특보</span></h4>
+                <a href="" class="newstitle btn">기사 제목입니다.aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</a>
+                <h4 class="display-inline"><span class="label label-primary ">2017-08-30</span></h4>
+                <h4 class="display-inline"><span class="label label-primary ">홍길동</span></h4>
+            </div>
+            <div>
+                <h4 class="display-inline"><span class="label label-warning btn-confirm">승인대기중</span></h4>
+                <h4 class="display-inline"><span class="label label-warning btn-category">특보</span></h4>
+                <a href="" class="newstitle btn">기사 제목입니다.aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</a>
+                <h4 class="display-inline"><span class="label label-primary ">2017-08-30</span></h4>
+                <h4 class="display-inline"><span class="label label-primary ">홍길동</span></h4>
+            </div>
+            <div class="text-center">
+                <ul class="pagination pagination-sm">
+                    <li><a href="">&laquo;</a></li>
+                    <li><a href="">1</a></li>
+                    <li class="active"><a href="">2</a></li>
+                    <li><a href="">3</a></li>
+                    <li><a href="">4</a></li>
+                    <li><a href="">5</a></li>
+                    <li><a href="">&raquo;</a></li>
+                </ul>
+            </div>
+        </fieldset>
+    </div>
+</body>
+</html>

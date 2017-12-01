@@ -1,0 +1,52 @@
+<%@page import="kr.co.jtimes.profile.common.vo.UserVo"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+   pageEncoding="UTF-8"%>
+<%@page import="kr.co.jtimes.profile.common.web.SMTPServlet"%>
+<%@ page
+   import="java.util.*,
+   java.io.*,
+   javax.mail.*,
+   javax.mail.internet.*,
+   javax.activation.*"%>
+<% 
+	
+	
+	String userid =  request.getParameter("id");
+	String userEmail =  request.getParameter("email");
+	int cnt = userid.length();
+	String changeId = userid.substring(0, cnt-3);
+	changeId += "***";
+	
+   String subject = "J times 회원님의 아이디 입니다."; 
+   String contents = "회원님의 아이디는 "+changeId+" 입니다"; 
+   // 받는이 메일주소 
+   String to = userEmail;
+   // 보내는이 메일주소
+   String from = "qoaak0662@gmail.com"; 
+
+   // create some properties and get the default Session 
+   Properties props = new Properties(); 
+   props.put("mail.transport.protocol", "smtp");
+    props.put("mail.smtp.host", "smtp.gmail.com");
+    props.put("mail.smtp.port", "465");
+    props.put("mail.smtp.starttls.enable", "true");
+    props.put("mail.smtp.socketFactory.port", "465");
+    props.put("mail.smtp.socketFactory.class", "javax.net.ssl.SSLSocketFactory");
+    props.put("mail.smtp.socketFactory.fallback", "false");
+    props.put("mail.smtp.auth", "true");
+
+    Authenticator auth = new SMTPServlet();
+    
+   Session sess = javax.mail.Session.getInstance(props,auth);
+   Message msg = new MimeMessage(sess);
+   
+   msg.setFrom(new InternetAddress(from));
+   InternetAddress address = new InternetAddress(to);
+   msg.setRecipient(Message.RecipientType.TO, address);
+   msg.setSubject(subject);
+   msg.setSentDate(new java.util.Date());
+   msg.setContent(contents, "text/html;charset=utf-8");
+   Transport.send(msg);
+   
+   response.sendRedirect("/profile/userLogin.jsp");
+%>

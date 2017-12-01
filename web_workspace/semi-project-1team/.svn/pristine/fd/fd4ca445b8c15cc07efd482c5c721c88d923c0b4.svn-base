@@ -1,0 +1,27 @@
+package kr.co.jtimes.citizenrep.dao;
+
+import java.sql.SQLException;
+import java.util.List;
+
+import kr.co.jtimes.citizenrep.vo.CitizenRepVo;
+import kr.co.jtimes.util.IbatisUtil;
+
+public class CitizenRepDao {
+
+	public void addCitizenRep(CitizenRepVo citizenRepVo) throws SQLException{
+		IbatisUtil.getSqlMap().insert("addCitizenRep", citizenRepVo);
+	}
+	
+	@SuppressWarnings("unchecked")
+	public List<CitizenRepVo> getAllCitRep() throws SQLException{
+		return IbatisUtil.getSqlMap().queryForList("getAllCitRep");
+	}
+	
+	public CitizenRepVo getCitRepByNo(int no) throws SQLException{
+		return (CitizenRepVo) IbatisUtil.getSqlMap().queryForObject("getCitRepByNo", no);
+	}
+	
+	public void deleteCitRepById(int no) throws SQLException{
+		IbatisUtil.getSqlMap().update("deleteCitRepById", no);
+	}
+}

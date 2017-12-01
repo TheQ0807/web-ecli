@@ -1,0 +1,206 @@
+<%@page import="com.google.gson.Gson"%>
+<%@page import="java.io.PrintWriter"%>
+<%@page import="kr.co.jtimes.news.vo.TbSuggestVo"%>
+<%@page import="kr.co.jtimes.news.dao.TbSuggestDao"%>
+<%@page import="kr.co.jtimes.news.comment.vo.NewCommentVo"%>
+<%@page import="java.util.List"%>
+<%@page import="kr.co.jtimes.news.comment.Dao.CommentDao"%>
+<%@page import="kr.co.jtimes.news.vo.TbNewsVo"%>
+<%@page import="kr.co.jtimes.news.dao.TbNewsDao"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <style>
+  	#write-date, #reporter-name, #one-line {color: darkgray;}
+  	.container {
+		width: 1024px;
+		margin: 0 auto;
+	}
+  </style>
+</head>
+<body>
+
+<%@include file="/commons/clientNavi.jsp" %>
+
+<%
+	int no = Integer.parseInt(request.getParameter("newsNo"));
+	
+	TbNewsDao tbNewsDao = new TbNewsDao();
+	TbNewsVo tbNewsVo = tbNewsDao.getNews(no);
+	
+	CommentDao commentDao = new CommentDao();
+	List<NewCommentVo> commentList = commentDao.getCommentsByNewsNo(no);
+	
+	UserVo user = new UserVo();
+	user.setNo(no);
+	
+	TbSuggestDao suggestDao = new TbSuggestDao();
+	TbSuggestVo suggest = new TbSuggestVo();
+%>
+<div class="container">
+	<div class=" col-xs-offset-1 col-xs-10">
+		<div class="row text-center">
+			<div class="panel panel-body">
+				<h1><strong><%=tbNewsVo.getNewsTitle() %></strong></h1>
+				<div class="text-right">
+					<span id="write-date"><small><%=tbNewsVo.getRegdate() %></small></span>
+					<span id="reporter-name"><small><%=tbNewsVo.getReporter() %></small></span>
+				</div>
+			</div>
+		</div>
+		<div class="row text-right">
+			<span><small>조회수:<%=tbNewsVo.getNewsViewCnt() %></small></span>
+		</div>
+		<div class="row text-right" id="count">	
+			<span><small>추천수:<%=suggestDao.getSuggests(no) %></small></span>
+		</div>
+		<div class="row">
+			<div class="panel panel-body">
+				<div class="row text-center">
+					<img alt="ecomomy" src="<%=tbNewsVo.getNewsImgPath() %>" />
+				</div>
+				<div class="row">
+					<p><%=tbNewsVo.getNewsContents() %></p>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="form-group text-center">
+			<%
+				if (userLogin != null) {
+			%>
+				<a href="javascript:likeup(<%=no %>)" class="btn btn-default" id="add-like">추천</a>
+			<%
+				}
+			%>
+			</div>
+		</div>
+		<div class="row well">
+			<form class="form-group" id="frm">
+				<input type="hidden" name="newsNo" value="<%=tbNewsVo.getNewsNo()%>">
+				<%
+					if (userLogin != null) {
+					String userId = userLogin.getId();
+						if(!userId.equals(user.getId())) {
+				%>
+				<div class="form-group">
+					<textarea rows="3" cols="100" class="form-control" name="contents" id="contents"></textarea>
+				</div>
+				<div class="form-group text-right">
+					<button class="btn btn-sm btn-primary" id="comment-register">등록</button>
+				</div>
+				
+				
+				<ul class="list-group" id="comment">
+					<%
+						for (NewCommentVo comments : commentList) {
+					%>
+					<li class="list-group-item">
+						<div>
+							<p>
+								<span id="comment-id"><%=userLogin.getId() %></span>
+								<span class="pull-right" id="comment-date">입력일시: <%=comments.getCommentRegDate() %></span>
+							</p>
+							<p class="list-group-item-text" id="comment-contents"><%=comments.getCommentContents() %></p>
+						</div>
+						<div class="text-right">
+							<p>
+								<a class="glyphicon glyphicon-thumbs-up" onclick="javascript:alert('좋아요')" class="btn btn-sm"></a> 
+								<span class="badge"></span>
+								<a class="glyphicon glyphicon-thumbs-down" onclick="javascript:alert('싫어요')" class="btn btn-sm" style="color: red;"></a> 
+								<span class="badge"></span>
+							</p>
+						</div>
+					</li>
+		<%
+						}
+				
+				} 
+			}
+		%>
+				</ul>
+			</form>
+		</div>
+	</div>
+</div>
+<%@include file="/commons/clientFooter.jsp" %>
+</body>
+<script type="text/javascript">
+
+	// 댓글 추가 및 디스플레이 기능
+	document.getElementById("frm").addEventListener("submit", function(event) {
+		
+		event.preventDefault();
+		
+		var xhr = new XMLHttpRequest();
+		xhr.onreadystatechange = function() {
+			if(xhr.readyState ==4 && xhr.status == 200) {
+				var commentList = JSON.parse(xhr.responseText);
+				
+				var htmlContent = "";
+				
+				commentList.forEach(function(comment, index){					
+					
+					htmlContent += '<li class="list-group-item">';
+					htmlContent += '<div id="comment">';
+					htmlContent += '	<p>';
+					htmlContent += '		<span">'+comment.userVo.id+'</span>';
+					htmlContent += '		<span class="pull-right">입력일시:'+comment.regdate+'</span>';
+					htmlContent += '	</p>';
+					htmlContent += '	<p class="list-group-item-text">'+comment.commentContents+'</p>';
+					htmlContent += '</div>';
+					htmlContent += '<div class="text-right">';
+					htmlContent += '	<p>';
+					htmlContent += '		<a class="glyphicon glyphicon-thumbs-up" onclick="javascript:alert(\'좋아요\')" class="btn btn-sm"></a> ';
+					htmlContent += '		<span class="badge"></span>';
+					htmlContent += '		<a class="glyphicon glyphicon-thumbs-down" onclick="javascript:alert(\'좋아요\')" class="btn btn-sm" style="color: red;"></a> ';
+					htmlContent += '		<span class="badge"></span>';
+					htmlContent += '	</p>';
+					htmlContent += '</div>';
+					htmlContent += '</li>';
+					
+				});
+				document.getElementById("comment").innerHTML = htmlContent;
+			}
+		}
+		xhr.open("POST", "/news/addComment.jsp");
+		xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+		xhr.send("contents="+document.getElementById("contents").value+"&no=" + <%=no %>);
+		
+	});
+	
+	// 추천수 띄우는 기능
+	
+	function likeup(pageNo) {
+		
+		var xhr = new XMLHttpRequest();
+		xhr.onreadystatechange = function () {
+			if (xhr.readyState == 4 && xhr.status == 200) {
+				var likes = xhr.responseText
+				console.log(likes)
+				var htmlContent = "";
+				
+				htmlContent +='<span><small>추천수:'+likes+'</small></span>'
+					
+				document.getElementById("count").innerHTML = htmlContent;
+				document.getElementById("add-like").setAttribute("class", "btn btn-danger");
+				document.getElementById("add-like").innerText = "이미 추천했음";
+				document.getElementById("add-like").setAttribute("disabled", "disabled");
+			}
+		}
+		
+		xhr.open("GET", "/news/newsLike.jsp?newsNo="+pageNo);
+		xhr.send(null);
+	}
+	
+</script>
+
+</html>

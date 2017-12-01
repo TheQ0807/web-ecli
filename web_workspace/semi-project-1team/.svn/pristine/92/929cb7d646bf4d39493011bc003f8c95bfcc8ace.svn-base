@@ -1,0 +1,101 @@
+<%@page import="java.util.ArrayList"%>
+<%@page import="java.lang.reflect.Array"%>
+<%@page import="java.util.List"%>
+<%@page import="kr.co.jtimes.news.vo.TbNewsVo"%>
+<%@page import="kr.co.jtimes.news.dao.TbNewsDao"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>main</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<style type="text/css">
+	.container {
+		width: 1024px;
+		margin: 0 auto;
+	}
+	a { color: black; }
+	#reporter { color: darkgray; }
+</style>
+</head>
+<body>
+<%pageContext.setAttribute("cp", "main");%>
+<%@include file="/commons/clientNavi.jsp" %>
+	<div class="container">
+	<%
+		TbNewsDao newsDao = new TbNewsDao();
+	
+		TbNewsVo mainNews = newsDao.selectMainNews();
+	%>
+	
+ 		<div class="col-xs-6 panel panel-body">
+ 			<div class="row">
+	 			<div class="col-xs-6">
+		 			<a href="" ><img alt="" src="" class="img-thumbnail" width="250px" height="250px"></a>
+	 			</div>
+	 			<h3 class="text-left"><a href=""><%=mainNews.getNewsTitle() %></a></h3>
+	 			<p><%=mainNews.getNewsContents() %></p>
+ 			</div>
+ 			<hr />
+	
+				<%
+					TbNewsDao tbNewsDao = new TbNewsDao();
+					List<TbNewsVo> tbNewsVos = tbNewsDao.getNewses();
+					
+					for(TbNewsVo tbNewsVo : tbNewsVos) {
+				%>
+					<h4><strong><a href="/news/article.jsp?newsNo=<%=tbNewsVo.getNewsNo()%>"><%=tbNewsVo.getNewsTitle()%></a></strong></h4>
+				<%
+					}
+				%>
+ 		</div>
+ 		<div class="col-xs-offset-1 col-xs-5">
+ 			<div class="row">
+ 				<h4>사진으로 보는 뉴스</h4>
+				</div>
+				<div class="row">
+	 			<div class="col-xs-2">
+		 			<a href="" ><img alt="" src="" class="img-thumbnail" width="50px" height="50px"></a>
+	 			</div>
+	 			<h3 class="text-left"><a href="">기사1</a></h3>
+	 		</div>
+	 		<div class="row">
+	 			<div class="col-xs-2">
+		 			<a href="" ><img alt="" src="" class="img-thumbnail" width="50px" height="50px"></a>
+	 			</div>
+	 			<h3 class="text-left"><a href="">기사2</a></h3>
+	 		</div>
+	 		<div class="row">
+	 			<div class="col-xs-2">
+		 			<a href="" ><img alt="" src="" class="img-thumbnail" width="50px" height="50px"></a>
+	 			</div>
+	 			<h3 class="text-left"><a href="">기사3</a></h3>
+	 		</div>
+	 		<div class="row">
+	 			<div class="col-xs-2">
+		 			<a href="" ><img alt="" src="" class="img-thumbnail" width="50px" height="50px"></a>
+	 			</div>
+	 			<h3 class="text-left"><a href="">기사4</a></h3>
+	 		</div>
+	 		<div class="row">
+	 			<div class="col-xs-2">
+		 			<a href="" ><img alt="" src="" class="img-thumbnail" width="50px" height="50px"></a>
+	 			</div>
+	 			<h3 class="text-left"><a href="">기사5</a></h3>
+	 		</div>
+	 		<div class="row">
+	 			<div class="col-xs-2">
+		 			<a href="" ><img alt="" src="" class="img-thumbnail" width="50px" height="50px"></a>
+	 			</div>
+	 			<h3 class="text-left"><a href="">기사 6</a></h3>
+	 		</div>
+ 		</div>
+	</div>
+<%@include file="/commons/clientFooter.jsp" %>
+</body>
+</html>

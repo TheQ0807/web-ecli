@@ -1,0 +1,57 @@
+package kr.co.jtimes.news.vo;
+
+import kr.co.jtimes.news.comment.vo.NewCommentVo;
+import kr.co.jtimes.profile.common.vo.UserVo;
+
+public class CommentLikeVo {
+
+	private String preference;
+	private NewCommentVo comment;
+	private UserVo user;
+	
+	public CommentLikeVo() {}
+
+	public CommentLikeVo(String preference, NewCommentVo comment, UserVo user) {
+		super();
+		this.preference = preference;
+		this.comment = comment;
+		this.user = user;
+	}
+
+
+	public String getPreference() {
+		return preference;
+	}
+
+
+	public void setPreference(String preference) {
+		this.preference = preference;
+	}
+
+
+	public NewCommentVo getComment() {
+		return comment;
+	}
+
+
+	public void setComment(NewCommentVo comment) {
+		this.comment = comment;
+	}
+
+
+	public UserVo getUser() {
+		return user;
+	}
+
+
+	public void setUser(UserVo user) {
+		this.user = user;
+	}
+
+
+	@Override
+	public String toString() {
+		return "CommentLikeVo [preference=" + preference + ", comment=" + comment + ", user=" + user + "]";
+	}
+	
+}

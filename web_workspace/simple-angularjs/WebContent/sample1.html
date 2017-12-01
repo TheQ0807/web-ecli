@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>angularjs</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+<script type="text/javascript">
+	var app = angular.module("app",[]);
+	app.controller("MyController", function($scope){
+		$scope.a = "안녕하세요";
+		$scope.b = "홈페이지 방문을 환영합니다.";
+		
+		$scope.c = [];
+		
+		$scope.addUser = function(){
+			$scope.c.push({
+				id:	$scope.x,
+				name: $scope.y,
+				phone: $scope.z
+			});
+		};
+	})
+</script>
+</head>
+<body ng-app="app">
+	<div class="container" ng-controller="MyController">
+		<h1>{{a}}</h1>
+		<p>{{b}}</p>
+		
+		<form class="form-inline">
+			<div class="form-group">
+				<label>no: </label>
+				<input type="text" class="from-control" ng-model="x">
+			</div>
+			<div class="form-group">
+				<label>name: </label>
+				<input type="text" class="from-control" ng-model="y">
+			</div>
+			<div class="form-group">
+				<label>email:  </label>
+				<input type="text" class="from-control" ng-model="z">
+			</div>
+			<button class="btn btn-default" ng-click="addUser()">등록</button>
+		</form>
+		
+		<table class="table">
+			<thead>
+				<tr>
+					<th>번호</th>
+					<th>이름</th>
+					<th>전화번호</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr ng-repeat="user in c"><!-- 지시어 ng가 붙은 네이밍들 -->
+					<td>{{user.id}}</td>
+					<td>{{user.name}}</td>
+					<td>{{user.phone}}</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</body>
+</html>

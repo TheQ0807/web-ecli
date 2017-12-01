@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE sqlMap      
+    PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"      
+    "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="news">
+
+	<typeAlias alias="comment" type="kr.co.jtimes.news.comment.vo.NewCommentVo"/>
+	
+	<insert id="addComment" parameterClass="comment">
+		insert into news_comments
+		(comment_no, comment_regdate, news_no, user_no, comment_contents)
+		values 
+		(seq_cmt.nextval, sysdate, #tbNewsVo.newsNo#, #userVo.no#, #commentContents#)
+	</insert>
+
+</sqlMap>

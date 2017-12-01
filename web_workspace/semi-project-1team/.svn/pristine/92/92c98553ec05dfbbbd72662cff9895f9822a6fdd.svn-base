@@ -1,0 +1,13 @@
+package kr.co.jtimes.profile.user.dao;
+
+import java.sql.SQLException;
+
+import kr.co.jtimes.profile.user.vo.User;
+import kr.co.jtimes.util.IbatisUtil;
+
+public class UserDao {
+
+	public void addUser(User user) throws SQLException {
+		IbatisUtil.getSqlMap().insert("addUser",user);
+	}
+}

@@ -1,0 +1,19 @@
+package kr.co.jtimes.ad.dao;
+
+import java.sql.SQLException;
+import java.util.List;
+
+import kr.co.jtimes.ad.vo.AdVo;
+import kr.co.jtimes.util.IbatisUtil;
+
+public class AdDao {
+
+	@SuppressWarnings("unchecked")
+	public List<AdVo> getAdAll()throws SQLException{
+		return IbatisUtil.getSqlMap().queryForList("getAdAll");
+	}
+	
+	public void addAd(AdVo adVo) throws SQLException{
+		IbatisUtil.getSqlMap().insert("addAd", adVo);
+	}
+}

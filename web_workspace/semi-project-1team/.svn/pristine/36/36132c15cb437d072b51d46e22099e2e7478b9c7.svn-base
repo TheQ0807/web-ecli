@@ -1,0 +1,38 @@
+<%@page import="kr.co.jtimes.reporter.profile.common.vo.ReporterEmployeeVo"%>
+<%@page import="kr.co.jtimes.reporter.profile.common.dao.ReporterEmployeeDao"%>
+<%@page import="kr.co.jtimes.common.vo.NewsCategoryVo"%>
+<%@page import="kr.co.jtimes.common.vo.NewsTypeVo"%>
+<%@page import="kr.co.jtimes.news.vo.TbNewsVo"%>
+<%@page import="kr.co.jtimes.news.dao.TbNewsDao"%>
+<%@ page language="java" contentType="text/html;charset=UTF-8"
+    pageEncoding="UTF-8"%>
+
+<%
+
+	request.setCharacterEncoding("utf-8");
+
+	TbNewsDao dao = new TbNewsDao();
+	ReporterEmployeeDao empDao = new ReporterEmployeeDao();
+	ReporterEmployeeVo reporter = empDao.getReporterById("testid");
+	
+	int newsType = Integer.parseInt(request.getParameter("newstype"));
+	int newsCategory = Integer.parseInt(request.getParameter("newscategory"));
+	String newsLocation = request.getParameter("newslocation");
+	String newsTitle = request.getParameter("title");
+	String newsContents = request.getParameter("ir1");
+	String mainImgPath = request.getParameter("mainimgpath");
+
+	TbNewsVo news = new TbNewsVo();
+	
+	news.setNewsType(new NewsTypeVo(newsType, ""));
+	news.setCategory(new NewsCategoryVo(newsCategory, ""));
+	news.setReporter(reporter);
+	news.setNewsLocation(newsLocation);
+	news.setNewsTitle(newsTitle);
+	news.setNewsContents(newsContents);
+	news.setNewsImgPath(mainImgPath);
+	
+	dao.insertNews(news);
+	
+%>
+

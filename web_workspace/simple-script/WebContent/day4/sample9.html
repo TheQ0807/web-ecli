@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<div id="gallery-box"></div>
+</body>
+<script type="text/javascript">
+	var posters = [
+		{image:"a.jpg", title:"브이아이피"},
+		{image:"b.jpg", title:"택시운전사"},
+		{image:"c.jpg", title:"청년경찰"},
+		{image:"d.jpg", title:"장산범"},
+		{image:"e.jpg", title:"혹성탈출"}
+	];
+	
+	var gallerybox = document.getElementById("gallery-box");
+	var htmlContent = "";
+	posters.forEach(function(poster, index) {
+		htmlContent += '<img src="../images/'+poster.image+'" alt="'+poster.title+'" />'
+	});
+	
+	gallerybox.innerHTML = htmlContent;
+	
+</script>
+</html>

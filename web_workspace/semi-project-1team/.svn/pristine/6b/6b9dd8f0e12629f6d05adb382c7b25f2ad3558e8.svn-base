@@ -1,0 +1,23 @@
+# root Logger\uc758 \ub85c\uadf8\ub808\ubca8 \uc124\uc815, \ub85c\uadf8\ub97c \ucd9c\ub825\ud560 appender\ub97c \uc0dd\uc131
+# \ub85c\uadf8\ub808\ubca8\uc744 DEBUG\ub85c \uc124\uc815\ud558\uae30
+
+log4j.rootLogger=INFO, console, logfile
+
+log4j.logger.java.sql.Connection=DEBUG
+log4j.logger.java.sql.Statement=DEBUG
+log4j.logger.java.sql.PreparedStatement=DEBUG
+log4j.logger.java.sql.ResultSet=DEBUG
+# \ud654\uba74\uc73c\ub85c \ucd9c\ub825\ub418\ub294 \ub85c\uadf8 \uc124\uc815
+log4j.appender.console=org.apache.log4j.ConsoleAppender
+log4j.appender.console.target=System.out
+log4j.appender.console.layout=org.apache.log4j.PatternLayout
+log4j.appender.console.layout.ConversionPattern= %d{yyyy-MM-dd HH:mm:ss} %-5p %c.%M [%L] - %m%n
+
+# \ud30c\uc77c\ub85c \ucd9c\ub825\ub418\ub294 \uc124\uc815
+log4j.appender.logfile=org.apache.log4j.DailyRollingFileAppender
+log4j.appender.logfile.DatePattern='.'yyyy-MM-dd
+log4j.appender.logfile.File=c:/web_eclipse/logs/web.log
+log4j.appender.logfile.layout=org.apache.log4j.PatternLayout
+log4j.appender.logfile.layout.ConversionPattern=%d{yyyy-MM-dd HH:mm:ss} %-5p %c.%M [%L] - %m%n
+
+# loh4j\uc758 \ub85c\uadf8\ub808\ubca8: DEGBUG, INFO, WARN, ERROR, FATAL

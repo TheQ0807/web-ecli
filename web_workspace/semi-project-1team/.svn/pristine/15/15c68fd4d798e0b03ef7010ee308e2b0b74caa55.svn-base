@@ -1,0 +1,16 @@
+<%@ page language="java" contentType="text/html;charset=UTF-8"
+    pageEncoding="UTF-8"%>
+
+<%
+
+	request.setCharacterEncoding("utf-8");
+	String newsType = request.getParameter("newstype");
+	String newsCategory = request.getParameter("newscategory");
+	String newsLocation = request.getParameter("newslocation");
+	String newsTitle = request.getParameter("title");
+	String newsContents = request.getParameter("ir1");
+	
+	
+%>
+	
+

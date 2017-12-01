@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE sqlMap      
+    PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"      
+    "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="score">
+
+	<insert id="addScore" parameterClass="vo.Score">
+		insert into tb_student_score
+		(st_no, st_name, st_ban, st_kor, st_eng, st_math, st_sci, st_his, st_createdate)
+		values
+		(st_seq.nextval,#name#,#ban#,#kor#,#eng#,#math#,#sci#, #his#, sysdate )	
+	</insert>
+
+	<select id="getScoreByNo" parameterClass="int" resultClass="vo.Score">
+		select 
+			st_no		as no,
+			st_name		as name,
+			st_ban		as ban,
+			st_kor		as kor,
+			st_eng		as eng,
+			st_math		as math,
+			st_sci		as sci,
+			st_his		as his,
+			st_createdate
+		from tb_student_score
+		where st_no = #value#
+	</select>
+
+
+	<select id="getRows" resultClass="int">
+		select count(*)
+		from tb_student_score
+	</select>
+	
+</sqlMap>

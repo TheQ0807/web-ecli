@@ -1,0 +1,35 @@
+html문서의 브라우저에서의 작동순서
+
+0.html문서를 읽어온다.(loading)
+1.html이 유효한지 체크한다.
+2.html 해석 (html parsing)
+3.html Document 객체 생성
+	- 객체 구성
+	- html엘리먼트 (Root 엘리먼트) (부모)
+		-head 엘리먼트 (자식)
+			- ....
+				...  계속해서 객체를 생성함
+		 body 엘리먼트
+4.html Document 렌더링해서 화면에 표시한다.
+
+
+
+
+
+
+현재 url주소 : http://127.0.0.1:61974/day1/demo5.html
+링크
+<a href = "demo.html">demo1</a>
+주소해석
+	http://127.0.0.1:61974/day1/ + demo1.html
+
+링크 
+ 	<a href
+
+
+
+테그
+	컨텐츠 가지는 테그
+	<태그명>컨텐츠</테그명>
+	컨텐츠를 가지지 않는 테그
+	<테그명 />

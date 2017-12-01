@@ -1,0 +1,29 @@
+<%@page import="kr.co.jtimes.profile.common.vo.UserVo"%>
+<%@page import="kr.co.jtimes.news.vo.TbNewsVo"%>
+<%@page import="kr.co.jtimes.news.vo.TbSuggestVo"%>
+<%@page import="kr.co.jtimes.news.dao.TbSuggestDao"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+
+	<%
+		pageContext.setAttribute("url", "/index.jsp");	
+	%>
+	<%@include file="/profile/logincheck.jsp" %>
+	<%
+   		int no = Integer.parseInt(request.getParameter("newsNo"));
+   
+		UserVo loginUser = (UserVo) session.getAttribute("userLogin");
+   		
+   		TbNewsVo tbNewsVo = new TbNewsVo();
+   		tbNewsVo.setNewsNo(no);
+   		
+   		TbSuggestVo suggest = new TbSuggestVo();
+   		suggest.setTbNewsVo(tbNewsVo);
+   		suggest.setUserNo(loginUser);
+   		
+   		TbSuggestDao suggestDao = new TbSuggestDao();
+   		suggestDao.addSuggest(suggest);
+
+   		response.sendRedirect("article.jsp?newsNo=" + no);
+   %>
+   

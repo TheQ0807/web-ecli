@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	function f(id){
+		var el = document.getElementById(id);
+		
+		return{
+			getText: function(){
+				return el.innerText;
+			},
+			setText: function(text){
+				el.innerText = text;
+				return this;
+			},
+			setColor: function(color){
+				el.style.color = color;
+				return this;
+			},
+			hide: function(){
+				el.style.display="none";
+				return this;
+			},
+			show: function(){
+				el.style.display="block";
+				return this;
+			}
+		}
+	}
+</script>
+</head>
+<body>
+	<p id="me">나는 나다.</p>
+</body>
+</html>

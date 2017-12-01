@@ -1,0 +1,162 @@
+package kr.co.jtimes.common.criteria;
+
+import java.util.Date;
+import java.util.List;
+
+import kr.co.jtimes.reporter.imagecontainer.common.vo.TbImageVo;
+
+public class Criteria {
+	
+	private String tapId;
+	private String categoryAll;
+	private String categoryRemainder;
+	private String optAll;
+	private String optTitle;
+	private String optWriter;
+	private String searchWord;
+	private Date beginDate;
+	private Date endDate;
+	private List<TbImageVo> extension;
+	private int beginIndex;
+	private int endIndex;
+	
+	public Criteria() {}
+
+	public Criteria(String tapId, String categoryAll, String categoryRemainder, String optAll, String optTitle,
+			String optWriter, String searchWord, Date beginDate, Date endDate, List<TbImageVo> extension,
+			int beginIndex, int endIndex) {
+		super();
+		this.tapId = tapId;
+		this.categoryAll = categoryAll;
+		this.categoryRemainder = categoryRemainder;
+		this.optAll = optAll;
+		this.optTitle = optTitle;
+		this.optWriter = optWriter;
+		this.searchWord = searchWord;
+		this.beginDate = beginDate;
+		this.endDate = endDate;
+		this.extension = extension;
+		this.beginIndex = beginIndex;
+		this.endIndex = endIndex;
+	}
+
+	public String getTapId() {
+		return tapId;
+	}
+
+	public void setTapId(String tapId) {
+		this.tapId = tapId;
+	}
+
+	public String getCategoryAll() {
+		return categoryAll;
+	}
+
+	public void setCategoryAll(String categoryAll) {
+		this.categoryAll = categoryAll;
+	}
+
+	public String getCategoryRemainder() {
+		return categoryRemainder;
+	}
+
+	public void setCategoryRemainder(String categoryRemainder) {
+		this.categoryRemainder = categoryRemainder;
+	}
+
+	public String getOptAll() {
+		return optAll;
+	}
+
+	public void setOptAll(String optAll) {
+		this.optAll = optAll;
+	}
+
+	public String getOptTitle() {
+		return optTitle;
+	}
+
+	public void setOptTitle(String optTitle) {
+		this.optTitle = optTitle;
+	}
+
+	public String getOptWriter() {
+		return optWriter;
+	}
+
+	public void setOptWriter(String optWriter) {
+		this.optWriter = optWriter;
+	}
+
+	public String getSearchWord() {
+		return searchWord;
+	}
+
+	public void setSearchWord(String searchWord) {
+		this.searchWord = searchWord;
+	}
+
+	public Date getBeginDate() {
+		return beginDate;
+	}
+
+	public void setBeginDate(Date beginDate) {
+		this.beginDate = beginDate;
+	}
+
+	public Date getEndDate() {
+		return endDate;
+	}
+
+	public void setEndDate(Date endDate) {
+		this.endDate = endDate;
+	}
+
+	public List<TbImageVo> getExtension() {
+		return extension;
+	}
+
+	public void setExtension(List<TbImageVo> extension) {
+		this.extension = extension;
+	}
+
+	public int getBeginIndex() {
+		return beginIndex;
+	}
+
+	public void setBeginIndex(int beginIndex) {
+		this.beginIndex = beginIndex;
+	}
+
+	public int getEndIndex() {
+		return endIndex;
+	}
+
+	public void setEndIndex(int endIndex) {
+		this.endIndex = endIndex;
+	}
+
+	@Override
+	public String toString() {
+		return "Criteria [tapId=" + tapId + ", categoryAll=" + categoryAll + ", categoryRemainder=" + categoryRemainder
+				+ ", optAll=" + optAll + ", optTitle=" + optTitle + ", optWriter=" + optWriter + ", searchWord="
+				+ searchWord + ", beginDate=" + beginDate + ", endDate=" + endDate + ", extension=" + extension
+				+ ", beginIndex=" + beginIndex + ", endIndex=" + endIndex + "]";
+	}
+	
+	
+	
+
+	
+
+
+
+	
+	
+	
+	
+	
+	
+	
+	
+}

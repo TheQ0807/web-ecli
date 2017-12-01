@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE sqlMap      
+    PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"      
+    "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap namespace="tbimages">
+
+	<typeAlias alias="tbimages" type="kr.co.jtimes.reporter.imagecontainer.common.vo.TbImageVo"/>
+	
+	<select id="getImageSelectAll" resultClass="tbimages">
+		SELECT  
+			A.IMG_NO				imgNo,
+	        A.IMG_LOCATION			imgLocation,
+	        A.IMG_TITLE				imgTitle,
+	        A.IMG_ALT				imgAlt,
+	        A.IMG_PATH				imgPath,
+	        A.IMG_ALTER_STATE		imgAlterState,
+	        A.REPORTER_NO			"reporter.reporterNo",
+	        A.NEWS_TYPE_NO			"newsType.newsTypeNo",
+	        A.CATEGORY_NO			"category.categoryNo",
+	        A.IMG_REGDATE			imgRegdate,
+	        A.IMG_TYPE				imgType,
+	        A.IMG_SIZE				imgSize
+		FROM 
+			TB_IMAGE A,
+		    REPORTER_EMPLOYEE B,
+		    NEWS_TYPE C,
+		    NEWS_CATEGORY D
+     
+		WHERE
+    		A.REPORTER_NO = B.REPORTER_NO
+		AND
+    		A.NEWS_TYPE_NO = C.NEWS_TYPE_NO
+		AND
+     		A.CATEGORY_NO = D.CATEGORY_NO   
+	</select>
+	
+	<select id="getImageSelectAlterStateMain" resultClass="tbimages">
+		<![CDATA[
+			select 
+			        IMG_NO				imgNo,
+			        IMG_LOCATION		imgLocation,
+			        IMG_TITLE			imgTitle,
+			        IMG_ALT				imgAlt,
+			        IMG_PATH			imgPath,
+			        IMG_ALTER_STATE		imgAlterState,
+			        REPORTER_NO			"reporter.reporterNo",
+	                NEWS_TYPE_NO		"newsType.newsTypeNo",
+	                CATEGORY_NO			"category.categoryNo",
+			        IMG_REGDATE			imgRegdate,
+			        IMG_TYPE			imgType,
+			        IMG_SIZE			imgSize
+				from ( select 
+				        row_number() over (order by img_no desc) 	rn, 
+				        IMG_NO				,
+				        IMG_LOCATION		,
+				        IMG_TITLE			,
+				        IMG_ALT				,
+				        IMG_PATH			,
+				        IMG_ALTER_STATE		,
+				        REPORTER_NO			,
+				        NEWS_TYPE_NO		,
+				        CATEGORY_NO			,
+				        IMG_REGDATE			,
+				        IMG_TYPE			,
+				        IMG_SIZE														
+				      from TB_IMAGE
+	                  where IMG_ALTER_STATE = 'N') 
+				where rn >= 1 and rn <= 8
+			]]>		   
+	</select>
+	
+	<select id="getImageSelectAlterState" resultClass="tbimages">
+		<![CDATA[
+			select 
+			        IMG_NO				imgNo,
+			        IMG_LOCATION		imgLocation,
+			        IMG_TITLE			imgTitle,
+			        IMG_ALT				imgAlt,
+			        IMG_PATH			imgPath,
+			        IMG_ALTER_STATE		imgAlterState,
+			        REPORTER_NO			"reporter.reporterNo",
+	                NEWS_TYPE_NO		"newsType.newsTypeNo",
+	                CATEGORY_NO			"category.categoryNo",
+			        IMG_REGDATE			imgRegdate,
+			        IMG_TYPE			imgType,
+			        IMG_SIZE			imgSize
+				from ( select 
+				        row_number() over (order by img_no desc) 	rn, 
+				        IMG_NO				,
+				        IMG_LOCATION		,
+				        IMG_TITLE			,
+				        IMG_ALT				,
+				        IMG_PATH			,
+				        IMG_ALTER_STATE		,
+				        REPORTER_NO			,
+				        NEWS_TYPE_NO		,
+				        CATEGORY_NO			,
+				        IMG_REGDATE			,
+				        IMG_TYPE			,
+				        IMG_SIZE														
+				      from TB_IMAGE
+	                  where IMG_ALTER_STATE = #string#)
+	             where rn >= 1 and rn <= 8      
+				
+			]]>		   
+	</select>
+	
+	<select id="getExpendSelectImage" parameterClass="kr.co.jtimes.common.criteria.Criteria" resultClass="tbimages" >
+		<![CDATA[
+			select 
+		        IMG_NO				imgNo,
+		        IMG_LOCATION		imgLocation,
+		        IMG_TITLE			imgTitle,
+		        IMG_ALT				imgAlt,
+		        IMG_PATH			imgPath,
+		        IMG_ALTER_STATE		imgAlterState,
+		        REPORTER_NO			"reporter.reporterNo",
+                NEWS_TYPE_NO		"newsType.newsTypeNo",
+                CATEGORY_NO			"category.categoryNo",
+		        IMG_REGDATE			imgRegdate,
+		        IMG_TYPE			imgType,
+		        IMG_SIZE			imgSize
+			from ( select 
+			        row_number() over (order by img_no desc) 	rn, 
+			        IMG_NO				,
+			        IMG_LOCATION		,
+			        IMG_TITLE			,
+			        IMG_ALT				,
+			        IMG_PATH			,
+			        IMG_ALTER_STATE		,
+			        REPORTER_NO			,
+			        NEWS_TYPE_NO		,
+			        CATEGORY_NO			,
+			        IMG_REGDATE			,
+			        IMG_TYPE			,
+			        IMG_SIZE														
+			      from TB_IMAGE
+                  where IMG_ALTER_STATE = #tapId#) 
+			where rn >= #beginIndex# and rn <= #endIndex#
+		]]>
+	</select>
+	
+	<select id="getImgByNo" parameterClass="int" resultClass="tbimages">
+		select
+			IMG_NO 			as imgNo, 
+			IMG_LOCATION 	as imgLocation, 
+			IMG_TITLE 		as imgTitle, 
+			IMG_ALT			as imgAlt,
+			IMG_PATH		as imgPath, 
+			IMG_ALTER_STATE	as imgAlterState, 
+			REPORTER_NO		as "reporter.reporterNo", 
+			NEWS_TYPE_NO	as "newsType.newsTypeNo", 
+			CATEGORY_NO		as "category.categoryNo", 
+			IMG_TYPE		as imgType,
+			IMG_SIZE		as imgSize
+		from TB_IMAGE
+		where
+			IMG_NO =#value#
+	</select>
+	
+	<select id="getSearchBySelectSort" parameterClass="kr.co.jtimes.common.criteria.Criteria" resultClass="tbimages">
+		
+			select 
+		        IMG_NO				imgNo,
+		        IMG_LOCATION		imgLocation,
+		        IMG_TITLE			imgTitle,
+		        IMG_ALT				imgAlt,
+		        IMG_PATH			imgPath,
+		        IMG_ALTER_STATE		imgAlterState,
+		        REPORTER_NO			"reporter.reporterNo",
+                NEWS_TYPE_NO		"newsType.newsTypeNo",
+                CATEGORY_NO			"category.categoryNo",
+		        IMG_REGDATE			imgRegdate,
+		        IMG_TYPE			imgType,
+		        IMG_SIZE			imgSize
+			from ( select 
+			        row_number() over (order by img_no desc) 	rn, 
+			        IMG_NO				,
+			        IMG_LOCATION		,
+			        IMG_TITLE			,
+			        IMG_ALT				,
+			        IMG_PATH			,
+			        IMG_ALTER_STATE		,
+			        REPORTER_NO			,
+			        NEWS_TYPE_NO		,
+			        CATEGORY_NO			,
+			        IMG_REGDATE			,
+			        IMG_TYPE			,
+			        IMG_SIZE														
+			      from TB_IMAGE
+                  where IMG_ALTER_STATE = #tapId#
+					<dynamic>
+			
+						<isNotNull property="categoryAll">
+						
+						</isNotNull>
+						
+						<isNotEmpty property="categoryRemainder">
+							AND CATEGORY_NO = #categoryRemainder#
+						</isNotEmpty>
+
+						<isNotNull property="optAll">
+							<isNotNull property="searchWord">
+								AND IMG_TITLE = #searchWord#		 
+								OR REPORTER_NO in (
+									                select REPORTER_NO
+									                from REPORTER_EMPLOYEE
+									                where REPORTER_NAME = #searchWord#
+									              )
+							</isNotNull>
+						</isNotNull>
+						<isNotNull property="optTitle">
+							<isNotNull property="searchWord">
+								AND IMG_TITLE = #searchWord#
+							</isNotNull>
+						</isNotNull>
+						<isNotNull property="optWriter">
+							<isNotNull property="searchWord">
+								AND REPORTER_NO in (
+									                select REPORTER_NO
+									                from REPORTER_EMPLOYEE
+									                where REPORTER_NAME = #searchWord#
+									              )
+							</isNotNull>
+						</isNotNull>
+						
+						<isNotNull property="beginDate">
+							<![CDATA[
+							AND IMG_REGDATE >= #beginDate#
+							]]>
+						</isNotNull>
+						<isNotNull property="beginDate">
+							<![CDATA[
+							AND IMG_REGDATE <= #beginDate#
+							]]>
+						</isNotNull>
+						<isNotNull property="extension">
+							<iterate property="extension" open="(" close=")" conjunction=",">
+								AND IMG_TYPE in #extension[]#
+							</iterate>
+						</isNotNull>
+					</dynamic>
+                  
+                  ) 
+			where rn >= #beginIndex# and rn &lt;= #endIndex#
+		
+	</select>
+	
+	<insert id="addtbImageVo" parameterClass="tbimages">
+		insert into TB_IMAGE (IMG_NO,IMG_LOCATION,IMG_TITLE,IMG_ALT,IMG_PATH,IMG_ALTER_STATE,REPORTER_NO,NEWS_TYPE_NO,CATEGORY_NO,IMG_REGDATE,IMG_TYPE,IMG_SIZE)
+		values (seq_img.nextval,#imgLocation#,#imgTitle#,#imgAlt#,#imgPath#,#imgAlterState#,#reporter.reporterNo#,#newsType.newsTypeNo#,#category.categoryNo#,sysdate,#imgType#,#imgSize#)
+	</insert>
+	
+</sqlMap>

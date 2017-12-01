@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<form name="loginform" id="login-form" action="login.jsp">
+		아이디: <br />
+		<input type="text" name="username" id="user-name" /><br />
+		비밀번호: <br />
+		<input type="password" name="userpwd" id="user-pwd" /><br />
+		
+		<button type="submit">저장</button>
+	</form>
+</body>
+<script type="text/javascript">
+	var form = document.getElementById("login-form");
+	form.addEventListener('submit',function(event){
+		
+		event.preventDefault();
+		
+		var name = document.getElementById("user-name").value;
+		var pwd = document.getElementById("user-pwd").value;
+		
+		if(name && pwd ) {
+			form.submit();			
+		} else{
+			alert("아이디와 비밀번호는 필수 입력값이 입니다")
+		}
+		
+	});
+</script>
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+	#gallery-box img {
+		margin: 5px;
+		padding: 5px;
+		border: 1px solid silver;
+	}
+	label {
+		margin: 10px;
+		display: inline-block; 100px;
+		padding: 10px;
+		border: 1px solid silver;
+	}
+	.on {
+		display:block;
+	}
+	.off {
+		display:none;
+	}
+</style>
+</head>
+<body>
+	<div>
+		<label id="vip">브이아이피</label>
+		<label id="texi">택시운전사</label>
+		<label id="poli">청년경찰</label>
+		<label id="jang">장산범</label>
+		<label id="run">혹성탈출</label>
+	</div>
+	<div id="gallery-box">
+		<img src="../images/a.jpg" class="on" id="vip-pic"/>
+		<img src="../images/b.jpg" class="off" id="texi-pic"/>
+		<img src="../images/c.jpg" class="off" id="poli-pic"/>
+		<img src="../images/d.jpg" class="off" id="jang-pic"/>
+		<img src="../images/e.jpg" class="off" id="run-pic"/>
+	</div>
+</body>
+<script type="text/javascript">
+	// label를 클릭하면 해당 영화의 포스트가 표시되도록 한다.
+	// <img> 태그의  class값을 변경해서 처리하시오.
+	var imgs = document.getElementsByTagName("img");
+	function hidePic() {
+		for(var i=0; i<imgs.length; i++) {
+			imgs[i].setAttribute("class","off");
+		}
+	}
+	
+	var labels = document.getElementsByTagName("label");
+	 for(var i=0; i<labels.length; i++){
+		 labels[i].addEventListener('click', function(event) {
+			 hidePic();
+			 document.getElementById(event.target.id+"-pic").setAttribute("class","on");
+		 });
+	 }
+	 /*
+	 function imgOff(){
+		 var imgNodeList = document.getElementsByTagName("img");
+		 for(var i=0; i<imgNodeList.length; i++){
+			 var img = imgNodeList.item(i);
+			 img.setAttribute('class','off');
+		 }
+	 }
+	 
+	 var labelNodeList = document.querySelectorAll('label');
+	 for(var i=0; i<labelNodeList.length; i++){
+		 var label = labelNodeList.item(i);
+		 label.addEventListener('click', function(event){
+			 imgOff();
+			 var img = document.getElementById(event.target.id.replace("label-",""));
+			 img.setAttribute("class", "on");
+		 });
+	 }
+	 
+	 단 여기서 주석안에 있는 펑션을 실행하기 위해서는 라벨에 달려있는 아이디가 a,b,c,d,e여야하며 또한 img에 달려있는 아이디 또한 label-a ,label-b 등등 으로 적혀있어야함.
+	 하지만 내가 적은건 다른 아이디로 적혀있기에 안된다.
+	  */
+</script>
+</html>

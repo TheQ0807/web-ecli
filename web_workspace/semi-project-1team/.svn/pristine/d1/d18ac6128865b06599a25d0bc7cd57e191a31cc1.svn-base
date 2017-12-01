@@ -1,0 +1,14 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+
+    <% 
+    	pageContext.setAttribute("", "/index.jsp");
+    %>
+    
+    <%@	// 로그인 체크 %>
+    
+    <% request.setCharacterEncoding("utf-8");
+    
+    
+    
+    

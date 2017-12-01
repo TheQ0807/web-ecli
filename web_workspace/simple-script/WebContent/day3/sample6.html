@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	function checkform(){
+		
+		var el1 = document.querySelector('#user-name');
+		var el2 = document.querySelector('#user-pwd');
+		
+		var inputUsername = el1.value;
+		var inputUserpwd = el2.value;
+		
+		if(!inputUsername){
+			alert("아이디를 입력하세요");
+			el1.focus();
+			return false;
+		}
+		if(!inputUserpwd){
+			alert("비밀번호를 입력하세요");
+			el2.focus();
+			return false;
+		}
+		return true;
+	}
+</script>
+</head>
+<body>
+	<form action="add.jsp" onsubmit="return checkform();">
+		아이디<br>
+		<input type="text" name="username" id="user-name"/> <br/>
+		
+		비밀번호<br>
+		<input type="password" name="userpwd" id="user-pwd"> <br />
+		
+		<button type="submit">로그인</button>
+	</form>
+</body>
+</html>

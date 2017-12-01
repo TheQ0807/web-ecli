@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	myfn(2,3);
+	
+	function myfn(x,y){
+		var z= x+y;
+		console.long(z);
+	}
+	
+	myfn(6,10);
+	
+	var yourfn = function(x,y){
+		var z = x*y;
+		console.log(z);
+	}
+	yourfn(4,10);
+	
+	function fn(){
+		alert("실행됨......");
+	}
+	function f1() {
+		el.style.color='red';
+		console.log("마우스 포커스가 들어왔다.";);
+	};
+	function f2() {
+		el.style.color='gray';
+		console.log("마우스 포커스가 나갔다..";);
+	};
+</script>
+</head>
+<body>
+	<button onclick="fn();" onmouseenter="fn1(this);" onmouseleave="fn2(this);">클릭플리즈</button>
+</body>
+</html>

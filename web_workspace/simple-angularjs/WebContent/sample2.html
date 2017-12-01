@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>angularjs</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+<script type="text/javascript">
+	var app = angular.module("app",[]);
+	app.controller('HRCtrl',function($scope, $http){
+		$scope.deptList = [];
+		$scope.empList = [];
+		
+		$http.get("response1.jsp")
+			 .then(function(response){
+				$scope.deptList = response.data.depts; 
+			 });
+		
+		$scope.getEmpList = function(deptId){
+			$http.get("response2.jsp?deptId="+deptId)
+				 .then(function(response){
+					 console.log(response.data);
+					 $scope.empList = response.data;
+				 })
+		}
+		
+		
+	})
+</script>
+</head>
+<body ng-app="app">
+	<div class="container" ng-controller="HRCtrl">
+		<div class="row">
+		<div class="col-sm-3">
+			<div class="panel panel-primary">
+				<div class="panel-heading">부서 목록</div>
+				<ul class="list-group" id="dept-list" >
+					<li class="list-group-item" ng-repeat="dept in deptList" ng-click="getEmpList(dept.id)">{{dept.name}}</li>
+				</ul>
+			</div>
+		</div>
+		<div class="col-sm-9">
+			<div class="panel panel-info">
+				<div class="panel-heading">사원 목록</div>
+				<table class="table" id="employee-list">
+					<tr>
+						<th>id</th>
+						<th>first name</th>
+						<th>last name</th>
+						<th>job</th>
+						<th>salary</th>
+					</tr>
+					<tbody>
+						<tr ng-repeat="emp in empList">
+							<td>{{emp.id}}</td>
+							<td>{{emp.firstName}}</td>
+							<td>{{emp.lastName}}</td>
+							<td>{{emp.job}}</td>
+							<td>{{emp.salary}}</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+		</div>
+	</div>
+</body>
+</html>

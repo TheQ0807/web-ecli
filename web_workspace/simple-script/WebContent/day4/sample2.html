@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<button id="btn">클릭</button>
+	<button id="btn-2">클릭</button>
+
+</body>
+<script type="text/javascript">
+	// 비침투적인 자바스클리트 이벤트 처리
+	document.getElementById("btn-2").addEventListener('click', function(){
+		console.log("한번에 이벤트 처리 완료..........");
+	});
+	
+	// 1. 이벤트 소스를 찾기 
+	var bt = document.getElementById("btn");
+	// 2. 이벤트 핸들러 함수 구현하기
+	function fn(){
+		console.log('이벤트 처리 완료...');
+	}
+	// 3. 이벤트 소스에 이벤트 핸들러 함수 추가하기
+	bt.addEventListener('click',fn);
+	
+</script>
+</html>

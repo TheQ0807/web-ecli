@@ -1,0 +1,5 @@
+package kr.co.jtimes.profile.vo;
+
+public class User {
+
+}

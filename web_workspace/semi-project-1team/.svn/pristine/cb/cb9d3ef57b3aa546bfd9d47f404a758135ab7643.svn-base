@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE sqlMap      
+    PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"      
+    "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="news">
+
+	<typeAlias alias="news" type="kr.co.jtimes.news.vo.TbNewsVo"/>
+	
+	<select id="getNews" parameterClass="int" resultClass="news">
+		select
+			news_no 		as newsNo, 
+			news_location 	as newsLocation, 
+			news_title 		as newsTitle, 
+			news_contents	as newsContents, 
+			news_regdate	as regdate, 
+			news_img_path	as newsImgPath, 
+			news_view_cnt	as newsViewCnt, 
+			news_sign_state	as newsSignState, 
+			news_type_no	as "newsType.newsTypeNo", 
+			category_no		as "category.categoryNo", 
+			reporter_no		as "reporter.reporterNo"
+		from tb_news
+		where
+			news_no =#value#
+
+	</select>
+	
+	<select id="getNewses" resultClass="news">
+		select
+			news_no 		as newsNo, 
+			news_location 	as newsLocation, 
+			news_title 		as newsTitle, 
+			news_contents	as newsContents, 
+			news_regdate	as regdate, 
+			news_img_path	as newsImgPath, 
+			news_view_cnt	as newsViewCnt, 
+			news_sign_state	as newsSignState, 
+			news_type_no	as "newsType.newsTypeNo", 
+			category_no		as "category.categoryNo", 
+			reporter_no		as "reporter.reporterNo"
+		from tb_news
+	</select>
+	
+	<insert id="insertNews" parameterClass="news">
+		INSERT INTO tb_news 
+			(news_no, news_location, news_title, news_contents, news_regdate, news_img_path, news_view_cnt, news_sign_state, news_type_no, category_no, reporter_no)
+		VALUES 
+			(seq_news.nextval, #newsLocation#, #newsTitle#, #newsContents#, sysdate, #newsImgPath#, 0, 'N', #newsType.newsTypeNo#, #category.categoryNo#, #reporter.reporterNo#)
+		
+	</insert>
+</sqlMap>

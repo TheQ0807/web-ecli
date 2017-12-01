@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<table>
+		<thead>
+			<tr>
+				<th>이름</th>
+				<th>국어</th>
+				<th>영어</th>
+				<th>수학</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>김유신</td><td>100</td><td>50</td><td>60</td>
+			</tr>
+			<tr>
+				<td>강감찬</td><td>20</td><td>30</td><td>50</td>
+			</tr>
+			<tr>
+				<td>이순신</td><td>70</td><td>80</td><td>40</td>
+			</tr>
+			<tr>
+				<td>홍길동</td><td>30</td><td>50</td><td>50</td>
+			</tr>
+		</tbody>
+	</table>
+</body>
+<script type="text/javascript">
+	// 점수가 40점 미만인 td의 글자색을 빨간색으로 변경하기
+	var tdNodeList = document.querySelectorAll('td:not(:nth-child(4n+1))');
+	for(var i=0; i<tdNodeList.length; i++) {
+		var td = tdNodeList.item(i);
+		if(parseInt(td.innerText)< 40){
+			td.style.color = 'red';
+		}
+	}
+	
+</script>
+</html>

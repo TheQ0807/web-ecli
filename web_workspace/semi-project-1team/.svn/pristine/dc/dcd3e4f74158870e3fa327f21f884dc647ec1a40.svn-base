@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE sqlMap      
+    PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"      
+    "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="reporter">
+	
+	<select id="getReporterById" parameterClass="string" resultClass="Reporter">
+		select 
+			reporter_no			as reporterNo,
+			reporter_name		as reporterName,
+			reporter_pos		as reporterPos,
+			reporter_email		as reporterEmail,
+			reporter_phone		as reporterPhone,
+			reporter_pw			as reporterPw,
+			dept_no				as "deptNo.deptNo"
+		from
+			reporter_employee
+		where
+			reporter_name = #value#
+	</select>
+		
+
+</sqlMap>

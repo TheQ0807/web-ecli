@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE sqlMap      
+    PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"      
+    "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="news">
+
+	<typeAlias alias="news" type="kr.co.jtimes.news.vo.TbNewsVo"/>
+	
+	<select id="getNews" parameterClass="int" resultClass="news">
+		select
+			news_no 		as newsNo, 
+			news_location 	as newsLocation, 
+			news_title 		as newsTitle, 
+			news_contents	as newsContents, 
+			news_regdate	as regdate, 
+			news_img_path	as newsImgPath, 
+			news_view_cnt	as newsViewCnt, 
+			news_sign_state	as newsSignState, 
+			news_type_no	as "newsType.newsTypeNo", 
+			category_no		as "category.categoryNo", 
+			reporter_no		as "reporter.reporterNo"
+		from tb_news
+		where
+			news_no =#value#
+		and
+			news_sign_state = 'Y'
+	</select>
+	
+	<select id="getNewses" resultClass="news">
+		select
+			news_no 		as newsNo, 
+			news_location 	as newsLocation, 
+			news_title 		as newsTitle, 
+			news_contents	as newsContents, 
+			news_regdate	as regdate, 
+			news_img_path	as newsImgPath, 
+			news_view_cnt	as newsViewCnt, 
+			news_sign_state	as newsSignState, 
+			news_type_no	as "newsType.newsTypeNo", 
+			category_no		as "category.categoryNo", 
+			reporter_no		as "reporter.reporterNo"
+		from tb_news 
+		where news_sign_state = 'Y'
+		order by news_no asc
+	</select>
+	
+	<select id="getNewsByCategory" parameterClass="int" resultClass="news">
+		select
+			NEWS.news_no 			as newsNo, 
+			NEWS.news_location 		as newsLocation, 
+			NEWS.news_title 		as newsTitle, 
+			NEWS.news_contents		as newsContents, 
+			NEWS.news_regdate		as regdate, 
+			NEWS.news_img_path		as newsImgPath, 
+			NEWS.news_view_cnt		as newsViewCnt, 
+			NEWS.news_sign_state	as newsSignState, 
+			NEWS.news_type_no		as "newsType.newsTypeNo", 
+			NEWS.category_no		as "category.categoryNo", 
+			NEWS.reporter_no		as "reporter.reporterNo",
+			REP.reporter_name		as "reporter.reporterName",
+			NT.news_type_name		as "newsType.newsTypeName"
+		from tb_news NEWS, reporter_employee REP, news_type NT
+		where NEWS.reporter_no = REP.reporter_no
+		and NEWS.category_no = #value#
+		and NEWS.news_type_no = NT.news_type_no
+		order by NEWS.news_no desc
+	</select>
+	
+	<insert id="insertNews" parameterClass="news">
+		INSERT INTO tb_news 
+			(news_no, news_location, news_title, news_contents, news_regdate, news_img_path, news_view_cnt, news_sign_state, news_type_no, category_no, reporter_no)
+		VALUES 
+			(seq_news.nextval, #newsLocation#, #newsTitle#, #newsContents#, sysdate, #newsImgPath#, 0, 'N', #newsType.newsTypeNo#, #category.categoryNo#, #reporter.reporterNo#)
+	</insert>
+</sqlMap>

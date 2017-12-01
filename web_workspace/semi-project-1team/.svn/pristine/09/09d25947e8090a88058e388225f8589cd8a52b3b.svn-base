@@ -1,0 +1,221 @@
+<%@page import="kr.co.jtimes.reporter.imagecontainer.common.dao.TbImageDao"%>
+<%@page import="kr.co.jtimes.reporter.profile.common.vo.ReporterEmployeeVo"%>
+<%@page import="java.util.Date"%>
+<%@page import="kr.co.jtimes.reporter.imagecontainer.common.vo.TbImageVo"%>
+<%@page import="java.util.List"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html> 
+<html lang="ko">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <style>
+      
+      
+      
+      .ck-all input{
+          display: none;
+      }
+      
+      .form-blank {
+           padding-right: 32px;
+      }
+      
+      .text-center{
+          margin-top: 30px;
+          margin-bottom: 50px;
+      }
+      
+      .caption{
+           text-align: center;
+      }
+     
+      
+  </style>
+</head>
+<body>
+
+
+<div class="container">
+    <div class="row"> 
+         <ul class="nav nav-tabs navcontents" style="margin-top: 200px;">
+            <li class="active"><a href="#" id="N">원본</a></li>
+            <li><a href="#" id="Y">수정본</a></li>
+            <li class="dropdown">
+                <a class="dropdown-toggle" data-toggle="dropdown" href="#">카테고리
+                <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                    <li><a href="#">시사</a></li>
+                    <li><a href="#">경제</a></li>
+                    <li><a href="#">연예</a></li>
+                    <li><a href="#">스포츠</a></li> 
+                </ul>
+            </li>
+        </ul>      
+    </div>
+</div>
+<div class="container">
+    <div class="row">
+            <div class="row text-center">
+              <form action="" class="form-inline">
+                 <div class="form-group form-blank">
+                      <div class="form-group">
+                          <select name="" id="" class="form-control">
+                              <option value=""></option>
+                              <option value=""></option>
+                          </select>
+                       </div>
+
+                       <div class="form-group">
+                           <input type="text" class="form-control">
+                       </div>
+
+                       <div class="form-group">
+                           <button class="btn btn-info">검색</button>
+                       </div>
+                 </div>
+                    
+                    <div class="form-group form-blank">
+                         <input type="date" class="form-control"> ~ <input type="date" class="form-control">
+                   </div>
+               
+                    <div class="form-group ck-all form-blank">
+                       <label for="ck-png" class="btn btn-default">png</label>
+                       <input type="checkbox" id="ck-png">
+                       
+                       <label for="ck-jpg" class="btn btn-default">jpg</label>
+                       <input type="checkbox" id="ck-jpg">
+                       
+                       <label for="ck-bmp" class="btn btn-default">bmp</label>
+                       <input type="checkbox" id="ck-bmp">
+                       
+                       <label for="ck-gif" class="btn btn-default">gif</label>
+                       <input type="checkbox" id="ck-gif">
+                   </div>
+
+                   <div class="form-group">
+                        <a href="addPicture.jsp"><label for="" class="btn btn-primary">이미지등록</label></a>
+                   </div>
+               </form>
+            </div>
+       
+       
+        <div class="row ">
+        	<div class="panel panel-default panel-body" id="img-box">
+		        <%
+					TbImageDao tbImageDao = new TbImageDao();
+		            List<TbImageVo> tbImageList = tbImageDao.getImageSelectAlterState("N");            		
+		        	for(TbImageVo voList : tbImageList) {
+		        		String path = voList.getImgPath();
+		        		String title = voList.getImgTitle();
+		        		Date regDate = voList.getImgRegdate();
+		        		int reporterNo = voList.getReporter().getReporterNo();
+		        		
+		        %>
+		        		<div class="col-xs-3">
+		                    <div class="thumbnail" style="width: 250px; height: 300px;">
+		                        <a href="pictureContainer.jsp">
+		                            <img src="/imgdata/<%=path %>" width="50%" id="img-path"/>
+		                            <div class="caption" >
+		                                <h4 id="img-title"><%=title %></h4>
+		                                <p id="img-regdate"><%=regDate %></p>
+		                                <p id="img-reproterno"><%=reporterNo %></p>
+		                            </div>
+		                        </a>
+		                    </div>
+		                </div>
+		        <% 
+		        	}
+		        %>   
+            </div>
+        </div>
+        
+        <div class="row" style="text-align: center">
+            <div class="label label-primary" >
+                <label  style="width: 500px; cursor: pointer;" class="glyphicon glyphicon-chevron-down">  펼치기</label>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+<script type="text/javascript">
+    // 원본 수정본을 선택시 선택한 곳의 버튼 모양 변경
+    var navContentsList = document.querySelectorAll(".nav-tabs > li:nth-child(1)>a, .nav-tabs > li:nth-child(2)>a");
+    for(var index=0; index < navContentsList.length; index++) {
+        var navContentsListItem = navContentsList.item(index);
+        
+        navContentsListItem.addEventListener("click", function(event) {
+            var liNodeList = document.querySelectorAll(".nav-tabs > li:nth-child(1), .nav-tabs > li:nth-child(2)");
+            for(var index2=0; index2 < liNodeList.length; index2++) {
+                liNodeList.item(index2).setAttribute("class", "");
+            }
+            event.target.parentNode.setAttribute("class", "active");
+        });
+    }
+    
+    // 체크박스형식으로 이미지 변경
+    var navExtensionList = document.querySelectorAll(".ck-all > label:nth-child(n+1)");
+    for(var navExtensionListIncrease=0; navExtensionListIncrease < navExtensionList.length; navExtensionListIncrease++) {
+        var navExtensionListItem = navExtensionList.item(navExtensionListIncrease);
+            navExtensionListItem.addEventListener('click', function(){
+                this.classList.toggle("btn-success");
+            });
+    }   
+    
+ // 원본 -> 수정본, 수정본 -> 원본이미지 보이게 만들기
+    var liBtnList = document.querySelectorAll(".nav-tabs > li:nth-child(1)>a, .nav-tabs > li:nth-child(2)>a");
+    
+    for(index=0; index < liBtnList.length; index++) {
+		var liBtn = liBtnList.item(index);
+		
+		liBtn.addEventListener("click", function(event) {
+            var liBthId = event.target.id;
+            
+            var xhr = new XMLHttpRequest();
+            
+            xhr.onreadystatechange = function() {
+                if(xhr.readyState == 4 && xhr.status == 200) {
+                    var jsonText = xhr.responseText;
+                    var arr = JSON.parse(jsonText);
+                    
+                    var html = "";
+                    for(var i=0; i < arr.length; i++) {
+                    	var img = arr[i];
+                    	html += '<div class="col-xs-3">';
+	                    html += '<div class="thumbnail" style="width: 250px; height: 300px;">';
+	                    html += '<a href="pictureContainer.jsp">';
+	                    html += '<img src="/imgdata/'+img.imgPath+'" width="50%" id="img-path"/>';
+	                    html += '<div class="caption" >';
+	                    html += '<h4 id="img-title">'+img.imgTitle+'</h4>';
+	                    html += '<p id="img-regdate">'+img.imgRegdate+'</p>';
+	                    html += '<p id="img-reproterno">'+img.reporter.reporterNo+'</p>';
+	                    html += '</div>';
+	                    html += '</a>';
+	                    html += '</div>';
+	                    html += '</div>';
+	                    
+	                    
+	                    document.getElementById("img-box").innerHTML = html;
+                    	
+                    };
+                    
+                    
+            	}
+            }
+            xhr.open("GET", "/index.do?arter="+liBthId);
+            
+            xhr.send(null);
+        });
+    }
+    
+    
+    
+    
+    
+</script>
+</html>

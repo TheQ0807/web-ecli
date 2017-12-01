@@ -1,0 +1,71 @@
+package kr.co.jtimes.ad.vo;
+
+import java.util.Date;
+
+public class AdVo {
+
+	private int ADNo;
+	private String ADTitle;
+	private String ADImgPath;
+	private String ADLink;
+	private Date ADStartDate;
+	private Date ADEndDate;
+	
+	public AdVo(){}
+
+	public int getADNo() {
+		return ADNo;
+	}
+
+	public void setADNo(int aDNo) {
+		ADNo = aDNo;
+	}
+
+	public String getADTitle() {
+		return ADTitle;
+	}
+
+	public void setADTitle(String aDTitle) {
+		ADTitle = aDTitle;
+	}
+
+	public String getADImgPath() {
+		return ADImgPath;
+	}
+
+	public void setADImgPath(String aDImgPath) {
+		ADImgPath = aDImgPath;
+	}
+
+	public String getADLink() {
+		return ADLink;
+	}
+
+	public void setADLink(String aDLink) {
+		ADLink = aDLink;
+	}
+
+	public Date getADStartDate() {
+		return ADStartDate;
+	}
+
+	public void setADStartDate(Date aDStartDate) {
+		ADStartDate = aDStartDate;
+	}
+
+	public Date getADEndDate() {
+		return ADEndDate;
+	}
+
+	public void setADEndDate(Date aDEndDate) {
+		ADEndDate = aDEndDate;
+	}
+
+	@Override
+	public String toString() {
+		return "AdVo [ADNo=" + ADNo + ", ADTitle=" + ADTitle + ", ADImgPath=" + ADImgPath + ", ADLink=" + ADLink
+				+ ", ADStartDate=" + ADStartDate + ", ADEndDate=" + ADEndDate + "]";
+	}
+	
+	
+}

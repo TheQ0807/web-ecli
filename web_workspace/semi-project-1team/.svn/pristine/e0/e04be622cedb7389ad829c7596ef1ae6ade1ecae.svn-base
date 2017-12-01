@@ -1,0 +1,5 @@
+package kr.co.jtimes.ad.dao;
+
+public class AdDao {
+
+}

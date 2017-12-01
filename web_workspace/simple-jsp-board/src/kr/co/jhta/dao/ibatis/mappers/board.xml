@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE sqlMap      
+    PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"      
+    "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="board">
+
+	<typeAlias alias="Board" type="kr.co.jhta.board.vo.Board"/>
+	<typeAlias alias="Likes" type="kr.co.jhta.board.vo.Likes"/>
+	<typeAlias alias="Comment" type="kr.co.jhta.board.vo.Comment"/>
+	
+	<select id="getBoards" resultClass="Board">
+		select
+			A.board_no				as no,
+			A.board_title			as title,
+			A.board_contents		as contents,
+			A.board_createdate		as createdate,
+			A.user_id				as "writer.id",
+			B.user_name				as "writer.name",
+			(select count(*) from tb_user_likes where board_no= A.board_no)		as likes
+			
+		from 
+			tb_user_board A, tb_user B
+		where
+			A.user_id = B.user_id
+			and board_active = 'Y'
+		order by
+			A.board_no desc
+	</select>
+	
+	<insert id="addBoard" parameterClass="Board">
+		insert into tb_user_board
+		(board_no, board_title, board_contents, user_id)
+		values
+		(board_seq.nextval,#title#,#contents#,#writer.id#)	
+	</insert>
+	<insert id="addLikes" parameterClass="Likes">
+		insert into tb_user_likes
+		(user_id, board_no)
+		values
+		(#userId#,#boardNo#)
+	</insert>
+	<select id="getLikes" parameterClass="Likes" resultClass="int">
+		select
+			count(*)
+		from
+			tb_user_likes
+		where 
+			user_id =#userId#
+		and
+			board_no=#boardNo#
+	</select>
+	
+	
+	<delete id="delBoard" parameterClass="int">
+		delete from tb_user_board
+		where board_no = #value#
+	</delete>
+	
+	<update id="inactiveBoard" parameterClass="int">
+		update tb_user_board
+		set
+			board_active = 'N'
+		where
+			board_no = #value#
+	</update>
+	
+	<insert id="addComment" parameterClass="Comment">
+		insert into tb_user_comments
+		(comment_no, comment_contents, comment_createdate, user_id, board_no)
+		values
+		(board_seq.nextval, #contents#, sysdate, #writer.id#, #board.no#)
+	</insert>
+	
+	<select id="getCommentsByBoardNo" parameterClass="int" resultClass="Comment">
+		select
+			A.comment_no			as no,
+			A.comment_contents		as contents,
+			A.comment_createdate	as createdate,
+			A.user_id				as "writer.id",
+			B.user_name				as "writer.name",
+			A.board_no				as "board.no"
+		from
+			tb_user_comments A, tb_user B
+		where
+			A.user_id = B.user_id
+			and A.board_no = #value#	
+	</select>
+
+
+	<select id="getBoardByNo" parameterClass="int" resultClass="Board">
+		select
+			A.board_no				as no,
+			A.board_title			as title,
+			A.board_contents		as contents,
+			A.board_createdate		as createdate,
+			A.user_id				as "writer.id",
+			B.user_name				as "writer.name",
+			(select count(*) from tb_user_likes where board_no= A.board_no)		as likes
+			
+		from 
+			tb_user_board A, tb_user B
+		where
+			A.user_id = B.user_id
+			and A.board_no = #value#
+		
+	</select>
+</sqlMap>

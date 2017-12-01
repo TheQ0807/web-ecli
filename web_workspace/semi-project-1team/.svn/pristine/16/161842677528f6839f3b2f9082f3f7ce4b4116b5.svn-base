@@ -1,0 +1,30 @@
+package kr.co.jtimes.reporter.sign.dao;
+
+import java.sql.SQLException;
+import java.util.List;
+
+import kr.co.jtimes.reporter.sign.vo.NewsSignVo;
+import kr.co.jtimes.util.IbatisUtil;
+
+public class NewsSignDao {
+
+	public void insertNewsSign(NewsSignVo newsSign) throws SQLException {
+		IbatisUtil.getSqlMap().insert("insertNewsSign", newsSign);
+	}
+	
+	public List<NewsSignVo> getFirstSignList(int signerNo) throws SQLException{
+		return IbatisUtil.getSqlMap().queryForList("getFirstSignList", signerNo);
+	}
+	
+	public List<NewsSignVo> getSecondSignList(int signerNo) throws SQLException{
+		return IbatisUtil.getSqlMap().queryForList("getSecondSignList", signerNo);
+	}
+	
+	public NewsSignVo getNewsSign(int no) throws SQLException {
+		return (NewsSignVo)IbatisUtil.getSqlMap().queryForObject("getNewsSign", no);
+	}
+	
+	public void updateSign(NewsSignVo sign) throws SQLException {
+		IbatisUtil.getSqlMap().update("updateSign", sign);
+	}
+}

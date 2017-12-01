@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap      
+    PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"      
+    "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="crimg">
+
+	<typeAlias alias="crimg" type="kr.co.jtimes.citizenrap.image.vo.CrImgVo"/>
+
+	<insert id="addCrImg" parameterClass="crimg">
+		insert into TB_CITIZEN_IMG (CR_IMG_NO, CR_IMG_PATH, CR_NO)
+		values (SEQ_CIT_IMG.nextval, #crImgPath#, #citizenRepVo.citizenRepNo#)
+	</insert>
+	
+	<select id="getCrImgByCrNo" parameterClass="int" resultClass="string">
+		select
+			CR_IMG_PATH
+		from
+			TB_CITIZEN_IMG
+		where CR_NO = #value#
+	</select>
+</sqlMap>

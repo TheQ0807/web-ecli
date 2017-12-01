@@ -1,0 +1,71 @@
+package kr.co.jtimes.reporter.imagecontainer.common.web;
+
+import java.io.IOException;
+import java.sql.SQLException;
+
+import javax.servlet.ServletException;
+import javax.servlet.annotation.MultipartConfig;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.Part;
+
+import kr.co.jtimes.common.vo.NewsCategoryVo;
+import kr.co.jtimes.common.vo.NewsTypeVo;
+import kr.co.jtimes.reporter.imagecontainer.common.dao.TbImageDao;
+import kr.co.jtimes.reporter.imagecontainer.common.vo.TbImageVo;
+import kr.co.jtimes.reporter.profile.common.vo.ReporterEmployeeVo;
+
+
+
+@WebServlet("/reporter/upload.html")
+@MultipartConfig()
+public class ImgUploadServlet extends HttpServlet{
+
+	private static final String SAVED_DIRECTORY = "C:\\web_eclipse\\web_workspace\\.metadata\\.plugins\\org.eclipse.wst.server.core\\tmp0\\wtpwebapps\\semi-project-1team\\imgstore\\";	//경로
+	@Override
+	protected void service(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
+		
+		req.setCharacterEncoding("utf-8");
+		
+		Part part = req.getPart("file-upload");
+		String imgname = req.getParameter("imgname");
+		long ImgSize = part.getSize();
+		String item = part.getContentType();
+		String fType = item.substring(item.indexOf("/")+1, item.length());
+		String path = SAVED_DIRECTORY + imgname + "." + fType;
+		part.write(path);
+		
+		TbImageVo tbImageVo = new TbImageVo();
+		tbImageVo.setImgLocation(req.getParameter("loc"));
+		tbImageVo.setImgTitle(imgname);
+		tbImageVo.setImgAlt(req.getParameter("contents"));
+		tbImageVo.setImgPath(path);
+		tbImageVo.setImgAlterState("N");
+		
+		ReporterEmployeeVo reporter = new ReporterEmployeeVo();
+		reporter.setReporterNo(1);
+		tbImageVo.setReporter(reporter);
+		
+		NewsTypeVo newsType = new NewsTypeVo();
+		newsType.setNewsTypeNo(Integer.parseInt(req.getParameter("newstype")));
+		tbImageVo.setNewsType(newsType);
+		
+		NewsCategoryVo category = new NewsCategoryVo();
+		category.setCategoryNo(Integer.parseInt(req.getParameter("newscat")));
+		tbImageVo.setCategory(category);
+		
+		tbImageVo.setImgType(fType);
+		tbImageVo.setImgSize(String.valueOf(ImgSize));
+		
+		TbImageDao dao = new TbImageDao();
+		try {
+			dao.addtbImageVo(tbImageVo);
+		} catch (SQLException e) {
+			throw new ServletException(e);
+		}
+	
+		res.sendRedirect("/reporter/imageContainer/index.jsp");
+	}
+}

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script type="text/javascript">
+ $(function(){
+	 
+	 $("#loading-box").hide();
+	 
+	 $(document).ajaxStart(function(){
+		 $("#loading-box").show();
+	 });
+	 
+	 $(document).ajaxComplete(function(){
+		 $("#loading-box").hide();
+	 });
+	 
+	 $.ajax({
+		 type:"GET",
+		 url: "http://openAPI.seoul.go.kr:8088/746847426465756e333176516c6d49/json/SearchConcertDetailService/1/5/",
+		 dataType:"jsonp",
+		 success:function(result){
+			
+			 var data = result.SearchConcertDetailService.row;
+			 
+			 var htmlContent = "";
+			 $.each(data, function(index, item){
+				 
+				 htmlContent += "<tr>";
+					htmlContent += "<td>"+item.CODENAME+"</td>";
+					htmlContent += "<td>"+item.TITLE+"</td>";
+					htmlContent += "<td>"+item.STRTDATE+"</td>";
+					htmlContent += "<td>"+item.END_DATE+"</td>";
+					htmlContent += "<td>"+item.PLACE+"</td>";
+					htmlContent += "<td>"+item.TIME+"</td>";
+					htmlContent += "</tr>";
+			 });
+			 
+			 $("tbody").html(htmlContent);
+		 }
+	 	/*  ,
+		 beforeSend:function(){
+			 $("#loading-box").show();
+		 },
+		 complete:function(){
+			 $("#loading-box").hide();
+		 } */
+	 })
+ })
+</script>
+<title>Insert title here</title>
+</head>
+<body>
+	<h1>서울시 문화정보</h1>
+			
+			<table class="table table-condensed">
+				<thead>
+					<tr>
+						<th>종류</th>
+						<th>제목</th>
+						<th>시작일</th>
+						<th>종료일</th>
+						<th>장소</th>
+						<th>공연시간</th>
+					</tr>
+				</thead>
+				<tbody></tbody>		
+			</table>
+			<div class="text-center" id="loading-box">
+				<img alt="loading image" src="../images/loading.gif">
+			</div>	
+</body>
+</html>

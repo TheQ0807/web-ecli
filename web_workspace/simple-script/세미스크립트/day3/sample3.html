@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	function mover(el){
+		el.style.border="1px solid red";
+		el.style.opacity = 1;
+	}
+	
+	function mout(el){
+		el.style.border = "1px solid silver";
+		el.style.opacity = 0.5;
+	}
+
+//아래의 opacity는 투명도
+</script>
+<style type="text/css">
+	img { margin:20px; opacity: 0.8; border: 1px solid silver;}
+</style>
+</head>
+<body>
+
+	<div>
+		<img src="../images/junhue.jpg" onmouseover="mover(this);" onmouseout="mout(this);"/>
+		<img src="../images/junhue.jpg" onmouseover="mover(this);" onmouseout="mout(this);"/>
+		<img src="../images/junhue.jpg" onmouseover="mover(this);" onmouseout="mout(this);"/>
+		<img src="../images/junhue.jpg" onmouseover="mover(this);" onmouseout="mout(this);"/>		
+	</div>
+</body>
+</html>

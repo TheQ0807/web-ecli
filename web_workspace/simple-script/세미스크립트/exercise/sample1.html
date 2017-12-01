@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<input type="text" id="firstVal"/> * <input type="text" id="secVal">
+	<button id="sum"> = </button>
+	<input type="text" id="reVal"/>
+</body>
+<script type="text/javascript">
+	// 버튼을 클릭하면 첫번째 필드의 입력값과 두번째 필드의 입력값을 읽어서 
+	// 곱하기 계산 결과를 세번째 필드에 표시하기
+	document.getElementById("firstVal").addEventListener('focus', function(event){
+		document.getElementById("firstVal").value = "";
+		document.getElementById("secVal").value = "";
+		document.getElementById("reVal").value = "";
+	})
+	
+	
+	document.getElementById("sum").addEventListener('click', function(event){
+		
+		var firVal = document.getElementById("firstVal").value;
+		var secVal = document.getElementById("secVal").value;
+		document.getElementById("reVal").value = firVal*secVal;
+		/* 
+			if(!isNaN(firVal) && !isNaN(secVal)){
+				document.getElementById("reVal").value = firVal * secVal;
+			} else{
+				alert("숫자만 입력가능합니다.")
+				document.getElementById("firstVal").value= "";
+				document.getElementById("secVal").value= "";				
+			}
+			위의 포커스때도 내가 확인 못했다. 이 이프문은 NaN 즉 숫자가 아닌것들이 들어갔을때 를 대비하여 만든것이다.
+			위의 포커스는 첫번째 계산을 마치고 나서 다시 입력하고싶을때 내가 마우스로 첫번째나 두번째 세번째 입력창에 마우스커서를 입력하는 순간 첫번째,두번째,세번째의
+			모든 입력창이 초기화("")이 되도록 만드는것이다. 
+		 */
+	});
+	
+</script>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	// 클로저(Closure)
+	// 지역변수로 선언된 변수는 그 함수의 실행이 완료되면 사라진다.
+	// 하지만, 그 함수가 선언된 범위내에서 그 변수를 참조하는 함수가 있을 때 그 함수를 클로저라고 한다.
+	// 함수의 실행결과로 클로저함수가 반환되는 경우, 함수내에서 선언된 지역변수가 계속 유지되게 된다.
+	// 클로저 함수를 외부에서 실행하게 되면 클로저 함수가 참조하는 지역변수값을 액세스할 수 있다.
+	
+	function fn() {
+		// 클로저함수가 참조하는 지역변수는 함수의 실행이 완료된 이후에도 계속 유지된다.
+		var value = 10;
+		
+		// 클로저 함수
+		var fn2 = function(){
+			return value;
+		};
+		return fn2;
+	}
+	
+	// f가 클로저 함수를 담고있는 외부 존재
+	var f = fn();
+	// 클로저함수를 실행한다. --> 클로저함수가 참조하고 있는 fn의 지역변수에 접근할 수 있다.
+	// x 에는 fn함수의 지역변수값 10이 들어있다.
+	// 즉, fn함수의 실행이 25번째 라인에서 완료되었지만 지역변수 value는 사라지지 않고 계속 유지되고 있다.
+	var x = f();
+	console.log(x);
+</script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,13 @@
+package kr.co.jtimes.reporter.profile.common.dao;
+
+import java.sql.SQLException;
+
+import kr.co.jtimes.reporter.profile.common.vo.ReporterEmployeeVo;
+import kr.co.jtimes.util.IbatisUtil;
+
+public class ReporterEmployeeDao {
+
+	public ReporterEmployeeVo getReporterById (String reporterId) throws SQLException{
+		return (ReporterEmployeeVo) IbatisUtil.getSqlMap().queryForObject("getReporterById", reporterId);
+	}
+}

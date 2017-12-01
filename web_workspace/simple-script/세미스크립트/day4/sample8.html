@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+	img{margin: 10px; width:155px; height: 225ps;}
+</style>
+</head>
+<body>
+	<div id="gallery-box"></div>
+</body>
+<script type="text/javascript">
+	var images = ["a.jpg","b.jpg","c.jpg","d.jpg","e.jpg"];
+	
+	var gallerybox = document.getElementById("gallery-box");
+	
+	var htmlContent = "";
+	images.forEach(function(imageName, index){
+		htmlContent += "<img src='../images/"+imageName+"'>";
+	});
+	
+	gallerybox.innerHTML = htmlContent;
+</script>
+</html>

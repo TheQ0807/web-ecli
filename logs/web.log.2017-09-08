@@ -1,0 +1,290 @@
+2017-09-08 17:41:32 DEBUG java.sql.Connection.debug [26] - {conn-100000} Connection
+2017-09-08 17:41:32 DEBUG java.sql.Connection.debug [26] - {conn-100000} Preparing Statement:    select    ad_no   as adNo,    ad_img_path  as adImgPath,    ad_title  as adTitle,    ad_link   as adLink,    ad_start_date as adStartDate,    ad_end_date  as adEndDate   from    tb_ad   order by adNo   
+2017-09-08 17:41:33 DEBUG java.sql.PreparedStatement.debug [26] - {pstm-100001} Executing Statement:    select    ad_no   as adNo,    ad_img_path  as adImgPath,    ad_title  as adTitle,    ad_link   as adLink,    ad_start_date as adStartDate,    ad_end_date  as adEndDate   from    tb_ad   order by adNo   
+2017-09-08 17:41:33 DEBUG java.sql.PreparedStatement.debug [26] - {pstm-100001} Parameters: []
+2017-09-08 17:41:33 DEBUG java.sql.PreparedStatement.debug [26] - {pstm-100001} Types: []
+2017-09-08 17:41:33 DEBUG java.sql.ResultSet.debug [26] - {rset-100002} ResultSet
+2017-09-08 17:41:33 DEBUG java.sql.ResultSet.debug [26] - {rset-100002} Header: [ADNO, ADIMGPATH, ADTITLE, ADLINK, ADSTARTDATE, ADENDDATE]
+2017-09-08 17:41:33 DEBUG java.sql.ResultSet.debug [26] - {rset-100002} Result: [1, 좋은광고.png, 좋은광고, www.naver.com, 2017-09-08 00:00:00.0, 2017-09-30 00:00:00.0]
+2017-09-08 17:41:33 DEBUG java.sql.ResultSet.debug [26] - {rset-100002} Result: [2, 이상한광고.png, 이상한광고, www.naver.com, 2017-09-08 00:00:00.0, 2017-09-30 00:00:00.0]
+2017-09-08 17:41:33 DEBUG java.sql.ResultSet.debug [26] - {rset-100002} Result: [3, 이상한광고.png, 이상한광고, www.naver.com, 2017-09-08 00:00:00.0, 2017-09-30 00:00:00.0]
+2017-09-08 17:41:33 DEBUG java.sql.ResultSet.debug [26] - {rset-100002} Result: [4, 이상한광고.png, 이상한광고, www.naver.com, 2017-09-08 00:00:00.0, 2017-09-30 00:00:00.0]
+2017-09-08 17:41:33 DEBUG java.sql.ResultSet.debug [26] - {rset-100002} Result: [5, 이상한광고.png, 이상한광고, www.naver.com, 2017-09-08 00:00:00.0, 2017-09-30 00:00:00.0]
+2017-09-08 17:41:33 DEBUG java.sql.ResultSet.debug [26] - {rset-100002} Result: [6, 이상한광고.png, 이상한광고, www.naver.com, 2017-09-08 00:00:00.0, 2017-09-24 00:00:00.0]
+2017-09-08 17:41:33 DEBUG java.sql.ResultSet.debug [26] - {rset-100002} Result: [7, 이상한광고.png, 이상한광고, www.daum.net, 2017-09-08 00:00:00.0, 2018-03-17 00:00:00.0]
+2017-09-08 17:41:33 DEBUG java.sql.ResultSet.debug [26] - {rset-100002} Result: [8, 멋진광고11.png, 멋진광고11, www.naver.com, 2017-10-13 00:00:00.0, 2018-01-20 00:00:00.0]
+2017-09-08 17:41:33 DEBUG java.sql.ResultSet.debug [26] - {rset-100002} Result: [9, 허리광고.png, 허리광고, www.naver.com, 2017-09-22 00:00:00.0, 2017-12-30 00:00:00.0]
+2017-09-08 17:41:33 DEBUG java.sql.ResultSet.debug [26] - {rset-100002} Result: [10, 오호호홍.png, 오호호홍, www.naver.com, 2017-09-30 00:00:00.0, 2018-04-28 00:00:00.0]
+2017-09-08 17:41:33 DEBUG java.sql.ResultSet.debug [26] - {rset-100002} Result: [11, ㅁㅇㄴㄻㄴㅇㄻㄴㅇㄹ.png, ㅁㅇㄴㄻㄴㅇㄻㄴㅇㄹ, www.naver.com, 2017-09-08 00:00:00.0, 2018-10-27 00:00:00.0]
+2017-09-08 17:41:33 DEBUG java.sql.ResultSet.debug [26] - {rset-100002} Result: [12, ㅁㅇㄻㄴㅇㅁㅇㄻㄴㅇㄻㄴㅇㄻㄴㅇㄹ.png, ㅁㅇㄻㄴㅇㅁㅇㄻㄴㅇㄻㄴㅇㄻㄴㅇㄹ, www.naver.com, 2017-04-05 00:00:00.0, 2018-11-03 00:00:00.0]
+2017-09-08 17:41:33 DEBUG java.sql.ResultSet.debug [26] - {rset-100002} Result: [13, ㅁㅇㄻㄴㅇㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹ.png, ㅁㅇㄻㄴㅇㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹ, www.naver.com, 2017-09-08 00:00:00.0, 2019-10-04 00:00:00.0]
+2017-09-08 17:41:33 DEBUG java.sql.ResultSet.debug [26] - {rset-100002} Result: [14, 3232323232323.jpeg, 3232323232323, www.naver.com, 2017-09-08 00:00:00.0, 2017-09-30 00:00:00.0]
+2017-09-08 17:41:33 DEBUG java.sql.ResultSet.debug [26] - {rset-100002} Result: [15, ㅁㅇㄻㄴㅇㄻ.jpeg, ㅁㅇㄻㄴㅇㄻ, www.naver.com, 2017-09-08 00:00:00.0, 2023-01-13 00:00:00.0]
+2017-09-08 17:41:33 DEBUG java.sql.ResultSet.debug [26] - {rset-100002} Result: [16, 전효성이네.jpeg, 전효성이네, www.naver.com, 2017-09-08 00:00:00.0, 2020-12-31 00:00:00.0]
+2017-09-08 17:41:33 DEBUG java.sql.ResultSet.debug [26] - {rset-100002} Result: [17, 12312312.jpeg, 12312312, www.naver.com, 2017-09-08 00:00:00.0, 2023-12-30 00:00:00.0]
+2017-09-08 17:41:33 DEBUG java.sql.ResultSet.debug [26] - {rset-100002} Result: [18, 124124.jpeg, 124124, www.naver.com, 2017-09-08 00:00:00.0, 2022-12-31 00:00:00.0]
+2017-09-08 17:41:33 DEBUG java.sql.ResultSet.debug [26] - {rset-100002} Result: [19, 11111.jpeg, 11111, www.naver.com, 2017-09-08 00:00:00.0, 2022-12-23 00:00:00.0]
+2017-09-08 17:41:33 DEBUG java.sql.Connection.debug [26] - {conn-100003} Connection
+2017-09-08 17:41:33 DEBUG java.sql.Connection.debug [26] - {conn-100003} Preparing Statement:    select    ad_img_path  as adImgPath,    ad_title  as adTitle,    ad_link   as adLink,    ad_start_date as adStartDate,    ad_end_date  as adEndDate   from    tb_ad   where    ad_no = ?    
+2017-09-08 17:41:33 DEBUG java.sql.PreparedStatement.debug [26] - {pstm-100004} Executing Statement:    select    ad_img_path  as adImgPath,    ad_title  as adTitle,    ad_link   as adLink,    ad_start_date as adStartDate,    ad_end_date  as adEndDate   from    tb_ad   where    ad_no = ?    
+2017-09-08 17:41:33 DEBUG java.sql.PreparedStatement.debug [26] - {pstm-100004} Parameters: [3]
+2017-09-08 17:41:33 DEBUG java.sql.PreparedStatement.debug [26] - {pstm-100004} Types: [java.lang.Integer]
+2017-09-08 17:41:33 DEBUG java.sql.ResultSet.debug [26] - {rset-100005} ResultSet
+2017-09-08 17:41:33 DEBUG java.sql.ResultSet.debug [26] - {rset-100005} Header: [ADIMGPATH, ADTITLE, ADLINK, ADSTARTDATE, ADENDDATE]
+2017-09-08 17:41:33 DEBUG java.sql.ResultSet.debug [26] - {rset-100005} Result: [이상한광고.png, 이상한광고, www.naver.com, 2017-09-08 00:00:00.0, 2017-09-30 00:00:00.0]
+2017-09-08 17:41:34 DEBUG java.sql.Connection.debug [26] - {conn-100006} Connection
+2017-09-08 17:41:34 DEBUG java.sql.Connection.debug [26] - {conn-100006} Preparing Statement:    select    ad_img_path  as adImgPath,    ad_title  as adTitle,    ad_link   as adLink,    ad_start_date as adStartDate,    ad_end_date  as adEndDate   from    tb_ad   where    ad_no = ?    
+2017-09-08 17:41:34 DEBUG java.sql.PreparedStatement.debug [26] - {pstm-100007} Executing Statement:    select    ad_img_path  as adImgPath,    ad_title  as adTitle,    ad_link   as adLink,    ad_start_date as adStartDate,    ad_end_date  as adEndDate   from    tb_ad   where    ad_no = ?    
+2017-09-08 17:41:34 DEBUG java.sql.PreparedStatement.debug [26] - {pstm-100007} Parameters: [3]
+2017-09-08 17:41:34 DEBUG java.sql.PreparedStatement.debug [26] - {pstm-100007} Types: [java.lang.Integer]
+2017-09-08 17:41:34 DEBUG java.sql.ResultSet.debug [26] - {rset-100008} ResultSet
+2017-09-08 17:41:34 DEBUG java.sql.ResultSet.debug [26] - {rset-100008} Header: [ADIMGPATH, ADTITLE, ADLINK, ADSTARTDATE, ADENDDATE]
+2017-09-08 17:41:34 DEBUG java.sql.ResultSet.debug [26] - {rset-100008} Result: [이상한광고.png, 이상한광고, www.naver.com, 2017-09-08 00:00:00.0, 2017-09-30 00:00:00.0]
+2017-09-08 17:41:38 DEBUG java.sql.Connection.debug [26] - {conn-100009} Connection
+2017-09-08 17:41:38 DEBUG java.sql.Connection.debug [26] - {conn-100009} Preparing Statement:    select    ad_no   as adNo,    ad_img_path  as adImgPath,    ad_title  as adTitle,    ad_link   as adLink,    ad_start_date as adStartDate,    ad_end_date  as adEndDate   from    tb_ad   order by adNo   
+2017-09-08 17:41:38 DEBUG java.sql.PreparedStatement.debug [26] - {pstm-100010} Executing Statement:    select    ad_no   as adNo,    ad_img_path  as adImgPath,    ad_title  as adTitle,    ad_link   as adLink,    ad_start_date as adStartDate,    ad_end_date  as adEndDate   from    tb_ad   order by adNo   
+2017-09-08 17:41:38 DEBUG java.sql.PreparedStatement.debug [26] - {pstm-100010} Parameters: []
+2017-09-08 17:41:38 DEBUG java.sql.PreparedStatement.debug [26] - {pstm-100010} Types: []
+2017-09-08 17:41:38 DEBUG java.sql.ResultSet.debug [26] - {rset-100011} ResultSet
+2017-09-08 17:41:38 DEBUG java.sql.ResultSet.debug [26] - {rset-100011} Header: [ADNO, ADIMGPATH, ADTITLE, ADLINK, ADSTARTDATE, ADENDDATE]
+2017-09-08 17:41:38 DEBUG java.sql.ResultSet.debug [26] - {rset-100011} Result: [1, 좋은광고.png, 좋은광고, www.naver.com, 2017-09-08 00:00:00.0, 2017-09-30 00:00:00.0]
+2017-09-08 17:41:38 DEBUG java.sql.ResultSet.debug [26] - {rset-100011} Result: [2, 이상한광고.png, 이상한광고, www.naver.com, 2017-09-08 00:00:00.0, 2017-09-30 00:00:00.0]
+2017-09-08 17:41:38 DEBUG java.sql.ResultSet.debug [26] - {rset-100011} Result: [3, 이상한광고.png, 이상한광고, www.naver.com, 2017-09-08 00:00:00.0, 2017-09-30 00:00:00.0]
+2017-09-08 17:41:38 DEBUG java.sql.ResultSet.debug [26] - {rset-100011} Result: [4, 이상한광고.png, 이상한광고, www.naver.com, 2017-09-08 00:00:00.0, 2017-09-30 00:00:00.0]
+2017-09-08 17:41:38 DEBUG java.sql.ResultSet.debug [26] - {rset-100011} Result: [5, 이상한광고.png, 이상한광고, www.naver.com, 2017-09-08 00:00:00.0, 2017-09-30 00:00:00.0]
+2017-09-08 17:41:38 DEBUG java.sql.ResultSet.debug [26] - {rset-100011} Result: [6, 이상한광고.png, 이상한광고, www.naver.com, 2017-09-08 00:00:00.0, 2017-09-24 00:00:00.0]
+2017-09-08 17:41:38 DEBUG java.sql.ResultSet.debug [26] - {rset-100011} Result: [7, 이상한광고.png, 이상한광고, www.daum.net, 2017-09-08 00:00:00.0, 2018-03-17 00:00:00.0]
+2017-09-08 17:41:38 DEBUG java.sql.ResultSet.debug [26] - {rset-100011} Result: [8, 멋진광고11.png, 멋진광고11, www.naver.com, 2017-10-13 00:00:00.0, 2018-01-20 00:00:00.0]
+2017-09-08 17:41:38 DEBUG java.sql.ResultSet.debug [26] - {rset-100011} Result: [9, 허리광고.png, 허리광고, www.naver.com, 2017-09-22 00:00:00.0, 2017-12-30 00:00:00.0]
+2017-09-08 17:41:38 DEBUG java.sql.ResultSet.debug [26] - {rset-100011} Result: [10, 오호호홍.png, 오호호홍, www.naver.com, 2017-09-30 00:00:00.0, 2018-04-28 00:00:00.0]
+2017-09-08 17:41:38 DEBUG java.sql.ResultSet.debug [26] - {rset-100011} Result: [11, ㅁㅇㄴㄻㄴㅇㄻㄴㅇㄹ.png, ㅁㅇㄴㄻㄴㅇㄻㄴㅇㄹ, www.naver.com, 2017-09-08 00:00:00.0, 2018-10-27 00:00:00.0]
+2017-09-08 17:41:38 DEBUG java.sql.ResultSet.debug [26] - {rset-100011} Result: [12, ㅁㅇㄻㄴㅇㅁㅇㄻㄴㅇㄻㄴㅇㄻㄴㅇㄹ.png, ㅁㅇㄻㄴㅇㅁㅇㄻㄴㅇㄻㄴㅇㄻㄴㅇㄹ, www.naver.com, 2017-04-05 00:00:00.0, 2018-11-03 00:00:00.0]
+2017-09-08 17:41:38 DEBUG java.sql.ResultSet.debug [26] - {rset-100011} Result: [13, ㅁㅇㄻㄴㅇㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹ.png, ㅁㅇㄻㄴㅇㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹ, www.naver.com, 2017-09-08 00:00:00.0, 2019-10-04 00:00:00.0]
+2017-09-08 17:41:38 DEBUG java.sql.ResultSet.debug [26] - {rset-100011} Result: [14, 3232323232323.jpeg, 3232323232323, www.naver.com, 2017-09-08 00:00:00.0, 2017-09-30 00:00:00.0]
+2017-09-08 17:41:38 DEBUG java.sql.ResultSet.debug [26] - {rset-100011} Result: [15, ㅁㅇㄻㄴㅇㄻ.jpeg, ㅁㅇㄻㄴㅇㄻ, www.naver.com, 2017-09-08 00:00:00.0, 2023-01-13 00:00:00.0]
+2017-09-08 17:41:38 DEBUG java.sql.ResultSet.debug [26] - {rset-100011} Result: [16, 전효성이네.jpeg, 전효성이네, www.naver.com, 2017-09-08 00:00:00.0, 2020-12-31 00:00:00.0]
+2017-09-08 17:41:38 DEBUG java.sql.ResultSet.debug [26] - {rset-100011} Result: [17, 12312312.jpeg, 12312312, www.naver.com, 2017-09-08 00:00:00.0, 2023-12-30 00:00:00.0]
+2017-09-08 17:41:38 DEBUG java.sql.ResultSet.debug [26] - {rset-100011} Result: [18, 124124.jpeg, 124124, www.naver.com, 2017-09-08 00:00:00.0, 2022-12-31 00:00:00.0]
+2017-09-08 17:41:38 DEBUG java.sql.ResultSet.debug [26] - {rset-100011} Result: [19, 11111.jpeg, 11111, www.naver.com, 2017-09-08 00:00:00.0, 2022-12-23 00:00:00.0]
+2017-09-08 17:41:38 DEBUG java.sql.Connection.debug [26] - {conn-100012} Connection
+2017-09-08 17:41:38 DEBUG java.sql.Connection.debug [26] - {conn-100012} Preparing Statement:    select    ad_no   as adNo,    ad_img_path  as adImgPath,    ad_title  as adTitle,    ad_link   as adLink,    ad_start_date as adStartDate,    ad_end_date  as adEndDate   from    tb_ad   order by adNo   
+2017-09-08 17:41:38 DEBUG java.sql.PreparedStatement.debug [26] - {pstm-100013} Executing Statement:    select    ad_no   as adNo,    ad_img_path  as adImgPath,    ad_title  as adTitle,    ad_link   as adLink,    ad_start_date as adStartDate,    ad_end_date  as adEndDate   from    tb_ad   order by adNo   
+2017-09-08 17:41:38 DEBUG java.sql.PreparedStatement.debug [26] - {pstm-100013} Parameters: []
+2017-09-08 17:41:38 DEBUG java.sql.PreparedStatement.debug [26] - {pstm-100013} Types: []
+2017-09-08 17:41:38 DEBUG java.sql.ResultSet.debug [26] - {rset-100014} ResultSet
+2017-09-08 17:41:38 DEBUG java.sql.ResultSet.debug [26] - {rset-100014} Header: [ADNO, ADIMGPATH, ADTITLE, ADLINK, ADSTARTDATE, ADENDDATE]
+2017-09-08 17:41:38 DEBUG java.sql.ResultSet.debug [26] - {rset-100014} Result: [1, 좋은광고.png, 좋은광고, www.naver.com, 2017-09-08 00:00:00.0, 2017-09-30 00:00:00.0]
+2017-09-08 17:41:38 DEBUG java.sql.ResultSet.debug [26] - {rset-100014} Result: [2, 이상한광고.png, 이상한광고, www.naver.com, 2017-09-08 00:00:00.0, 2017-09-30 00:00:00.0]
+2017-09-08 17:41:38 DEBUG java.sql.ResultSet.debug [26] - {rset-100014} Result: [3, 이상한광고.png, 이상한광고, www.naver.com, 2017-09-08 00:00:00.0, 2017-09-30 00:00:00.0]
+2017-09-08 17:41:38 DEBUG java.sql.ResultSet.debug [26] - {rset-100014} Result: [4, 이상한광고.png, 이상한광고, www.naver.com, 2017-09-08 00:00:00.0, 2017-09-30 00:00:00.0]
+2017-09-08 17:41:38 DEBUG java.sql.ResultSet.debug [26] - {rset-100014} Result: [5, 이상한광고.png, 이상한광고, www.naver.com, 2017-09-08 00:00:00.0, 2017-09-30 00:00:00.0]
+2017-09-08 17:41:38 DEBUG java.sql.ResultSet.debug [26] - {rset-100014} Result: [6, 이상한광고.png, 이상한광고, www.naver.com, 2017-09-08 00:00:00.0, 2017-09-24 00:00:00.0]
+2017-09-08 17:41:38 DEBUG java.sql.ResultSet.debug [26] - {rset-100014} Result: [7, 이상한광고.png, 이상한광고, www.daum.net, 2017-09-08 00:00:00.0, 2018-03-17 00:00:00.0]
+2017-09-08 17:41:38 DEBUG java.sql.ResultSet.debug [26] - {rset-100014} Result: [8, 멋진광고11.png, 멋진광고11, www.naver.com, 2017-10-13 00:00:00.0, 2018-01-20 00:00:00.0]
+2017-09-08 17:41:38 DEBUG java.sql.ResultSet.debug [26] - {rset-100014} Result: [9, 허리광고.png, 허리광고, www.naver.com, 2017-09-22 00:00:00.0, 2017-12-30 00:00:00.0]
+2017-09-08 17:41:38 DEBUG java.sql.ResultSet.debug [26] - {rset-100014} Result: [10, 오호호홍.png, 오호호홍, www.naver.com, 2017-09-30 00:00:00.0, 2018-04-28 00:00:00.0]
+2017-09-08 17:41:38 DEBUG java.sql.ResultSet.debug [26] - {rset-100014} Result: [11, ㅁㅇㄴㄻㄴㅇㄻㄴㅇㄹ.png, ㅁㅇㄴㄻㄴㅇㄻㄴㅇㄹ, www.naver.com, 2017-09-08 00:00:00.0, 2018-10-27 00:00:00.0]
+2017-09-08 17:41:38 DEBUG java.sql.ResultSet.debug [26] - {rset-100014} Result: [12, ㅁㅇㄻㄴㅇㅁㅇㄻㄴㅇㄻㄴㅇㄻㄴㅇㄹ.png, ㅁㅇㄻㄴㅇㅁㅇㄻㄴㅇㄻㄴㅇㄻㄴㅇㄹ, www.naver.com, 2017-04-05 00:00:00.0, 2018-11-03 00:00:00.0]
+2017-09-08 17:41:38 DEBUG java.sql.ResultSet.debug [26] - {rset-100014} Result: [13, ㅁㅇㄻㄴㅇㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹ.png, ㅁㅇㄻㄴㅇㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹ, www.naver.com, 2017-09-08 00:00:00.0, 2019-10-04 00:00:00.0]
+2017-09-08 17:41:38 DEBUG java.sql.ResultSet.debug [26] - {rset-100014} Result: [14, 3232323232323.jpeg, 3232323232323, www.naver.com, 2017-09-08 00:00:00.0, 2017-09-30 00:00:00.0]
+2017-09-08 17:41:38 DEBUG java.sql.ResultSet.debug [26] - {rset-100014} Result: [15, ㅁㅇㄻㄴㅇㄻ.jpeg, ㅁㅇㄻㄴㅇㄻ, www.naver.com, 2017-09-08 00:00:00.0, 2023-01-13 00:00:00.0]
+2017-09-08 17:41:38 DEBUG java.sql.ResultSet.debug [26] - {rset-100014} Result: [16, 전효성이네.jpeg, 전효성이네, www.naver.com, 2017-09-08 00:00:00.0, 2020-12-31 00:00:00.0]
+2017-09-08 17:41:38 DEBUG java.sql.ResultSet.debug [26] - {rset-100014} Result: [17, 12312312.jpeg, 12312312, www.naver.com, 2017-09-08 00:00:00.0, 2023-12-30 00:00:00.0]
+2017-09-08 17:41:38 DEBUG java.sql.ResultSet.debug [26] - {rset-100014} Result: [18, 124124.jpeg, 124124, www.naver.com, 2017-09-08 00:00:00.0, 2022-12-31 00:00:00.0]
+2017-09-08 17:41:38 DEBUG java.sql.ResultSet.debug [26] - {rset-100014} Result: [19, 11111.jpeg, 11111, www.naver.com, 2017-09-08 00:00:00.0, 2022-12-23 00:00:00.0]
+2017-09-08 17:41:41 DEBUG java.sql.Connection.debug [26] - {conn-100015} Connection
+2017-09-08 17:41:41 DEBUG java.sql.Connection.debug [26] - {conn-100015} Preparing Statement:    select    ad_img_path  as adImgPath,    ad_title  as adTitle,    ad_link   as adLink,    ad_start_date as adStartDate,    ad_end_date  as adEndDate   from    tb_ad   where    ad_no = ?    
+2017-09-08 17:41:41 DEBUG java.sql.PreparedStatement.debug [26] - {pstm-100016} Executing Statement:    select    ad_img_path  as adImgPath,    ad_title  as adTitle,    ad_link   as adLink,    ad_start_date as adStartDate,    ad_end_date  as adEndDate   from    tb_ad   where    ad_no = ?    
+2017-09-08 17:41:41 DEBUG java.sql.PreparedStatement.debug [26] - {pstm-100016} Parameters: [1]
+2017-09-08 17:41:41 DEBUG java.sql.PreparedStatement.debug [26] - {pstm-100016} Types: [java.lang.Integer]
+2017-09-08 17:41:41 DEBUG java.sql.ResultSet.debug [26] - {rset-100017} ResultSet
+2017-09-08 17:41:41 DEBUG java.sql.ResultSet.debug [26] - {rset-100017} Header: [ADIMGPATH, ADTITLE, ADLINK, ADSTARTDATE, ADENDDATE]
+2017-09-08 17:41:41 DEBUG java.sql.ResultSet.debug [26] - {rset-100017} Result: [좋은광고.png, 좋은광고, www.naver.com, 2017-09-08 00:00:00.0, 2017-09-30 00:00:00.0]
+2017-09-08 17:41:43 DEBUG java.sql.Connection.debug [26] - {conn-100018} Connection
+2017-09-08 17:41:43 DEBUG java.sql.Connection.debug [26] - {conn-100018} Preparing Statement:    select    ad_no   as adNo,    ad_img_path  as adImgPath,    ad_title  as adTitle,    ad_link   as adLink,    ad_start_date as adStartDate,    ad_end_date  as adEndDate   from    tb_ad   order by adNo   
+2017-09-08 17:41:43 DEBUG java.sql.PreparedStatement.debug [26] - {pstm-100019} Executing Statement:    select    ad_no   as adNo,    ad_img_path  as adImgPath,    ad_title  as adTitle,    ad_link   as adLink,    ad_start_date as adStartDate,    ad_end_date  as adEndDate   from    tb_ad   order by adNo   
+2017-09-08 17:41:43 DEBUG java.sql.PreparedStatement.debug [26] - {pstm-100019} Parameters: []
+2017-09-08 17:41:43 DEBUG java.sql.PreparedStatement.debug [26] - {pstm-100019} Types: []
+2017-09-08 17:41:43 DEBUG java.sql.ResultSet.debug [26] - {rset-100020} ResultSet
+2017-09-08 17:41:43 DEBUG java.sql.ResultSet.debug [26] - {rset-100020} Header: [ADNO, ADIMGPATH, ADTITLE, ADLINK, ADSTARTDATE, ADENDDATE]
+2017-09-08 17:41:43 DEBUG java.sql.ResultSet.debug [26] - {rset-100020} Result: [1, 좋은광고.png, 좋은광고, www.naver.com, 2017-09-08 00:00:00.0, 2017-09-30 00:00:00.0]
+2017-09-08 17:41:43 DEBUG java.sql.ResultSet.debug [26] - {rset-100020} Result: [2, 이상한광고.png, 이상한광고, www.naver.com, 2017-09-08 00:00:00.0, 2017-09-30 00:00:00.0]
+2017-09-08 17:41:43 DEBUG java.sql.ResultSet.debug [26] - {rset-100020} Result: [3, 이상한광고.png, 이상한광고, www.naver.com, 2017-09-08 00:00:00.0, 2017-09-30 00:00:00.0]
+2017-09-08 17:41:43 DEBUG java.sql.ResultSet.debug [26] - {rset-100020} Result: [4, 이상한광고.png, 이상한광고, www.naver.com, 2017-09-08 00:00:00.0, 2017-09-30 00:00:00.0]
+2017-09-08 17:41:43 DEBUG java.sql.ResultSet.debug [26] - {rset-100020} Result: [5, 이상한광고.png, 이상한광고, www.naver.com, 2017-09-08 00:00:00.0, 2017-09-30 00:00:00.0]
+2017-09-08 17:41:43 DEBUG java.sql.ResultSet.debug [26] - {rset-100020} Result: [6, 이상한광고.png, 이상한광고, www.naver.com, 2017-09-08 00:00:00.0, 2017-09-24 00:00:00.0]
+2017-09-08 17:41:43 DEBUG java.sql.ResultSet.debug [26] - {rset-100020} Result: [7, 이상한광고.png, 이상한광고, www.daum.net, 2017-09-08 00:00:00.0, 2018-03-17 00:00:00.0]
+2017-09-08 17:41:43 DEBUG java.sql.ResultSet.debug [26] - {rset-100020} Result: [8, 멋진광고11.png, 멋진광고11, www.naver.com, 2017-10-13 00:00:00.0, 2018-01-20 00:00:00.0]
+2017-09-08 17:41:43 DEBUG java.sql.ResultSet.debug [26] - {rset-100020} Result: [9, 허리광고.png, 허리광고, www.naver.com, 2017-09-22 00:00:00.0, 2017-12-30 00:00:00.0]
+2017-09-08 17:41:43 DEBUG java.sql.ResultSet.debug [26] - {rset-100020} Result: [10, 오호호홍.png, 오호호홍, www.naver.com, 2017-09-30 00:00:00.0, 2018-04-28 00:00:00.0]
+2017-09-08 17:41:43 DEBUG java.sql.ResultSet.debug [26] - {rset-100020} Result: [11, ㅁㅇㄴㄻㄴㅇㄻㄴㅇㄹ.png, ㅁㅇㄴㄻㄴㅇㄻㄴㅇㄹ, www.naver.com, 2017-09-08 00:00:00.0, 2018-10-27 00:00:00.0]
+2017-09-08 17:41:43 DEBUG java.sql.ResultSet.debug [26] - {rset-100020} Result: [12, ㅁㅇㄻㄴㅇㅁㅇㄻㄴㅇㄻㄴㅇㄻㄴㅇㄹ.png, ㅁㅇㄻㄴㅇㅁㅇㄻㄴㅇㄻㄴㅇㄻㄴㅇㄹ, www.naver.com, 2017-04-05 00:00:00.0, 2018-11-03 00:00:00.0]
+2017-09-08 17:41:43 DEBUG java.sql.ResultSet.debug [26] - {rset-100020} Result: [13, ㅁㅇㄻㄴㅇㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹ.png, ㅁㅇㄻㄴㅇㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹ, www.naver.com, 2017-09-08 00:00:00.0, 2019-10-04 00:00:00.0]
+2017-09-08 17:41:43 DEBUG java.sql.ResultSet.debug [26] - {rset-100020} Result: [14, 3232323232323.jpeg, 3232323232323, www.naver.com, 2017-09-08 00:00:00.0, 2017-09-30 00:00:00.0]
+2017-09-08 17:41:43 DEBUG java.sql.ResultSet.debug [26] - {rset-100020} Result: [15, ㅁㅇㄻㄴㅇㄻ.jpeg, ㅁㅇㄻㄴㅇㄻ, www.naver.com, 2017-09-08 00:00:00.0, 2023-01-13 00:00:00.0]
+2017-09-08 17:41:43 DEBUG java.sql.ResultSet.debug [26] - {rset-100020} Result: [16, 전효성이네.jpeg, 전효성이네, www.naver.com, 2017-09-08 00:00:00.0, 2020-12-31 00:00:00.0]
+2017-09-08 17:41:43 DEBUG java.sql.ResultSet.debug [26] - {rset-100020} Result: [17, 12312312.jpeg, 12312312, www.naver.com, 2017-09-08 00:00:00.0, 2023-12-30 00:00:00.0]
+2017-09-08 17:41:43 DEBUG java.sql.ResultSet.debug [26] - {rset-100020} Result: [18, 124124.jpeg, 124124, www.naver.com, 2017-09-08 00:00:00.0, 2022-12-31 00:00:00.0]
+2017-09-08 17:41:43 DEBUG java.sql.ResultSet.debug [26] - {rset-100020} Result: [19, 11111.jpeg, 11111, www.naver.com, 2017-09-08 00:00:00.0, 2022-12-23 00:00:00.0]
+2017-09-08 17:41:44 DEBUG java.sql.Connection.debug [26] - {conn-100021} Connection
+2017-09-08 17:41:44 DEBUG java.sql.Connection.debug [26] - {conn-100021} Preparing Statement:    select    ad_img_path  as adImgPath,    ad_title  as adTitle,    ad_link   as adLink,    ad_start_date as adStartDate,    ad_end_date  as adEndDate   from    tb_ad   where    ad_no = ?    
+2017-09-08 17:41:44 DEBUG java.sql.PreparedStatement.debug [26] - {pstm-100022} Executing Statement:    select    ad_img_path  as adImgPath,    ad_title  as adTitle,    ad_link   as adLink,    ad_start_date as adStartDate,    ad_end_date  as adEndDate   from    tb_ad   where    ad_no = ?    
+2017-09-08 17:41:44 DEBUG java.sql.PreparedStatement.debug [26] - {pstm-100022} Parameters: [19]
+2017-09-08 17:41:44 DEBUG java.sql.PreparedStatement.debug [26] - {pstm-100022} Types: [java.lang.Integer]
+2017-09-08 17:41:44 DEBUG java.sql.ResultSet.debug [26] - {rset-100023} ResultSet
+2017-09-08 17:41:44 DEBUG java.sql.ResultSet.debug [26] - {rset-100023} Header: [ADIMGPATH, ADTITLE, ADLINK, ADSTARTDATE, ADENDDATE]
+2017-09-08 17:41:44 DEBUG java.sql.ResultSet.debug [26] - {rset-100023} Result: [11111.jpeg, 11111, www.naver.com, 2017-09-08 00:00:00.0, 2022-12-23 00:00:00.0]
+2017-09-08 17:41:45 DEBUG java.sql.Connection.debug [26] - {conn-100024} Connection
+2017-09-08 17:41:45 DEBUG java.sql.Connection.debug [26] - {conn-100024} Preparing Statement:    select    ad_no   as adNo,    ad_img_path  as adImgPath,    ad_title  as adTitle,    ad_link   as adLink,    ad_start_date as adStartDate,    ad_end_date  as adEndDate   from    tb_ad   order by adNo   
+2017-09-08 17:41:45 DEBUG java.sql.PreparedStatement.debug [26] - {pstm-100025} Executing Statement:    select    ad_no   as adNo,    ad_img_path  as adImgPath,    ad_title  as adTitle,    ad_link   as adLink,    ad_start_date as adStartDate,    ad_end_date  as adEndDate   from    tb_ad   order by adNo   
+2017-09-08 17:41:45 DEBUG java.sql.PreparedStatement.debug [26] - {pstm-100025} Parameters: []
+2017-09-08 17:41:45 DEBUG java.sql.PreparedStatement.debug [26] - {pstm-100025} Types: []
+2017-09-08 17:41:45 DEBUG java.sql.ResultSet.debug [26] - {rset-100026} ResultSet
+2017-09-08 17:41:45 DEBUG java.sql.ResultSet.debug [26] - {rset-100026} Header: [ADNO, ADIMGPATH, ADTITLE, ADLINK, ADSTARTDATE, ADENDDATE]
+2017-09-08 17:41:45 DEBUG java.sql.ResultSet.debug [26] - {rset-100026} Result: [1, 좋은광고.png, 좋은광고, www.naver.com, 2017-09-08 00:00:00.0, 2017-09-30 00:00:00.0]
+2017-09-08 17:41:45 DEBUG java.sql.ResultSet.debug [26] - {rset-100026} Result: [2, 이상한광고.png, 이상한광고, www.naver.com, 2017-09-08 00:00:00.0, 2017-09-30 00:00:00.0]
+2017-09-08 17:41:45 DEBUG java.sql.ResultSet.debug [26] - {rset-100026} Result: [3, 이상한광고.png, 이상한광고, www.naver.com, 2017-09-08 00:00:00.0, 2017-09-30 00:00:00.0]
+2017-09-08 17:41:45 DEBUG java.sql.ResultSet.debug [26] - {rset-100026} Result: [4, 이상한광고.png, 이상한광고, www.naver.com, 2017-09-08 00:00:00.0, 2017-09-30 00:00:00.0]
+2017-09-08 17:41:45 DEBUG java.sql.ResultSet.debug [26] - {rset-100026} Result: [5, 이상한광고.png, 이상한광고, www.naver.com, 2017-09-08 00:00:00.0, 2017-09-30 00:00:00.0]
+2017-09-08 17:41:45 DEBUG java.sql.ResultSet.debug [26] - {rset-100026} Result: [6, 이상한광고.png, 이상한광고, www.naver.com, 2017-09-08 00:00:00.0, 2017-09-24 00:00:00.0]
+2017-09-08 17:41:45 DEBUG java.sql.ResultSet.debug [26] - {rset-100026} Result: [7, 이상한광고.png, 이상한광고, www.daum.net, 2017-09-08 00:00:00.0, 2018-03-17 00:00:00.0]
+2017-09-08 17:41:45 DEBUG java.sql.ResultSet.debug [26] - {rset-100026} Result: [8, 멋진광고11.png, 멋진광고11, www.naver.com, 2017-10-13 00:00:00.0, 2018-01-20 00:00:00.0]
+2017-09-08 17:41:45 DEBUG java.sql.ResultSet.debug [26] - {rset-100026} Result: [9, 허리광고.png, 허리광고, www.naver.com, 2017-09-22 00:00:00.0, 2017-12-30 00:00:00.0]
+2017-09-08 17:41:45 DEBUG java.sql.ResultSet.debug [26] - {rset-100026} Result: [10, 오호호홍.png, 오호호홍, www.naver.com, 2017-09-30 00:00:00.0, 2018-04-28 00:00:00.0]
+2017-09-08 17:41:45 DEBUG java.sql.ResultSet.debug [26] - {rset-100026} Result: [11, ㅁㅇㄴㄻㄴㅇㄻㄴㅇㄹ.png, ㅁㅇㄴㄻㄴㅇㄻㄴㅇㄹ, www.naver.com, 2017-09-08 00:00:00.0, 2018-10-27 00:00:00.0]
+2017-09-08 17:41:45 DEBUG java.sql.ResultSet.debug [26] - {rset-100026} Result: [12, ㅁㅇㄻㄴㅇㅁㅇㄻㄴㅇㄻㄴㅇㄻㄴㅇㄹ.png, ㅁㅇㄻㄴㅇㅁㅇㄻㄴㅇㄻㄴㅇㄻㄴㅇㄹ, www.naver.com, 2017-04-05 00:00:00.0, 2018-11-03 00:00:00.0]
+2017-09-08 17:41:45 DEBUG java.sql.ResultSet.debug [26] - {rset-100026} Result: [13, ㅁㅇㄻㄴㅇㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹ.png, ㅁㅇㄻㄴㅇㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹ, www.naver.com, 2017-09-08 00:00:00.0, 2019-10-04 00:00:00.0]
+2017-09-08 17:41:45 DEBUG java.sql.ResultSet.debug [26] - {rset-100026} Result: [14, 3232323232323.jpeg, 3232323232323, www.naver.com, 2017-09-08 00:00:00.0, 2017-09-30 00:00:00.0]
+2017-09-08 17:41:45 DEBUG java.sql.ResultSet.debug [26] - {rset-100026} Result: [15, ㅁㅇㄻㄴㅇㄻ.jpeg, ㅁㅇㄻㄴㅇㄻ, www.naver.com, 2017-09-08 00:00:00.0, 2023-01-13 00:00:00.0]
+2017-09-08 17:41:45 DEBUG java.sql.ResultSet.debug [26] - {rset-100026} Result: [16, 전효성이네.jpeg, 전효성이네, www.naver.com, 2017-09-08 00:00:00.0, 2020-12-31 00:00:00.0]
+2017-09-08 17:41:45 DEBUG java.sql.ResultSet.debug [26] - {rset-100026} Result: [17, 12312312.jpeg, 12312312, www.naver.com, 2017-09-08 00:00:00.0, 2023-12-30 00:00:00.0]
+2017-09-08 17:41:45 DEBUG java.sql.ResultSet.debug [26] - {rset-100026} Result: [18, 124124.jpeg, 124124, www.naver.com, 2017-09-08 00:00:00.0, 2022-12-31 00:00:00.0]
+2017-09-08 17:41:45 DEBUG java.sql.ResultSet.debug [26] - {rset-100026} Result: [19, 11111.jpeg, 11111, www.naver.com, 2017-09-08 00:00:00.0, 2022-12-23 00:00:00.0]
+2017-09-08 17:41:46 DEBUG java.sql.Connection.debug [26] - {conn-100027} Connection
+2017-09-08 17:41:46 DEBUG java.sql.Connection.debug [26] - {conn-100027} Preparing Statement:    select    ad_img_path  as adImgPath,    ad_title  as adTitle,    ad_link   as adLink,    ad_start_date as adStartDate,    ad_end_date  as adEndDate   from    tb_ad   where    ad_no = ?    
+2017-09-08 17:41:46 DEBUG java.sql.PreparedStatement.debug [26] - {pstm-100028} Executing Statement:    select    ad_img_path  as adImgPath,    ad_title  as adTitle,    ad_link   as adLink,    ad_start_date as adStartDate,    ad_end_date  as adEndDate   from    tb_ad   where    ad_no = ?    
+2017-09-08 17:41:46 DEBUG java.sql.PreparedStatement.debug [26] - {pstm-100028} Parameters: [17]
+2017-09-08 17:41:46 DEBUG java.sql.PreparedStatement.debug [26] - {pstm-100028} Types: [java.lang.Integer]
+2017-09-08 17:41:46 DEBUG java.sql.ResultSet.debug [26] - {rset-100029} ResultSet
+2017-09-08 17:41:46 DEBUG java.sql.ResultSet.debug [26] - {rset-100029} Header: [ADIMGPATH, ADTITLE, ADLINK, ADSTARTDATE, ADENDDATE]
+2017-09-08 17:41:46 DEBUG java.sql.ResultSet.debug [26] - {rset-100029} Result: [12312312.jpeg, 12312312, www.naver.com, 2017-09-08 00:00:00.0, 2023-12-30 00:00:00.0]
+2017-09-08 17:41:48 DEBUG java.sql.Connection.debug [26] - {conn-100030} Connection
+2017-09-08 17:41:48 DEBUG java.sql.Connection.debug [26] - {conn-100030} Preparing Statement:    select    ad_no   as adNo,    ad_img_path  as adImgPath,    ad_title  as adTitle,    ad_link   as adLink,    ad_start_date as adStartDate,    ad_end_date  as adEndDate   from    tb_ad   order by adNo   
+2017-09-08 17:41:48 DEBUG java.sql.PreparedStatement.debug [26] - {pstm-100031} Executing Statement:    select    ad_no   as adNo,    ad_img_path  as adImgPath,    ad_title  as adTitle,    ad_link   as adLink,    ad_start_date as adStartDate,    ad_end_date  as adEndDate   from    tb_ad   order by adNo   
+2017-09-08 17:41:48 DEBUG java.sql.PreparedStatement.debug [26] - {pstm-100031} Parameters: []
+2017-09-08 17:41:48 DEBUG java.sql.PreparedStatement.debug [26] - {pstm-100031} Types: []
+2017-09-08 17:41:48 DEBUG java.sql.ResultSet.debug [26] - {rset-100032} ResultSet
+2017-09-08 17:41:48 DEBUG java.sql.ResultSet.debug [26] - {rset-100032} Header: [ADNO, ADIMGPATH, ADTITLE, ADLINK, ADSTARTDATE, ADENDDATE]
+2017-09-08 17:41:48 DEBUG java.sql.ResultSet.debug [26] - {rset-100032} Result: [1, 좋은광고.png, 좋은광고, www.naver.com, 2017-09-08 00:00:00.0, 2017-09-30 00:00:00.0]
+2017-09-08 17:41:48 DEBUG java.sql.ResultSet.debug [26] - {rset-100032} Result: [2, 이상한광고.png, 이상한광고, www.naver.com, 2017-09-08 00:00:00.0, 2017-09-30 00:00:00.0]
+2017-09-08 17:41:48 DEBUG java.sql.ResultSet.debug [26] - {rset-100032} Result: [3, 이상한광고.png, 이상한광고, www.naver.com, 2017-09-08 00:00:00.0, 2017-09-30 00:00:00.0]
+2017-09-08 17:41:48 DEBUG java.sql.ResultSet.debug [26] - {rset-100032} Result: [4, 이상한광고.png, 이상한광고, www.naver.com, 2017-09-08 00:00:00.0, 2017-09-30 00:00:00.0]
+2017-09-08 17:41:48 DEBUG java.sql.ResultSet.debug [26] - {rset-100032} Result: [5, 이상한광고.png, 이상한광고, www.naver.com, 2017-09-08 00:00:00.0, 2017-09-30 00:00:00.0]
+2017-09-08 17:41:48 DEBUG java.sql.ResultSet.debug [26] - {rset-100032} Result: [6, 이상한광고.png, 이상한광고, www.naver.com, 2017-09-08 00:00:00.0, 2017-09-24 00:00:00.0]
+2017-09-08 17:41:48 DEBUG java.sql.ResultSet.debug [26] - {rset-100032} Result: [7, 이상한광고.png, 이상한광고, www.daum.net, 2017-09-08 00:00:00.0, 2018-03-17 00:00:00.0]
+2017-09-08 17:41:48 DEBUG java.sql.ResultSet.debug [26] - {rset-100032} Result: [8, 멋진광고11.png, 멋진광고11, www.naver.com, 2017-10-13 00:00:00.0, 2018-01-20 00:00:00.0]
+2017-09-08 17:41:48 DEBUG java.sql.ResultSet.debug [26] - {rset-100032} Result: [9, 허리광고.png, 허리광고, www.naver.com, 2017-09-22 00:00:00.0, 2017-12-30 00:00:00.0]
+2017-09-08 17:41:48 DEBUG java.sql.ResultSet.debug [26] - {rset-100032} Result: [10, 오호호홍.png, 오호호홍, www.naver.com, 2017-09-30 00:00:00.0, 2018-04-28 00:00:00.0]
+2017-09-08 17:41:48 DEBUG java.sql.ResultSet.debug [26] - {rset-100032} Result: [11, ㅁㅇㄴㄻㄴㅇㄻㄴㅇㄹ.png, ㅁㅇㄴㄻㄴㅇㄻㄴㅇㄹ, www.naver.com, 2017-09-08 00:00:00.0, 2018-10-27 00:00:00.0]
+2017-09-08 17:41:48 DEBUG java.sql.ResultSet.debug [26] - {rset-100032} Result: [12, ㅁㅇㄻㄴㅇㅁㅇㄻㄴㅇㄻㄴㅇㄻㄴㅇㄹ.png, ㅁㅇㄻㄴㅇㅁㅇㄻㄴㅇㄻㄴㅇㄻㄴㅇㄹ, www.naver.com, 2017-04-05 00:00:00.0, 2018-11-03 00:00:00.0]
+2017-09-08 17:41:48 DEBUG java.sql.ResultSet.debug [26] - {rset-100032} Result: [13, ㅁㅇㄻㄴㅇㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹ.png, ㅁㅇㄻㄴㅇㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹ, www.naver.com, 2017-09-08 00:00:00.0, 2019-10-04 00:00:00.0]
+2017-09-08 17:41:48 DEBUG java.sql.ResultSet.debug [26] - {rset-100032} Result: [14, 3232323232323.jpeg, 3232323232323, www.naver.com, 2017-09-08 00:00:00.0, 2017-09-30 00:00:00.0]
+2017-09-08 17:41:48 DEBUG java.sql.ResultSet.debug [26] - {rset-100032} Result: [15, ㅁㅇㄻㄴㅇㄻ.jpeg, ㅁㅇㄻㄴㅇㄻ, www.naver.com, 2017-09-08 00:00:00.0, 2023-01-13 00:00:00.0]
+2017-09-08 17:41:48 DEBUG java.sql.ResultSet.debug [26] - {rset-100032} Result: [16, 전효성이네.jpeg, 전효성이네, www.naver.com, 2017-09-08 00:00:00.0, 2020-12-31 00:00:00.0]
+2017-09-08 17:41:48 DEBUG java.sql.ResultSet.debug [26] - {rset-100032} Result: [17, 12312312.jpeg, 12312312, www.naver.com, 2017-09-08 00:00:00.0, 2023-12-30 00:00:00.0]
+2017-09-08 17:41:48 DEBUG java.sql.ResultSet.debug [26] - {rset-100032} Result: [18, 124124.jpeg, 124124, www.naver.com, 2017-09-08 00:00:00.0, 2022-12-31 00:00:00.0]
+2017-09-08 17:41:48 DEBUG java.sql.ResultSet.debug [26] - {rset-100032} Result: [19, 11111.jpeg, 11111, www.naver.com, 2017-09-08 00:00:00.0, 2022-12-23 00:00:00.0]
+2017-09-08 17:42:20 DEBUG java.sql.Connection.debug [26] - {conn-100033} Connection
+2017-09-08 17:42:20 DEBUG java.sql.Connection.debug [26] - {conn-100033} Preparing Statement:    insert into tb_ad    (ad_no, ad_img_path, ad_link, ad_start_date, ad_end_date, ad_title)   values    (seq_ad.nextval, ?, ?, ? ,?, ?)  
+2017-09-08 17:42:20 DEBUG java.sql.PreparedStatement.debug [26] - {pstm-100034} Executing Statement:    insert into tb_ad    (ad_no, ad_img_path, ad_link, ad_start_date, ad_end_date, ad_title)   values    (seq_ad.nextval, ?, ?, ? ,?, ?)  
+2017-09-08 17:42:20 DEBUG java.sql.PreparedStatement.debug [26] - {pstm-100034} Parameters: [쯔위.jpeg, www.naver.com, 2017-09-01 00:00:00.0, 2022-12-08 00:00:00.0, 쯔위]
+2017-09-08 17:42:20 DEBUG java.sql.PreparedStatement.debug [26] - {pstm-100034} Types: [java.lang.String, java.lang.String, java.sql.Timestamp, java.sql.Timestamp, java.lang.String]
+2017-09-08 17:42:24 DEBUG java.sql.Connection.debug [26] - {conn-100035} Connection
+2017-09-08 17:42:24 DEBUG java.sql.Connection.debug [26] - {conn-100035} Preparing Statement:    select    ad_no   as adNo,    ad_img_path  as adImgPath,    ad_title  as adTitle,    ad_link   as adLink,    ad_start_date as adStartDate,    ad_end_date  as adEndDate   from    tb_ad   order by adNo   
+2017-09-08 17:42:24 DEBUG java.sql.PreparedStatement.debug [26] - {pstm-100036} Executing Statement:    select    ad_no   as adNo,    ad_img_path  as adImgPath,    ad_title  as adTitle,    ad_link   as adLink,    ad_start_date as adStartDate,    ad_end_date  as adEndDate   from    tb_ad   order by adNo   
+2017-09-08 17:42:24 DEBUG java.sql.PreparedStatement.debug [26] - {pstm-100036} Parameters: []
+2017-09-08 17:42:24 DEBUG java.sql.PreparedStatement.debug [26] - {pstm-100036} Types: []
+2017-09-08 17:42:24 DEBUG java.sql.ResultSet.debug [26] - {rset-100037} ResultSet
+2017-09-08 17:42:24 DEBUG java.sql.ResultSet.debug [26] - {rset-100037} Header: [ADNO, ADIMGPATH, ADTITLE, ADLINK, ADSTARTDATE, ADENDDATE]
+2017-09-08 17:42:24 DEBUG java.sql.ResultSet.debug [26] - {rset-100037} Result: [1, 좋은광고.png, 좋은광고, www.naver.com, 2017-09-08 00:00:00.0, 2017-09-30 00:00:00.0]
+2017-09-08 17:42:24 DEBUG java.sql.ResultSet.debug [26] - {rset-100037} Result: [2, 이상한광고.png, 이상한광고, www.naver.com, 2017-09-08 00:00:00.0, 2017-09-30 00:00:00.0]
+2017-09-08 17:42:24 DEBUG java.sql.ResultSet.debug [26] - {rset-100037} Result: [3, 이상한광고.png, 이상한광고, www.naver.com, 2017-09-08 00:00:00.0, 2017-09-30 00:00:00.0]
+2017-09-08 17:42:24 DEBUG java.sql.ResultSet.debug [26] - {rset-100037} Result: [4, 이상한광고.png, 이상한광고, www.naver.com, 2017-09-08 00:00:00.0, 2017-09-30 00:00:00.0]
+2017-09-08 17:42:24 DEBUG java.sql.ResultSet.debug [26] - {rset-100037} Result: [5, 이상한광고.png, 이상한광고, www.naver.com, 2017-09-08 00:00:00.0, 2017-09-30 00:00:00.0]
+2017-09-08 17:42:24 DEBUG java.sql.ResultSet.debug [26] - {rset-100037} Result: [6, 이상한광고.png, 이상한광고, www.naver.com, 2017-09-08 00:00:00.0, 2017-09-24 00:00:00.0]
+2017-09-08 17:42:24 DEBUG java.sql.ResultSet.debug [26] - {rset-100037} Result: [7, 이상한광고.png, 이상한광고, www.daum.net, 2017-09-08 00:00:00.0, 2018-03-17 00:00:00.0]
+2017-09-08 17:42:24 DEBUG java.sql.ResultSet.debug [26] - {rset-100037} Result: [8, 멋진광고11.png, 멋진광고11, www.naver.com, 2017-10-13 00:00:00.0, 2018-01-20 00:00:00.0]
+2017-09-08 17:42:24 DEBUG java.sql.ResultSet.debug [26] - {rset-100037} Result: [9, 허리광고.png, 허리광고, www.naver.com, 2017-09-22 00:00:00.0, 2017-12-30 00:00:00.0]
+2017-09-08 17:42:24 DEBUG java.sql.ResultSet.debug [26] - {rset-100037} Result: [10, 오호호홍.png, 오호호홍, www.naver.com, 2017-09-30 00:00:00.0, 2018-04-28 00:00:00.0]
+2017-09-08 17:42:24 DEBUG java.sql.ResultSet.debug [26] - {rset-100037} Result: [11, ㅁㅇㄴㄻㄴㅇㄻㄴㅇㄹ.png, ㅁㅇㄴㄻㄴㅇㄻㄴㅇㄹ, www.naver.com, 2017-09-08 00:00:00.0, 2018-10-27 00:00:00.0]
+2017-09-08 17:42:24 DEBUG java.sql.ResultSet.debug [26] - {rset-100037} Result: [12, ㅁㅇㄻㄴㅇㅁㅇㄻㄴㅇㄻㄴㅇㄻㄴㅇㄹ.png, ㅁㅇㄻㄴㅇㅁㅇㄻㄴㅇㄻㄴㅇㄻㄴㅇㄹ, www.naver.com, 2017-04-05 00:00:00.0, 2018-11-03 00:00:00.0]
+2017-09-08 17:42:24 DEBUG java.sql.ResultSet.debug [26] - {rset-100037} Result: [13, ㅁㅇㄻㄴㅇㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹ.png, ㅁㅇㄻㄴㅇㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹ, www.naver.com, 2017-09-08 00:00:00.0, 2019-10-04 00:00:00.0]
+2017-09-08 17:42:24 DEBUG java.sql.ResultSet.debug [26] - {rset-100037} Result: [14, 3232323232323.jpeg, 3232323232323, www.naver.com, 2017-09-08 00:00:00.0, 2017-09-30 00:00:00.0]
+2017-09-08 17:42:24 DEBUG java.sql.ResultSet.debug [26] - {rset-100037} Result: [15, ㅁㅇㄻㄴㅇㄻ.jpeg, ㅁㅇㄻㄴㅇㄻ, www.naver.com, 2017-09-08 00:00:00.0, 2023-01-13 00:00:00.0]
+2017-09-08 17:42:24 DEBUG java.sql.ResultSet.debug [26] - {rset-100037} Result: [16, 전효성이네.jpeg, 전효성이네, www.naver.com, 2017-09-08 00:00:00.0, 2020-12-31 00:00:00.0]
+2017-09-08 17:42:24 DEBUG java.sql.ResultSet.debug [26] - {rset-100037} Result: [17, 12312312.jpeg, 12312312, www.naver.com, 2017-09-08 00:00:00.0, 2023-12-30 00:00:00.0]
+2017-09-08 17:42:24 DEBUG java.sql.ResultSet.debug [26] - {rset-100037} Result: [18, 124124.jpeg, 124124, www.naver.com, 2017-09-08 00:00:00.0, 2022-12-31 00:00:00.0]
+2017-09-08 17:42:24 DEBUG java.sql.ResultSet.debug [26] - {rset-100037} Result: [19, 11111.jpeg, 11111, www.naver.com, 2017-09-08 00:00:00.0, 2022-12-23 00:00:00.0]
+2017-09-08 17:42:24 DEBUG java.sql.ResultSet.debug [26] - {rset-100037} Result: [20, 쯔위.jpeg, 쯔위, www.naver.com, 2017-09-01 00:00:00.0, 2022-12-08 00:00:00.0]
+2017-09-08 17:42:25 DEBUG java.sql.Connection.debug [26] - {conn-100038} Connection
+2017-09-08 17:42:25 DEBUG java.sql.Connection.debug [26] - {conn-100038} Preparing Statement:    select    ad_no   as adNo,    ad_img_path  as adImgPath,    ad_title  as adTitle,    ad_link   as adLink,    ad_start_date as adStartDate,    ad_end_date  as adEndDate   from    tb_ad   order by adNo   
+2017-09-08 17:42:25 DEBUG java.sql.PreparedStatement.debug [26] - {pstm-100039} Executing Statement:    select    ad_no   as adNo,    ad_img_path  as adImgPath,    ad_title  as adTitle,    ad_link   as adLink,    ad_start_date as adStartDate,    ad_end_date  as adEndDate   from    tb_ad   order by adNo   
+2017-09-08 17:42:25 DEBUG java.sql.PreparedStatement.debug [26] - {pstm-100039} Parameters: []
+2017-09-08 17:42:25 DEBUG java.sql.PreparedStatement.debug [26] - {pstm-100039} Types: []
+2017-09-08 17:42:25 DEBUG java.sql.ResultSet.debug [26] - {rset-100040} ResultSet
+2017-09-08 17:42:25 DEBUG java.sql.ResultSet.debug [26] - {rset-100040} Header: [ADNO, ADIMGPATH, ADTITLE, ADLINK, ADSTARTDATE, ADENDDATE]
+2017-09-08 17:42:25 DEBUG java.sql.ResultSet.debug [26] - {rset-100040} Result: [1, 좋은광고.png, 좋은광고, www.naver.com, 2017-09-08 00:00:00.0, 2017-09-30 00:00:00.0]
+2017-09-08 17:42:25 DEBUG java.sql.ResultSet.debug [26] - {rset-100040} Result: [2, 이상한광고.png, 이상한광고, www.naver.com, 2017-09-08 00:00:00.0, 2017-09-30 00:00:00.0]
+2017-09-08 17:42:25 DEBUG java.sql.ResultSet.debug [26] - {rset-100040} Result: [3, 이상한광고.png, 이상한광고, www.naver.com, 2017-09-08 00:00:00.0, 2017-09-30 00:00:00.0]
+2017-09-08 17:42:25 DEBUG java.sql.ResultSet.debug [26] - {rset-100040} Result: [4, 이상한광고.png, 이상한광고, www.naver.com, 2017-09-08 00:00:00.0, 2017-09-30 00:00:00.0]
+2017-09-08 17:42:25 DEBUG java.sql.ResultSet.debug [26] - {rset-100040} Result: [5, 이상한광고.png, 이상한광고, www.naver.com, 2017-09-08 00:00:00.0, 2017-09-30 00:00:00.0]
+2017-09-08 17:42:25 DEBUG java.sql.ResultSet.debug [26] - {rset-100040} Result: [6, 이상한광고.png, 이상한광고, www.naver.com, 2017-09-08 00:00:00.0, 2017-09-24 00:00:00.0]
+2017-09-08 17:42:25 DEBUG java.sql.ResultSet.debug [26] - {rset-100040} Result: [7, 이상한광고.png, 이상한광고, www.daum.net, 2017-09-08 00:00:00.0, 2018-03-17 00:00:00.0]
+2017-09-08 17:42:25 DEBUG java.sql.ResultSet.debug [26] - {rset-100040} Result: [8, 멋진광고11.png, 멋진광고11, www.naver.com, 2017-10-13 00:00:00.0, 2018-01-20 00:00:00.0]
+2017-09-08 17:42:25 DEBUG java.sql.ResultSet.debug [26] - {rset-100040} Result: [9, 허리광고.png, 허리광고, www.naver.com, 2017-09-22 00:00:00.0, 2017-12-30 00:00:00.0]
+2017-09-08 17:42:25 DEBUG java.sql.ResultSet.debug [26] - {rset-100040} Result: [10, 오호호홍.png, 오호호홍, www.naver.com, 2017-09-30 00:00:00.0, 2018-04-28 00:00:00.0]
+2017-09-08 17:42:25 DEBUG java.sql.ResultSet.debug [26] - {rset-100040} Result: [11, ㅁㅇㄴㄻㄴㅇㄻㄴㅇㄹ.png, ㅁㅇㄴㄻㄴㅇㄻㄴㅇㄹ, www.naver.com, 2017-09-08 00:00:00.0, 2018-10-27 00:00:00.0]
+2017-09-08 17:42:25 DEBUG java.sql.ResultSet.debug [26] - {rset-100040} Result: [12, ㅁㅇㄻㄴㅇㅁㅇㄻㄴㅇㄻㄴㅇㄻㄴㅇㄹ.png, ㅁㅇㄻㄴㅇㅁㅇㄻㄴㅇㄻㄴㅇㄻㄴㅇㄹ, www.naver.com, 2017-04-05 00:00:00.0, 2018-11-03 00:00:00.0]
+2017-09-08 17:42:25 DEBUG java.sql.ResultSet.debug [26] - {rset-100040} Result: [13, ㅁㅇㄻㄴㅇㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹ.png, ㅁㅇㄻㄴㅇㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹ, www.naver.com, 2017-09-08 00:00:00.0, 2019-10-04 00:00:00.0]
+2017-09-08 17:42:25 DEBUG java.sql.ResultSet.debug [26] - {rset-100040} Result: [14, 3232323232323.jpeg, 3232323232323, www.naver.com, 2017-09-08 00:00:00.0, 2017-09-30 00:00:00.0]
+2017-09-08 17:42:25 DEBUG java.sql.ResultSet.debug [26] - {rset-100040} Result: [15, ㅁㅇㄻㄴㅇㄻ.jpeg, ㅁㅇㄻㄴㅇㄻ, www.naver.com, 2017-09-08 00:00:00.0, 2023-01-13 00:00:00.0]
+2017-09-08 17:42:25 DEBUG java.sql.ResultSet.debug [26] - {rset-100040} Result: [16, 전효성이네.jpeg, 전효성이네, www.naver.com, 2017-09-08 00:00:00.0, 2020-12-31 00:00:00.0]
+2017-09-08 17:42:25 DEBUG java.sql.ResultSet.debug [26] - {rset-100040} Result: [17, 12312312.jpeg, 12312312, www.naver.com, 2017-09-08 00:00:00.0, 2023-12-30 00:00:00.0]
+2017-09-08 17:42:25 DEBUG java.sql.ResultSet.debug [26] - {rset-100040} Result: [18, 124124.jpeg, 124124, www.naver.com, 2017-09-08 00:00:00.0, 2022-12-31 00:00:00.0]
+2017-09-08 17:42:25 DEBUG java.sql.ResultSet.debug [26] - {rset-100040} Result: [19, 11111.jpeg, 11111, www.naver.com, 2017-09-08 00:00:00.0, 2022-12-23 00:00:00.0]
+2017-09-08 17:42:25 DEBUG java.sql.ResultSet.debug [26] - {rset-100040} Result: [20, 쯔위.jpeg, 쯔위, www.naver.com, 2017-09-01 00:00:00.0, 2022-12-08 00:00:00.0]
+2017-09-08 17:42:25 DEBUG java.sql.Connection.debug [26] - {conn-100041} Connection
+2017-09-08 17:42:25 DEBUG java.sql.Connection.debug [26] - {conn-100041} Preparing Statement:    select    ad_no   as adNo,    ad_img_path  as adImgPath,    ad_title  as adTitle,    ad_link   as adLink,    ad_start_date as adStartDate,    ad_end_date  as adEndDate   from    tb_ad   order by adNo   
+2017-09-08 17:42:25 DEBUG java.sql.PreparedStatement.debug [26] - {pstm-100042} Executing Statement:    select    ad_no   as adNo,    ad_img_path  as adImgPath,    ad_title  as adTitle,    ad_link   as adLink,    ad_start_date as adStartDate,    ad_end_date  as adEndDate   from    tb_ad   order by adNo   
+2017-09-08 17:42:25 DEBUG java.sql.PreparedStatement.debug [26] - {pstm-100042} Parameters: []
+2017-09-08 17:42:25 DEBUG java.sql.PreparedStatement.debug [26] - {pstm-100042} Types: []
+2017-09-08 17:42:25 DEBUG java.sql.ResultSet.debug [26] - {rset-100043} ResultSet
+2017-09-08 17:42:25 DEBUG java.sql.ResultSet.debug [26] - {rset-100043} Header: [ADNO, ADIMGPATH, ADTITLE, ADLINK, ADSTARTDATE, ADENDDATE]
+2017-09-08 17:42:25 DEBUG java.sql.ResultSet.debug [26] - {rset-100043} Result: [1, 좋은광고.png, 좋은광고, www.naver.com, 2017-09-08 00:00:00.0, 2017-09-30 00:00:00.0]
+2017-09-08 17:42:25 DEBUG java.sql.ResultSet.debug [26] - {rset-100043} Result: [2, 이상한광고.png, 이상한광고, www.naver.com, 2017-09-08 00:00:00.0, 2017-09-30 00:00:00.0]
+2017-09-08 17:42:25 DEBUG java.sql.ResultSet.debug [26] - {rset-100043} Result: [3, 이상한광고.png, 이상한광고, www.naver.com, 2017-09-08 00:00:00.0, 2017-09-30 00:00:00.0]
+2017-09-08 17:42:25 DEBUG java.sql.ResultSet.debug [26] - {rset-100043} Result: [4, 이상한광고.png, 이상한광고, www.naver.com, 2017-09-08 00:00:00.0, 2017-09-30 00:00:00.0]
+2017-09-08 17:42:25 DEBUG java.sql.ResultSet.debug [26] - {rset-100043} Result: [5, 이상한광고.png, 이상한광고, www.naver.com, 2017-09-08 00:00:00.0, 2017-09-30 00:00:00.0]
+2017-09-08 17:42:25 DEBUG java.sql.ResultSet.debug [26] - {rset-100043} Result: [6, 이상한광고.png, 이상한광고, www.naver.com, 2017-09-08 00:00:00.0, 2017-09-24 00:00:00.0]
+2017-09-08 17:42:25 DEBUG java.sql.ResultSet.debug [26] - {rset-100043} Result: [7, 이상한광고.png, 이상한광고, www.daum.net, 2017-09-08 00:00:00.0, 2018-03-17 00:00:00.0]
+2017-09-08 17:42:25 DEBUG java.sql.ResultSet.debug [26] - {rset-100043} Result: [8, 멋진광고11.png, 멋진광고11, www.naver.com, 2017-10-13 00:00:00.0, 2018-01-20 00:00:00.0]
+2017-09-08 17:42:25 DEBUG java.sql.ResultSet.debug [26] - {rset-100043} Result: [9, 허리광고.png, 허리광고, www.naver.com, 2017-09-22 00:00:00.0, 2017-12-30 00:00:00.0]
+2017-09-08 17:42:25 DEBUG java.sql.ResultSet.debug [26] - {rset-100043} Result: [10, 오호호홍.png, 오호호홍, www.naver.com, 2017-09-30 00:00:00.0, 2018-04-28 00:00:00.0]
+2017-09-08 17:42:25 DEBUG java.sql.ResultSet.debug [26] - {rset-100043} Result: [11, ㅁㅇㄴㄻㄴㅇㄻㄴㅇㄹ.png, ㅁㅇㄴㄻㄴㅇㄻㄴㅇㄹ, www.naver.com, 2017-09-08 00:00:00.0, 2018-10-27 00:00:00.0]
+2017-09-08 17:42:25 DEBUG java.sql.ResultSet.debug [26] - {rset-100043} Result: [12, ㅁㅇㄻㄴㅇㅁㅇㄻㄴㅇㄻㄴㅇㄻㄴㅇㄹ.png, ㅁㅇㄻㄴㅇㅁㅇㄻㄴㅇㄻㄴㅇㄻㄴㅇㄹ, www.naver.com, 2017-04-05 00:00:00.0, 2018-11-03 00:00:00.0]
+2017-09-08 17:42:25 DEBUG java.sql.ResultSet.debug [26] - {rset-100043} Result: [13, ㅁㅇㄻㄴㅇㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹ.png, ㅁㅇㄻㄴㅇㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹ, www.naver.com, 2017-09-08 00:00:00.0, 2019-10-04 00:00:00.0]
+2017-09-08 17:42:25 DEBUG java.sql.ResultSet.debug [26] - {rset-100043} Result: [14, 3232323232323.jpeg, 3232323232323, www.naver.com, 2017-09-08 00:00:00.0, 2017-09-30 00:00:00.0]
+2017-09-08 17:42:25 DEBUG java.sql.ResultSet.debug [26] - {rset-100043} Result: [15, ㅁㅇㄻㄴㅇㄻ.jpeg, ㅁㅇㄻㄴㅇㄻ, www.naver.com, 2017-09-08 00:00:00.0, 2023-01-13 00:00:00.0]
+2017-09-08 17:42:25 DEBUG java.sql.ResultSet.debug [26] - {rset-100043} Result: [16, 전효성이네.jpeg, 전효성이네, www.naver.com, 2017-09-08 00:00:00.0, 2020-12-31 00:00:00.0]
+2017-09-08 17:42:25 DEBUG java.sql.ResultSet.debug [26] - {rset-100043} Result: [17, 12312312.jpeg, 12312312, www.naver.com, 2017-09-08 00:00:00.0, 2023-12-30 00:00:00.0]
+2017-09-08 17:42:25 DEBUG java.sql.ResultSet.debug [26] - {rset-100043} Result: [18, 124124.jpeg, 124124, www.naver.com, 2017-09-08 00:00:00.0, 2022-12-31 00:00:00.0]
+2017-09-08 17:42:25 DEBUG java.sql.ResultSet.debug [26] - {rset-100043} Result: [19, 11111.jpeg, 11111, www.naver.com, 2017-09-08 00:00:00.0, 2022-12-23 00:00:00.0]
+2017-09-08 17:42:25 DEBUG java.sql.ResultSet.debug [26] - {rset-100043} Result: [20, 쯔위.jpeg, 쯔위, www.naver.com, 2017-09-01 00:00:00.0, 2022-12-08 00:00:00.0]
+2017-09-08 17:42:26 DEBUG java.sql.Connection.debug [26] - {conn-100044} Connection
+2017-09-08 17:42:26 DEBUG java.sql.Connection.debug [26] - {conn-100044} Preparing Statement:    select    ad_img_path  as adImgPath,    ad_title  as adTitle,    ad_link   as adLink,    ad_start_date as adStartDate,    ad_end_date  as adEndDate   from    tb_ad   where    ad_no = ?    
+2017-09-08 17:42:26 DEBUG java.sql.PreparedStatement.debug [26] - {pstm-100045} Executing Statement:    select    ad_img_path  as adImgPath,    ad_title  as adTitle,    ad_link   as adLink,    ad_start_date as adStartDate,    ad_end_date  as adEndDate   from    tb_ad   where    ad_no = ?    
+2017-09-08 17:42:26 DEBUG java.sql.PreparedStatement.debug [26] - {pstm-100045} Parameters: [20]
+2017-09-08 17:42:26 DEBUG java.sql.PreparedStatement.debug [26] - {pstm-100045} Types: [java.lang.Integer]
+2017-09-08 17:42:26 DEBUG java.sql.ResultSet.debug [26] - {rset-100046} ResultSet
+2017-09-08 17:42:26 DEBUG java.sql.ResultSet.debug [26] - {rset-100046} Header: [ADIMGPATH, ADTITLE, ADLINK, ADSTARTDATE, ADENDDATE]
+2017-09-08 17:42:26 DEBUG java.sql.ResultSet.debug [26] - {rset-100046} Result: [쯔위.jpeg, 쯔위, www.naver.com, 2017-09-01 00:00:00.0, 2022-12-08 00:00:00.0]

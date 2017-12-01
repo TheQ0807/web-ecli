@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+	div {padding: 30px; border: 1px solid black;}
+</style>
+</head>
+<body>
+	<div id="box">
+		<button id="btn-1">클릭</button>
+		<button id="btn-2">클릭</button>
+	</div>
+</body>
+<script type="text/javascript">
+	document.getElementById("box").addEventListener('click', function(event){
+		console.log("div에서 클릭이벤트를 처리중입니다.");
+	});
+	document.getElementById("btn-1").addEventListener('click', function(event){
+		event.stopPropagation();
+		console.log("btn-1에서 클릭이벤트를 처리중입니다.");
+	});
+	document.getElementById("btn-2").addEventListener('click', function(event){
+		event.stopImmediatePropagation();
+		console.log("btn-2에서 클릭이벤트111111를 처리중입니다.");
+	});
+	document.getElementById("btn-2").addEventListener('click', function(event){
+		event.stopImmediatePropagation();
+		console.log("btn-2에서 클릭이벤트를 처리중입니다.");
+	});
+</script>
+</html>
